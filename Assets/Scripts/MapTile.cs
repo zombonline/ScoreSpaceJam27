@@ -43,7 +43,10 @@ using UnityEngine;
     public void ReceiveTempTower(GameObject tower)
     {
         tempTower = Instantiate(tower, transform.position, Quaternion.identity);
-        tempTower.GetComponent<TargetRange>().EnableTempTower();
+        if (ableToHoldTower)
+        {
+            tempTower.GetComponent<TargetRange>().EnableTempTower();
+        }
     }
 
     public void RemoveTempTower()
@@ -98,7 +101,7 @@ using UnityEngine;
         {
             placedTower.GetComponent<TargetRange>().DisableTargetTileRangeSprites();
         }
-        if (placementManager.tempTower != null)
+        if (tempTower != null)
         {
             RemoveTempTower();
         }
