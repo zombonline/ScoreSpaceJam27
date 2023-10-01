@@ -11,6 +11,8 @@ public class Base : MonoBehaviour
     int hitPoints;
 
     [SerializeField] UnityEvent onGameOver;
+    [SerializeField] SpriteRenderer spriteBase;
+    [SerializeField] float lengthSpriteFlashSeconds = .5f, lengthBetweenFlashesSeconds = .1f;
 
     private void Awake()
     {
@@ -28,18 +30,24 @@ public class Base : MonoBehaviour
         }
     }
 
-    private void Update()
+    private IEnumerator FlashSpriteRoutine()
     {
-        if(Input.GetKeyUp(KeyCode.E))
+        for (float i = 0; i < lengthSpriteFlashSeconds; i += lengthBetweenFlashesSeconds)
         {
-            AdjustHitPoints(-1);
+            spriteBase.color = Color.red;
+            yield return new WaitForSeconds(lengthBetweenFlashesSeconds);
+            spriteBase.color = Color.white;
         }
+        
     }
+
+
 
     public void AdjustHitPoints(int adjustment)
     {
         hitPoints += adjustment;
         UpdateHealthBar();
+        if(adjustment < 0) { StartCoroutine(FlashSpriteRoutine()); } //if damage taken, flash sprite
         if (hitPoints <= 0)
         {
             onGameOver.Invoke();

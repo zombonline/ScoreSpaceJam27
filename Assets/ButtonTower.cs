@@ -11,13 +11,18 @@ public class ButtonTower : MonoBehaviour
     [SerializeField] SOTower soTower;
     [SerializeField] Image imgCard;
     [SerializeField] TextMeshProUGUI textCost;
+    int currentCost;
+    float costFontSize;
 
     private void Awake()
     {
         placementManager = FindObjectOfType<PlacementManager>();
 
         imgCard.sprite = soTower.card;
-        textCost.text = soTower.buildCost.ToString();
+        currentCost = soTower.GetCostOfTower();
+        textCost.text = currentCost.ToString();
+
+        costFontSize = textCost.fontSize;
     }
 
     public void Press()
@@ -28,7 +33,36 @@ public class ButtonTower : MonoBehaviour
 
     public void UpdateCost()
     {
-        textCost.text = soTower.GetCostOfTower().ToString(); // put this on wave start and wave end.
+        StartCoroutine(UpdateCostRoutine());
+    }
+
+    private IEnumerator UpdateCostRoutine()
+    {
+        var diffBetweenCost = Mathf.Abs(soTower.GetCostOfTower() - currentCost);
+        Debug.Log(diffBetweenCost);
+        StartCoroutine(EnlargeCostTextRoutine());
+        for (int i = 0; i < diffBetweenCost; i++)
+        {
+            if (currentCost < soTower.GetCostOfTower()) { currentCost++; }
+            else if (currentCost > soTower.GetCostOfTower()) { currentCost--; }
+            textCost.text = currentCost.ToString();
+            yield return new WaitForSeconds(1f / diffBetweenCost);
+        }
+
+    }
+    private IEnumerator EnlargeCostTextRoutine()
+    {
+        var diffBetweenSizes = Mathf.Abs(textCost.fontSize - costFontSize *1.2f);
+        while (textCost.fontSize < costFontSize * 1.2f)
+        {
+            textCost.fontSize++;
+            yield return new WaitForSeconds((1f / diffBetweenSizes)/2f);
+        }
+        while (textCost.fontSize > costFontSize)
+        {
+            textCost.fontSize--;
+            yield return new WaitForSeconds((1f / diffBetweenSizes) / 2f);
+        }
     }
 
     private void UnableToPurchase()

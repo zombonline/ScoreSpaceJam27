@@ -9,7 +9,12 @@ public class EnemyMovement : MonoBehaviour
     public void MoveAlongPath()
     {
         currentTile++;
-        if(currentTile >= path.Length) { return; } //path is over, attack here?
+        if(currentTile >= path.Length)
+        {
+            FindObjectOfType<Base>().AdjustHitPoints(-1);
+            Destroy(gameObject);
+            return;
+        } 
         path[currentTile-1].RemoveEnemy(this.gameObject);
         path[currentTile].ReceiveEnemy(this.gameObject);
         transform.position = path[currentTile].transform.position;

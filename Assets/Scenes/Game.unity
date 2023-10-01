@@ -3512,6 +3512,9 @@ MonoBehaviour:
   onGameOver:
     m_PersistentCalls:
       m_Calls: []
+  spriteBase: {fileID: 708914876}
+  lengthSpriteFlashSeconds: 0.5
+  lengthBetweenFlashesSeconds: 0.1
 --- !u!1001 &639794654
 PrefabInstance:
   m_ObjectHideFlags: 0
