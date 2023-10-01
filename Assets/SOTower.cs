@@ -5,7 +5,24 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Tower", menuName = "Tower")]
 public class SOTower : ScriptableObject
 {
-    public int cost;
+    public int buildCost;
+    public int battleCost;
     public GameObject towerPrefab;
     public Sprite card;
+
+    public int GetCostOfTower()
+    {
+        if (FindObjectOfType<WaveSystem>().gameMode == GameMode.Battle)
+        {
+            Debug.Log("Hello!");
+
+            return battleCost;
+        }
+        else
+        {
+            Debug.Log("Hello!");
+
+            return buildCost;
+        }
+    }
 }

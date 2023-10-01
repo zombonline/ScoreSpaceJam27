@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095bbabb37193574b945a3cdac9a15d6, type: 3}
   m_Name: Pistol
   m_EditorClassIdentifier: 
-  cost: 250
+  buildCost: 250
+  battleCost: 300
   towerPrefab: {fileID: 4437146109528682727, guid: bd1b35fb6b8abbf439193b095bb3b50f, type: 3}
   card: {fileID: 21300000, guid: fa03cdc64a80f1d498492019dae9b2d7, type: 3}

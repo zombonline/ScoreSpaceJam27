@@ -8,16 +8,21 @@ public enum GameMode
     Battle,
     Build
 }
+[System.Serializable]
+public struct Paths
+{
+    public MapTile[] path; 
+}
 
 public class WaveSystem : MonoBehaviour
 {
     [SerializeField] SOWave[] waves;
 
-    int currentWave, currentWaveStep;
+    int currentWave = -1, currentWaveStep;
 
-    public GameMode gameMode { get; private set; }
+    public GameMode gameMode { get; private set; } = GameMode.Build;
 
-    [SerializeField] MapTile[] spawnTilesMouse, spawnTilesBird, spawnTilesDog;
+    [SerializeField] Paths[] pathsMouse, pathsBird, pathsDog;
 
     [SerializeField] GameObject mousePrefab, birdPrefab, dogPrefab;
 
@@ -25,17 +30,28 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] UnityEvent onWaveEnd, onWaveStart;
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space) && gameMode == GameMode.Build)
+        {
+            gameMode = GameMode.Battle;
+            LoadNewWave();
+            onWaveStart.Invoke();
+        }
+    }
+
 
     //do every beat
     public void SpawnWaveStep()
     {
-        currentWaveStep++;
         if(currentWaveStep >= waves[currentWave].waveSteps.Length) { return; } //No more steps left in wave 
 
         var waveStep = waves[currentWave].waveSteps[currentWaveStep];
-        SpawnEnemy(waveStep.mice, spawnTilesMouse, mousePrefab);
-        SpawnEnemy(waveStep.birds, spawnTilesBird, birdPrefab);
-        SpawnEnemy(waveStep.dogs, spawnTilesDog, dogPrefab);
+        SpawnEnemy(waveStep.mice, pathsMouse, mousePrefab);
+        SpawnEnemy(waveStep.birds, pathsBird, birdPrefab);
+        SpawnEnemy(waveStep.dogs, pathsDog, dogPrefab);
+
+        currentWaveStep++;
     }
     //do every beat
     public void CheckForWaveEnd()
@@ -48,16 +64,29 @@ public class WaveSystem : MonoBehaviour
 
     }
 
-    private void SpawnEnemy(int enemyCount, MapTile[] spawnTiles, GameObject enemyPrefab)
+    private void SpawnEnemy(int enemyCount, Paths[] paths, GameObject enemyPrefab)
     {
         for (int i = 0; i < enemyCount; i++)
         {
-            MapTile tileToSpawnOn = spawnTilesBird[Random.Range(0, spawnTiles.Length)];
-            while (tileToSpawnOn.enemies.Count == 0)
-            {
-                tileToSpawnOn = spawnTilesBird[Random.Range(0, spawnTiles.Length)];
-            }
-            tileToSpawnOn.ReceiveEnemy(enemyPrefab);
+            //Allocate a random path if only on enemy is spawning on this step.
+            //Allocate in order if two spawn.
+            MapTile[] path;
+            if (enemyCount == 1) {  path = paths[Random.Range(0, paths.Length)].path; }
+            else { path = paths[i].path; }
+
+            var newEnemy = Instantiate(enemyPrefab, path[0].transform.position, Quaternion.identity);
+            newEnemy.GetComponent<EnemyMovement>().SetPath(path);
+            path[0].ReceiveEnemy(newEnemy);
         }
     }
+
+    public void LoadNewWave()
+    {
+        currentWave++;
+        if (currentWave > waves.Length) { return; } //No waves remain
+
+        GetComponent<ReactOnBeat>().SetBeatsToReactOn(waves[currentWave].beatsToSpawnOn);
+    }
+
+
 }

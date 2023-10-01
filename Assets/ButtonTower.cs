@@ -17,12 +17,23 @@ public class ButtonTower : MonoBehaviour
         placementManager = FindObjectOfType<PlacementManager>();
 
         imgCard.sprite = soTower.card;
-        textCost.text = soTower.cost.ToString();
+        textCost.text = soTower.buildCost.ToString();
     }
 
     public void Press()
     {
-        placementManager.AssignTowerHeld(soTower.towerPrefab, this);
+        if(soTower.GetCostOfTower() > Bank.coins) { UnableToPurchase(); return; } //Player does not have enough coins.
+        placementManager.AssignTowerHeld(soTower, this);
+    }
+
+    public void UpdateCost()
+    {
+        textCost.text = soTower.GetCostOfTower().ToString(); // put this on wave start and wave end.
+    }
+
+    private void UnableToPurchase()
+    {
+
     }
 
     public void EnablePressedState()

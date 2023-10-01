@@ -7,16 +7,17 @@ using UnityEngine.UI;
 public  class PlacementManager : MonoBehaviour 
 {
     bool canPlace = true;
-    public GameObject towerHeld { get; private set; }
+    public SOTower towerHeld { get; private set; }
+
     ButtonTower towerHeldButton;
-    public GameObject tempTower { get; private set; }   
+    public SOTower tempTower { get; private set; }   
     
     public void Place(MapTile tile)
     {
         if (!canPlace) { return; }
         if (towerHeld == null) { return; }
-        tile.ReceiveTower(towerHeld);
-        //charge player money
+        tile.ReceiveTower(towerHeld.towerPrefab);
+        FindObjectOfType<Bank>().AdjustCoins(-towerHeld.GetCostOfTower());
 
         //if the player now has less than cost of currently held tower
         ClearTowerHeld();
@@ -29,7 +30,7 @@ public  class PlacementManager : MonoBehaviour
         towerHeldButton.DisablePressedState();
     }
 
-    public void AssignTowerHeld(GameObject tower, ButtonTower buttonTower)
+    public void AssignTowerHeld(SOTower tower, ButtonTower buttonTower)
     {
         if(!canPlace) { return; }
         //check if player can afford

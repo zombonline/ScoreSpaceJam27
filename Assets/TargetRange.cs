@@ -17,6 +17,7 @@ public class TargetRange : MonoBehaviour
     }
     public void AssignTargetTiles()
     {
+        if (tempTower) { return; } //Do not target if tower is temporary
         targetTiles.Clear();
         targetTiles = mapTilesInsideTrigger;
     }

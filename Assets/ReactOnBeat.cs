@@ -29,4 +29,10 @@ public class ReactOnBeat : MonoBehaviour
             reactEvent.Invoke();
         }
     }
+
+    public void SetBeatsToReactOn(int[] newBeatsToReactOn)
+    {
+        beatsToReactOn = newBeatsToReactOn;
+    }
+
 }

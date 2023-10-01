@@ -20,7 +20,7 @@ using UnityEngine;
     [Header("Enemy")]
     [SerializeField] bool ableToHoldEnemy = false;
     public bool AbleToHoldEnemy { get { return ableToHoldTower; } private set { ableToHoldTower = value; } }
-    public List<GameObject> enemies { get; private set; }
+    public List<GameObject> enemies { get; private set; } = new List<GameObject>();
 
     private void Awake()
     {
@@ -56,7 +56,10 @@ using UnityEngine;
         tempTower = null;
     }
 
-    public void ReceiveEnemy(GameObject enemy) { enemies.Add(enemy); }
+    public void ReceiveEnemy(GameObject enemy)
+    {
+        enemies.Add(enemy);
+    }
 
     public void RemoveEnemy(GameObject enemy)
     {
@@ -90,7 +93,7 @@ using UnityEngine;
         
         if(placementManager.tempTower != null)
         {
-            ReceiveTempTower(placementManager.tempTower);
+            ReceiveTempTower(placementManager.tempTower.towerPrefab);
         }
     }
 

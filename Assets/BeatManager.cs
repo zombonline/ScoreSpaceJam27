@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ class BeatManager : MonoBehaviour
     public static int beat;
     public static string marker;
 
-    public FMOD.Studio.EventInstance instance;
+    [SerializeField] public FMOD.Studio.EventInstance instance;
 
     public void AssignBeatEvent(FMOD.Studio.EventInstance instance)
     {
@@ -46,7 +47,7 @@ class BeatManager : MonoBehaviour
     [AOT.MonoPInvokeCallback(typeof(FMOD.Studio.EVENT_CALLBACK))]
     FMOD.RESULT BeatEventCallback(FMOD.Studio.EVENT_CALLBACK_TYPE type, IntPtr instancePtr, IntPtr parameterPtr)
     {
-        instance = new FMOD.Studio.EventInstance(instancePtr);
+        instance = GetComponent<StudioEventEmitter>().EventInstance;
         IntPtr timelineInfoPtr;
         FMOD.RESULT result = instance.getUserData(out timelineInfoPtr);
         if (result != FMOD.RESULT.OK)
