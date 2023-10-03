@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public List<MapTile> tiles;
+    public List<MapTile> tiles = new List<MapTile>();
     [SerializeField] List<string> possibleTargets;
     [SerializeField] int damagePoints;
     public void Awake()
@@ -13,11 +13,11 @@ public class Bullet : MonoBehaviour
         StartCoroutine(DamageRoutine());
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<MapTile>() != null)
         {
-            if(!tiles.Contains(collision.GetComponent<MapTile>())) { return; }
+            if(tiles.Contains(collision.GetComponent<MapTile>())) { return; }
             tiles.Add(collision.GetComponent<MapTile>());
         }
     }
@@ -27,7 +27,8 @@ public class Bullet : MonoBehaviour
         yield return new WaitUntil(() => tiles.Count > 0);
         foreach(var tile in tiles)
         {
-            if (tile.enemies.Count > 0) { break; }
+            if (tile.enemies.Count <= 0) { continue; }
+            Debug.Log(tile.enemies.Count);
             foreach (GameObject enemy in tile.enemies)
             {
                 if (!possibleTargets.Contains(enemy.tag)) { break; }
@@ -36,7 +37,7 @@ public class Bullet : MonoBehaviour
             }
 
         }
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
 }

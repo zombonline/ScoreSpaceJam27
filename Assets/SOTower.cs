@@ -7,6 +7,7 @@ public class SOTower : ScriptableObject
 {
     public int buildCost;
     public int battleCost;
+    public int refundCost;
     public GameObject towerPrefab;
     public Sprite card;
 

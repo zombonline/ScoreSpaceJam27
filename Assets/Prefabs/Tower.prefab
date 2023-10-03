@@ -96,7 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a06b548e54883d42a93f133aa15ffa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  possibleTargets: []
+  possibleTargets:
+  - Mouse
+  bulletPrefab: {fileID: 7928686679903576516, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
 --- !u!114 &6639345657934296495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,8 +117,8 @@ MonoBehaviour:
   reactEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: TowerShoot, Assembly-CSharp
+      - m_Target: {fileID: 6069892793969425065}
+        m_TargetAssemblyTypeName: TargetRange, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 1
         m_Arguments:

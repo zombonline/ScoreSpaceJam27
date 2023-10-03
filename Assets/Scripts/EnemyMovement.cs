@@ -30,4 +30,10 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+
+    private void OnDestroy()
+    {
+        path[currentTile].RemoveEnemy(this.gameObject);
+    }
+
 }

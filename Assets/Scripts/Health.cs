@@ -38,7 +38,10 @@ public class Health : MonoBehaviour
             sprite.color = Color.red;
             yield return new WaitForSeconds(lengthBetweenFlashesSeconds);
             sprite.color = Color.white;
+            yield return new WaitForSeconds(lengthBetweenFlashesSeconds);
+
         }
 
     }
+
 }

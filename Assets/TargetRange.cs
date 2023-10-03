@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TargetRange : MonoBehaviour
@@ -68,7 +69,7 @@ public class TargetRange : MonoBehaviour
 
         foreach (MapTile tile in targetTiles)
         {
-            if (tile.enemies.Count <= 0) { break; } //come out of loop if current tile has no enemies
+            if (tile.enemies.Count <= 0) { continue;  } //come out of loop if current tile has no enemies
             
             foreach(GameObject enemy in tile.enemies)
             {
@@ -87,12 +88,19 @@ public class TargetRange : MonoBehaviour
 
     public void Shoot()
     {
+        if (tempTower) { return; }
+        StartCoroutine(ShootRoutine());
+    }
+
+    private IEnumerator ShootRoutine()
+    {
+        yield return new WaitForEndOfFrameUnit();
         MapTile targetTile = GetTarget();
-        if(targetTile != null)
+        if (targetTile != null)
         {
             Bullet newBullet = Instantiate(bulletPrefab, targetTile.transform.position, Quaternion.identity).GetComponent<Bullet>();
         }
-    }
+    }    
 
 
 

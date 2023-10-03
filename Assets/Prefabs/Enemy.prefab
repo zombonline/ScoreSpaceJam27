@@ -93,6 +93,9 @@ MonoBehaviour:
   onDeath:
     m_PersistentCalls:
       m_Calls: []
+  sprite: {fileID: 6205711346933447457}
+  lengthSpriteFlashSeconds: 0.5
+  lengthBetweenFlashesSeconds: 0.1
 --- !u!1 &8089471326060289320
 GameObject:
   m_ObjectHideFlags: 0

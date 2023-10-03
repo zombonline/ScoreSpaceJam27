@@ -16,11 +16,14 @@ using UnityEngine;
     public GameObject placedTower { get; private set; }
 
     GameObject tempTower;
+    public int placedTowerRefundValue { get; private set; }
+
 
     [Header("Enemy")]
     [SerializeField] bool ableToHoldEnemy = false;
     public bool AbleToHoldEnemy { get { return ableToHoldTower; } private set { ableToHoldTower = value; } }
     public List<GameObject> enemies { get; private set; } = new List<GameObject>();
+
 
     private void Awake()
     {
@@ -56,6 +59,11 @@ using UnityEngine;
         tempTower = null;
     }
 
+    public void SetRefundValue(int val)
+    {
+        this.placedTowerRefundValue = val;
+    }
+
     public void ReceiveEnemy(GameObject enemy)
     {
         enemies.Add(enemy);
@@ -75,6 +83,8 @@ using UnityEngine;
         {
             placementManager.Place(this);
         }
+        placementManager.SetLastSelectedTile(this);
+
     }
 
 
