@@ -14,13 +14,11 @@ public class SOTower : ScriptableObject
     {
         if (FindObjectOfType<WaveSystem>().gameMode == GameMode.Battle)
         {
-            Debug.Log("Hello!");
 
             return battleCost;
         }
         else
         {
-            Debug.Log("Hello!");
 
             return buildCost;
         }

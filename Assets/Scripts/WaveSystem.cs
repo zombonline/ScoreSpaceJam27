@@ -26,7 +26,7 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] GameObject mousePrefab, birdPrefab, dogPrefab;
 
-    GameObject[] activeEnemies;
+    List<GameObject> activeEnemies = new List<GameObject>();
 
     [SerializeField] UnityEvent onWaveEnd, onWaveStart;
 
@@ -57,7 +57,7 @@ public class WaveSystem : MonoBehaviour
     public void CheckForWaveEnd()
     {
         if (currentWaveStep < waves[currentWave].waveSteps.Length) { return; } //Wave still has unactioned steps. Wave not over.
-        if (activeEnemies.Length > 0) { return; } //Wave still has active enemies. Wave not over.
+        if (FindObjectsOfType<EnemyMovement>().Length > 0) { return; } //Wave still has active enemies. Wave not over.
 
         gameMode = GameMode.Build;
         onWaveEnd.Invoke();

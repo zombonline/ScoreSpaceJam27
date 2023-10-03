@@ -46,7 +46,7 @@ public class ButtonTower : MonoBehaviour
             if (currentCost < soTower.GetCostOfTower()) { currentCost++; }
             else if (currentCost > soTower.GetCostOfTower()) { currentCost--; }
             textCost.text = currentCost.ToString();
-            yield return new WaitForSeconds(1f / diffBetweenCost);
+            yield return new WaitForSeconds(.5f / diffBetweenCost);
         }
 
     }
@@ -56,12 +56,12 @@ public class ButtonTower : MonoBehaviour
         while (textCost.fontSize < costFontSize * 1.2f)
         {
             textCost.fontSize++;
-            yield return new WaitForSeconds((1f / diffBetweenSizes)/2f);
+            yield return new WaitForSeconds((.5f / diffBetweenSizes)/2f);
         }
         while (textCost.fontSize > costFontSize)
         {
             textCost.fontSize--;
-            yield return new WaitForSeconds((1f / diffBetweenSizes) / 2f);
+            yield return new WaitForSeconds((.5f / diffBetweenSizes) / 2f);
         }
     }
 

@@ -41,8 +41,6 @@ public class Base : MonoBehaviour
         
     }
 
-
-
     public void AdjustHitPoints(int adjustment)
     {
         hitPoints += adjustment;

@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class TargetRange : MonoBehaviour
 {
     List<MapTile> mapTilesInsideTrigger= new List<MapTile>();
 
-    List<MapTile> targetTiles = new List<MapTile>();
+    public List<MapTile> targetTiles { get; private set; } = new List<MapTile>();
     bool tempTower = false;
+
+    [SerializeField] string[] possibleTargets;
+
+    [SerializeField] Bullet bulletPrefab;
 
     public void EnableTempTower() { tempTower = true; }
 
@@ -38,7 +43,6 @@ public class TargetRange : MonoBehaviour
         }
     }
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.GetComponent<MapTile>() != null)
@@ -57,6 +61,39 @@ public class TargetRange : MonoBehaviour
 
         }
     }
+
+    public MapTile GetTarget()
+    {
+        MapTile currentTarget = null;
+
+        foreach (MapTile tile in targetTiles)
+        {
+            if (tile.enemies.Count <= 0) { break; } //come out of loop if current tile has no enemies
+            
+            foreach(GameObject enemy in tile.enemies)
+            {
+                if (!possibleTargets.Contains(enemy.tag)) { break; } //come out of loop if enemy is not a possible target
+                if (currentTarget == null) { currentTarget = tile; } //if no current target assigned, assign this one
+                else if
+                    (currentTarget.GetComponent<EnemyMovement>().currentTile
+                    > tile.enemies[0].GetComponent<EnemyMovement>().currentTile) //if this enemy is further ahead than current target, assignt this one.
+                {
+                    currentTarget = tile;
+                }
+            }
+        }
+        return currentTarget;
+    }
+
+    public void Shoot()
+    {
+        MapTile targetTile = GetTarget();
+        if(targetTile != null)
+        {
+            Bullet newBullet = Instantiate(bulletPrefab, targetTile.transform.position, Quaternion.identity).GetComponent<Bullet>();
+        }
+    }
+
 
 
 }
