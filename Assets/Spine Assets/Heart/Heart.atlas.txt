@@ -1,0 +1,6 @@
+Heart.png
+	size: 117, 117
+	filter: Linear, Linear
+	pma: true
+Layer 1
+	bounds: 2, 2, 113, 113
