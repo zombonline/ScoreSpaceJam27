@@ -74,8 +74,8 @@ public class WaveSystem : MonoBehaviour
             if (enemyCount == 1) {  path = paths[Random.Range(0, paths.Length)].path; }
             else { path = paths[i].path; }
 
-            var newEnemy = Instantiate(enemyPrefab, path[0].transform.position, Quaternion.identity);
-            newEnemy.GetComponent<EnemyMovement>().SetPath(path);
+            var newEnemy = Instantiate(enemyPrefab, path[0].transform.position, Quaternion.identity).GetComponent<EnemyMovement>();
+            newEnemy.SetPath(path);
             path[0].ReceiveEnemy(newEnemy);
         }
     }

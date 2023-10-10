@@ -12,7 +12,7 @@ public class TowerShoot : MonoBehaviour
 
     public void Shoot()
     {
-        MapTile targetTile = range.GetTarget();
+        MapTile targetTile = range.GetTarget().GetComponent<EnemyMovement>().GetCurrentTile();
         Instantiate(bulletPrefab, targetTile.transform.position, Quaternion.identity).GetComponent<Bullet>();
 
     }

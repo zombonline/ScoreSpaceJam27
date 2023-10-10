@@ -19,7 +19,7 @@ MonoBehaviour:
   - mice: 2
     birds: 0
     dogs: 0
-  - mice: 2
+  - mice: 0
     birds: 0
     dogs: 0
-  beatsToSpawnOn: 01000000
+  beatsToSpawnOn: 0100000003000000

@@ -15,6 +15,8 @@ public class TargetRange : MonoBehaviour
 
     [SerializeField] Bullet bulletPrefab;
 
+    EnemyMovement currentTarget = null;
+
     public void EnableTempTower() { tempTower = true; }
 
     private void Start()
@@ -63,23 +65,22 @@ public class TargetRange : MonoBehaviour
         }
     }
 
-    public MapTile GetTarget()
+    public EnemyMovement GetTarget()
     {
-        MapTile currentTarget = null;
 
         foreach (MapTile tile in targetTiles)
         {
             if (tile.enemies.Count <= 0) { continue;  } //come out of loop if current tile has no enemies
             
-            foreach(GameObject enemy in tile.enemies)
+            foreach(EnemyMovement newPossibleTarget in tile.enemies)
             {
-                if (!possibleTargets.Contains(enemy.tag)) { break; } //come out of loop if enemy is not a possible target
-                if (currentTarget == null) { currentTarget = tile; } //if no current target assigned, assign this one
-                else if
-                    (currentTarget.GetComponent<EnemyMovement>().currentTile
-                    > tile.enemies[0].GetComponent<EnemyMovement>().currentTile) //if this enemy is further ahead than current target, assignt this one.
+
+                if (!possibleTargets.Contains(newPossibleTarget.tag)) { break; } //come out of loop if enemy is not a possible target
+
+                if (currentTarget == null) { currentTarget = newPossibleTarget; } //if no current target assigned, assign this one
+                else if(newPossibleTarget.currentTile > currentTarget.currentTile) //if this enemy is further ahead than current target, assign it this one.
                 {
-                    currentTarget = tile;
+                    currentTarget = newPossibleTarget;
                 }
             }
         }
@@ -95,10 +96,13 @@ public class TargetRange : MonoBehaviour
     private IEnumerator ShootRoutine()
     {
         yield return new WaitForEndOfFrameUnit();
-        MapTile targetTile = GetTarget();
-        if (targetTile != null)
+        if (GetTarget() != null)
         {
-            Bullet newBullet = Instantiate(bulletPrefab, targetTile.transform.position, Quaternion.identity).GetComponent<Bullet>();
+            MapTile targetTile = GetTarget().GetCurrentTile();
+            if (targetTile != null)
+            {
+                Bullet newBullet = Instantiate(bulletPrefab, targetTile.transform.position, Quaternion.identity).GetComponent<Bullet>();
+            }
         }
     }    
 

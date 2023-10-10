@@ -15,10 +15,15 @@ public class EnemyMovement : MonoBehaviour
             Destroy(gameObject);
             return;
         } 
-        path[currentTile-1].RemoveEnemy(this.gameObject);
-        path[currentTile].ReceiveEnemy(this.gameObject);
+        path[currentTile-1].RemoveEnemy(this);
+        path[currentTile].ReceiveEnemy(this);
         transform.position = path[currentTile].transform.position;
 
+    }
+
+    public MapTile GetCurrentTile()
+    {
+        return path[currentTile];
     }
 
     public void SetPath(MapTile[] newPath) { path = newPath; }
@@ -33,7 +38,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        path[currentTile].RemoveEnemy(this.gameObject);
+        path[currentTile].RemoveEnemy(this);
     }
 
 }
