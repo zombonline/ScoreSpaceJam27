@@ -6,6 +6,10 @@ public class EnemyMovement : MonoBehaviour
 {
     MapTile[] path;
     public int currentTile { get; private set; } = 0;
+
+    bool move = false;
+
+    [SerializeField] float speed;
     public void MoveAlongPath()
     {
         currentTile++;
@@ -17,8 +21,26 @@ public class EnemyMovement : MonoBehaviour
         } 
         path[currentTile-1].RemoveEnemy(this);
         path[currentTile].ReceiveEnemy(this);
-        transform.position = path[currentTile].transform.position;
+        //transform.position = path[currentTile].transform.position;
+        StartCoroutine(MovementRoutine());
+    }
 
+    IEnumerator MovementRoutine()
+    {
+        yield return new WaitForSeconds(.25f);
+        move = true;
+    }
+
+    private void Update()
+    {
+        if (move)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, path[currentTile].transform.position, speed * Time.deltaTime); ;
+        }
+        if(transform.position == path[currentTile].transform.position)
+        {
+            move = false;
+        }
     }
 
     public MapTile GetCurrentTile()
@@ -27,13 +49,6 @@ public class EnemyMovement : MonoBehaviour
     }
 
     public void SetPath(MapTile[] newPath) { path = newPath; }
-    public void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            MoveAlongPath();
-        }
-    }
 
 
     private void OnDestroy()
