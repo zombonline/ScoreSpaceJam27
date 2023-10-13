@@ -13,7 +13,7 @@ public class ButtonTower : MonoBehaviour
     [SerializeField] TextMeshProUGUI textCost;
     int currentCost;
     float costFontSize;
-
+    bool selected;
     private void Awake()
     {
         placementManager = FindObjectOfType<PlacementManager>();
@@ -29,6 +29,7 @@ public class ButtonTower : MonoBehaviour
     {
         if(soTower.GetCostOfTower() > Bank.coins) { UnableToPurchase(); return; } //Player does not have enough coins.
         placementManager.AssignTowerHeld(soTower, this);
+        EnablePressedState();
     }
 
     public void UpdateCost()
@@ -49,6 +50,41 @@ public class ButtonTower : MonoBehaviour
             yield return new WaitForSeconds(.5f / diffBetweenCost);
         }
 
+    }
+
+   
+
+    IEnumerator Animate()
+    {
+        var counter = 0;
+        while(counter < 150f)
+        {
+            counter++;
+            GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,transform.eulerAngles.z- .02f);
+            yield return new WaitForSeconds(0.001f);
+        }
+        counter = 0;
+        while (counter < 150f)
+        {
+            counter++;
+            GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + .02f);
+            yield return new WaitForSeconds(0.001f);
+        }
+        counter = 0;
+        while (counter < 150f)
+        {
+            counter++;
+            GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + .02f);
+            yield return new WaitForSeconds(0.001f);
+        }
+        counter = 0;
+        while (counter < 150f)
+        {
+            counter++;
+            GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - .02f);
+            yield return new WaitForSeconds(0.001f);
+        }
+        if (selected) { StartCoroutine(Animate()); }
     }
     private IEnumerator EnlargeCostTextRoutine()
     {
@@ -72,12 +108,13 @@ public class ButtonTower : MonoBehaviour
 
     public void EnablePressedState()
     {
-
+        StartCoroutine(Animate());
+        selected = true;
     }
 
     public void DisablePressedState()
     {
-
+        selected = false;
     }
 
 

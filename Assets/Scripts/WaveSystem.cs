@@ -26,8 +26,6 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] GameObject mousePrefab, birdPrefab, dogPrefab;
 
-    List<GameObject> activeEnemies = new List<GameObject>();
-
     [SerializeField] UnityEvent onWaveEnd, onWaveStart;
 
     private void Update()
@@ -83,6 +81,7 @@ public class WaveSystem : MonoBehaviour
     public void LoadNewWave()
     {
         currentWave++;
+        currentWaveStep = 0;
         if (currentWave > waves.Length) { return; } //No waves remain
 
         GetComponent<ReactOnBeat>().SetBeatsToReactOn(waves[currentWave].beatsToSpawnOn);

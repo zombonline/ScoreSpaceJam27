@@ -10,7 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3096840434627624199, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
       propertyPath: m_Name
-      value: Bullet Pistol Variant
+      value: Bullet_Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928686679903576516, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
+      propertyPath: possibleTargets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7928686679903576516, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
+      propertyPath: possibleTargets.Array.data[1]
+      value: Dog
       objectReference: {fileID: 0}
     - target: {fileID: 9007585499370904153, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
       propertyPath: m_LocalPosition.x

@@ -67,7 +67,10 @@ public class TargetRange : MonoBehaviour
 
     public EnemyMovement GetTarget()
     {
-
+        if (currentTarget != null && !targetTiles.Contains(currentTarget.GetCurrentTile())) // if current target no longer in range
+        {
+            currentTarget = null;
+        }
         foreach (MapTile tile in targetTiles)
         {
             if (tile.enemies.Count <= 0) { continue;  } //come out of loop if current tile has no enemies
@@ -84,13 +87,16 @@ public class TargetRange : MonoBehaviour
                 }
             }
         }
+        
         return currentTarget;
     }
 
     public void Shoot()
     {
-        if (tempTower) { return; }
+        if (!tempTower)
+        {
         StartCoroutine(ShootRoutine());
+        }
     }
 
     private IEnumerator ShootRoutine()

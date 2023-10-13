@@ -125,7 +125,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6362956031120084456}
         m_TargetAssemblyTypeName: SpineAnimator, Assembly-CSharp
-        m_MethodName: SetAnimation
+        m_MethodName: SetUIAnimation
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -147,3 +147,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0645bb3a1f86a8d4ea684d1376a2f0f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  skeletonGraphic: {fileID: 3393456186376399615}
+  skeletonAnimation: {fileID: 0}

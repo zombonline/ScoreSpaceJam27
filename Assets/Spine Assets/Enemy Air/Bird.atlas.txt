@@ -1,0 +1,43 @@
+Bird.png
+	size: 2792, 156
+	filter: Linear, Linear
+	pma: true
+Back_Wing_1
+	bounds: 2, 2, 152, 152
+Back_Wing_2
+	bounds: 156, 2, 152, 152
+Back_Wing_3
+	bounds: 310, 2, 152, 152
+Back_Wing_4
+	bounds: 464, 2, 152, 152
+Back_Wing_5
+	bounds: 618, 2, 152, 152
+Back_Wing_6
+	bounds: 772, 2, 152, 152
+Back_Wing_7
+	bounds: 926, 2, 152, 152
+Back_Wing_8
+	bounds: 1080, 2, 152, 152
+Body
+	bounds: 1234, 2, 152, 152
+Front_Wing_1
+	bounds: 1388, 2, 152, 152
+Front_Wing_2
+	bounds: 1542, 2, 152, 152
+Front_Wing_3
+	bounds: 1696, 2, 152, 152
+Front_Wing_4
+	bounds: 1850, 2, 152, 152
+Front_Wing_5
+	bounds: 2004, 2, 152, 152
+Front_Wing_6
+	bounds: 2158, 2, 152, 152
+Front_Wing_7
+	bounds: 2312, 2, 152, 152
+Front_Wing_8
+	bounds: 2466, 2, 152, 152
+Shadow
+	bounds: 2774, 98, 56, 16
+	rotate: 90
+Tail
+	bounds: 2620, 2, 152, 152

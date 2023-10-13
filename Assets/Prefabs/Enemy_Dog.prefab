@@ -24,10 +24,42 @@ PrefabInstance:
       propertyPath: beatsToReactOn.Array.data[2]
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1153690115158390522, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: startHitPoints
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 1369971762910065995, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_Name
       value: Enemy_Dog
       objectReference: {fileID: 0}
+    - target: {fileID: 1369971762910065995, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_TagString
+      value: Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 1472688669804275167, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2358146484431022789, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: animationControlledByThisScript
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303524598629720487, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303524598629720487, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: initialSkinName
+      value: Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 3303524598629720487, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: skeletonDataAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 0e42dd626a08e7f47803bb316e98153a, type: 2}
+    - target: {fileID: 4944810408795440115, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: abf24de2427cd8f498f4ceb8e0882f0f, type: 2}
     - target: {fileID: 5030495180544423178, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -79,6 +111,14 @@ PrefabInstance:
     - target: {fileID: 6205711346933447457, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250676985772931009, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250676985772931009, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

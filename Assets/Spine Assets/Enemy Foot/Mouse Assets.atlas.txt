@@ -1,0 +1,44 @@
+Mouse Assets.png
+	size: 101, 266
+	filter: Linear, Linear
+	pma: true
+Dog_Arm_Left
+	bounds: 70, 208, 27, 27
+Dog_Arm_Right
+	bounds: 70, 237, 27, 28
+	rotate: 90
+Dog_Body
+	bounds: 2, 87, 40, 48
+	rotate: 90
+Dog_Ear_Left
+	bounds: 68, 127, 34, 30
+	rotate: 90
+Dog_Ear_Right
+	bounds: 2, 19, 34, 30
+Dog_Head
+	bounds: 2, 147, 64, 59
+Left Ear
+	bounds: 52, 55, 34, 44
+	rotate: 90
+Left Whiskers
+	bounds: 68, 185, 31, 21
+Mice Body
+	bounds: 52, 91, 34, 47
+	rotate: 90
+Mice Head
+	bounds: 2, 208, 66, 56
+Mice Left Arms
+	bounds: 38, 2, 25, 26
+	rotate: 90
+Mice Right Arm
+	bounds: 66, 2, 25, 26
+	rotate: 90
+Mice Tail
+	bounds: 48, 29, 35, 24
+Right Ear
+	bounds: 2, 51, 34, 44
+	rotate: 90
+Right whiskers
+	bounds: 68, 163, 31, 20
+Shadow
+	bounds: 2, 129, 56, 16

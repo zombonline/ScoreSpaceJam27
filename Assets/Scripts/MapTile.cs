@@ -8,7 +8,7 @@ using UnityEngine;
     PlacementManager placementManager;
 
 
-    [SerializeField] SpriteRenderer hoverSprite, rangeSprite;
+    [SerializeField] SpriteRenderer hoverSprite, rangeSprite, selectSprite;
 
     [Header("Tower")]
     [SerializeField] bool ableToHoldTower = false;
@@ -90,9 +90,9 @@ using UnityEngine;
 
     #region Methods for enabling sprites
     public void EnableRangeSprite() { rangeSprite.enabled = true; }
-
     public void DisableRangeSprite() { rangeSprite.enabled = false; }
-
+    public void EnableSelectSprite() { selectSprite.enabled = true; }
+    public void DisableSelectSprite() { selectSprite.enabled = false; }
     private void OnMouseEnter()
     {
         hoverSprite.enabled = true;

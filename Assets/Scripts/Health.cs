@@ -1,8 +1,10 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.U2D;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
@@ -10,38 +12,37 @@ public class Health : MonoBehaviour
     int hitPoints;
 
     [SerializeField] UnityEvent onDeath;
-    [SerializeField] SpriteRenderer sprite;
     [SerializeField] float lengthSpriteFlashSeconds = .5f, lengthBetweenFlashesSeconds = .1f;
 
+    [SerializeField] Slider healthSlider;
 
+    [SerializeField] GameObject coinDrop;
     private void Awake()
     {
         hitPoints = startHitPoints;
+        healthSlider.maxValue = startHitPoints;
+        healthSlider.value = startHitPoints;
+        healthSlider.gameObject.SetActive(false);
     }
 
     public void AdjustHitPoints(int adjustment)
     {
         Debug.Log(gameObject.name + "says ouch!");
         hitPoints += adjustment;
-        StartCoroutine(FlashSpriteRoutine());
+        UpdateHealthSlider();
         if(hitPoints <= 0)
         {
             onDeath.Invoke();
             Destroy(gameObject);
+            Instantiate(coinDrop, new Vector3(transform.position.x,transform.position.y,-1f), Quaternion.identity);
         }
-
     }
-    private IEnumerator FlashSpriteRoutine()
+  
+
+    private void UpdateHealthSlider()
     {
-        for (float i = 0; i < lengthSpriteFlashSeconds; i += lengthBetweenFlashesSeconds)
-        {
-            sprite.color = Color.red;
-            yield return new WaitForSeconds(lengthBetweenFlashesSeconds);
-            sprite.color = Color.white;
-            yield return new WaitForSeconds(lengthBetweenFlashesSeconds);
-
-        }
-
+        healthSlider.gameObject.SetActive(true);
+        healthSlider.value = hitPoints;
     }
 
 }

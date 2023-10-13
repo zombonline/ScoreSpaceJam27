@@ -1,0 +1,76 @@
+Splash Screen Spine Assets.png
+	size: 4931, 4846
+	filter: Linear, Linear
+	pma: true
+00
+	bounds: 2190, 7, 725, 242
+Alley
+	bounds: 1659, 6, 529, 243
+Bin Lit
+	bounds: 2859, 264, 497, 736
+Bin Unlit
+	bounds: 4427, 3579, 497, 736
+Cat 1
+	bounds: 4427, 2494, 471, 471
+Cat 1 Eyes
+	bounds: 4427, 1662, 233, 223
+Cat 10
+	bounds: 4427, 4317, 502, 527
+Cat 10 Eyes
+	bounds: 3517, 4, 324, 293
+	rotate: 90
+Cat 2
+	bounds: 4427, 2130, 362, 366
+	rotate: 90
+Cat 2 Eyes
+	bounds: 2917, 7, 255, 177
+	rotate: 90
+Cat 3
+	bounds: 3812, 18, 264, 310
+Cat 4
+	bounds: 4512, 36, 209, 303
+Cat 4 Eyes
+	bounds: 4723, 2, 153, 152
+	rotate: 90
+Cat 5
+	bounds: 4427, 1887, 300, 241
+Cat 6
+	bounds: 4295, 3, 336, 215
+	rotate: 90
+Cat 7
+	bounds: 4803, 2264, 116, 228
+Cat 8
+	bounds: 4078, 21, 215, 307
+Cat 8 eyes
+	bounds: 4723, 157, 189, 182
+Cat 9
+	bounds: 4427, 2967, 610, 471
+	rotate: 90
+Cat Left
+	bounds: 832, 79, 921, 825
+	rotate: 90
+Cat RIght
+	bounds: 2, 64, 936, 828
+	rotate: 90
+City Skyline
+	bounds: 3181, 1002, 3842, 1244
+	rotate: 90
+Gun
+	bounds: 3096, 20, 419, 242
+Lamp Light
+	bounds: 1659, 251, 749, 1198
+	rotate: 90
+Left Speaker
+	bounds: 3477, 330, 665, 670
+Line Art copy
+	bounds: 2, 1002, 3842, 1927
+	rotate: 90
+Right Speaker
+	bounds: 4144, 341, 659, 657
+	rotate: 90
+Shadow
+	bounds: 3358, 310, 690, 117
+	rotate: 90
+Sky
+	bounds: 1931, 1002, 3842, 1248
+	rotate: 90

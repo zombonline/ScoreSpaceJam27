@@ -52,38 +52,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_Pistol
       objectReference: {fileID: 0}
-    - target: {fileID: 4988982266470259240, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 7928686679903576516, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
-    - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
-      propertyPath: possibleTargets.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
-      propertyPath: possibleTargets.Array.data[0]
-      value: Mouse
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443842037358703884, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
-      propertyPath: m_SortingLayer
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443842037358703884, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8443842037358703884, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -1406798775
-      objectReference: {fileID: 0}
-    - target: {fileID: 8840907661764088818, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

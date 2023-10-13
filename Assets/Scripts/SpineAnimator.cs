@@ -4,19 +4,29 @@ using UnityEngine;
 using Spine.Unity;
 public class SpineAnimator : MonoBehaviour
 {
-    SkeletonGraphic skeletonGraphic;
-    Spine.AnimationState animationState;
+    [SerializeField] SkeletonGraphic skeletonGraphic;
+    [SerializeField] SkeletonAnimation skeletonAnimation;
+    Spine.AnimationState graphicState, animationState;
 
     private void Awake()
     {
-        skeletonGraphic = GetComponent<SkeletonGraphic>();
-        animationState = skeletonGraphic.AnimationState;
+        if (skeletonGraphic != null)
+        {
+            graphicState = skeletonGraphic.AnimationState;
+        }
+        if(skeletonAnimation != null)
+        {
+            animationState= skeletonAnimation.AnimationState;
+        }
     }
 
 
+    public void SetUIAnimation(string anim)
+    {
+        graphicState.SetAnimation(0, anim, false);
+    }
     public void SetAnimation(string anim)
     {
         animationState.SetAnimation(0, anim, false);
     }
-
 }

@@ -7,9 +7,15 @@ public class EnemyMovement : MonoBehaviour
     MapTile[] path;
     public int currentTile { get; private set; } = 0;
 
-    bool move = false;
+    bool move = true;
 
     [SerializeField] float speed;
+
+    [SerializeField] bool animationControlledByThisScript;
+    private void Awake()
+    {
+    }
+
     public void MoveAlongPath()
     {
         currentTile++;
@@ -27,18 +33,20 @@ public class EnemyMovement : MonoBehaviour
 
     IEnumerator MovementRoutine()
     {
-        yield return new WaitForSeconds(.25f);
+        yield return new WaitForSeconds(.125f);
+        if (animationControlledByThisScript) { GetComponent<SpineAnimator>().SetAnimation("Jump"); }
         move = true;
     }
 
     private void Update()
     {
-        if (move)
+        if (move && currentTile+1 < path.Length)
         {
-            transform.position = Vector3.MoveTowards(transform.position, path[currentTile].transform.position, speed * Time.deltaTime); ;
+            transform.position = Vector3.MoveTowards(transform.position, path[currentTile+1].transform.position, speed * Time.deltaTime); ;
         }
-        if(transform.position == path[currentTile].transform.position)
+        if(transform.position == path[currentTile+1].transform.position && move == true)
         {
+            if (animationControlledByThisScript) { GetComponent<SpineAnimator>().SetAnimation("Idle"); }
             move = false;
         }
     }
