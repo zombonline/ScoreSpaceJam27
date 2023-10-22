@@ -44,6 +44,8 @@ public class AmmoCache : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] textUpgradeAmounts;
     [SerializeField] TextMeshProUGUI[] textUpgradeCosts;
 
+    [SerializeField] RectTransform upgradePanel;
+
     private void Awake()
     {
         maxAmmo = ammo.initialMaxAmount;
@@ -95,4 +97,12 @@ public class AmmoCache : MonoBehaviour
         return currentAmmo;
     }
 
+    public void OpenUpgradesPanel()
+    {
+        LeanTween.scaleX(upgradePanel.gameObject, 0, 1f);
+    }
+    public void CloseUpgradesPanel()
+    {
+
+    }
 }
