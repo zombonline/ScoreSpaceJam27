@@ -1,0 +1,22 @@
+Environment.png
+	size: 406, 108
+	filter: Linear, Linear
+	pma: true
+Double Quaver 2
+	bounds: 320, 62, 41, 44
+Double Quaver
+	bounds: 320, 62, 41, 44
+Loud Lines
+	bounds: 289, 15, 44, 115
+	rotate: 90
+Loud Lines 2
+	bounds: 201, 15, 91, 86
+	rotate: 90
+Quaver
+	bounds: 363, 64, 29, 42
+Quaver 2
+	bounds: 289, 61, 29, 45
+Speaker Bottom Left
+	bounds: 2, 2, 110, 104
+Speakers Top Right
+	bounds: 114, 2, 85, 104

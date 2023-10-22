@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public List<MapTile> tiles = new List<MapTile>();
     [SerializeField] List<string> possibleTargets;
     [SerializeField] int damagePoints;
+    [SerializeField] public SOAmmo ammoType;
     public void Awake()
     {
         StartCoroutine(DamageRoutine());

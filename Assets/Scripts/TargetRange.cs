@@ -17,10 +17,21 @@ public class TargetRange : MonoBehaviour
 
     EnemyMovement currentTarget = null;
 
+    AmmoCache ammoMenu;
+
+
     public void EnableTempTower() { tempTower = true; }
 
     private void Start()
     {
+        foreach(AmmoCache menu in FindObjectsOfType<AmmoCache>())
+        {
+            if(menu.ammo == bulletPrefab.ammoType)
+            {
+                ammoMenu = menu;
+            }
+        }
+
         AssignTargetTiles();
     }
     public void AssignTargetTiles()
@@ -93,10 +104,9 @@ public class TargetRange : MonoBehaviour
 
     public void Shoot()
     {
-        if (!tempTower)
-        {
+        if (tempTower) { return; } //check this tower is not a temp display tower.
+        if(ammoMenu.GetAmmoCount() <= 0) { return; } //check player has enough of correct ammo
         StartCoroutine(ShootRoutine());
-        }
     }
 
     private IEnumerator ShootRoutine()
@@ -107,6 +117,7 @@ public class TargetRange : MonoBehaviour
             MapTile targetTile = GetTarget().GetCurrentTile();
             if (targetTile != null)
             {
+                ammoMenu.UseAmmo();
                 Bullet newBullet = Instantiate(bulletPrefab, targetTile.transform.position, Quaternion.identity).GetComponent<Bullet>();
             }
         }

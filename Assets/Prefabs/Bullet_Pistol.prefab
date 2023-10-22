@@ -13,6 +13,10 @@ PrefabInstance:
       value: Bullet_Pistol
       objectReference: {fileID: 0}
     - target: {fileID: 7928686679903576516, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
+      propertyPath: ammoType
+      value: 
+      objectReference: {fileID: 11400000, guid: d153e26c8af22d6409f17330cf34b5d3, type: 2}
+    - target: {fileID: 7928686679903576516, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
       propertyPath: possibleTargets.Array.size
       value: 2
       objectReference: {fileID: 0}

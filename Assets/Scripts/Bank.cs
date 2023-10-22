@@ -19,7 +19,6 @@ public class Bank : MonoBehaviour
         
     }
 
-
     public void AdjustCoins(int amount)
     {
         coins += amount;
