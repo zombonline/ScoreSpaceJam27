@@ -100,6 +100,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 10
   destroyOnPickup: 1
+  timeToDespawn: 10
+  spriteRenderer: {fileID: 1524266638318566819}
 --- !u!61 &4653513713193942597
 BoxCollider2D:
   m_ObjectHideFlags: 0

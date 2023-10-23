@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Wave 3
   m_EditorClassIdentifier: 
   waveSteps:
-  - mice: 2
+  - mice: 1
+    birds: 0
+    dogs: 0
+  - mice: 1
     birds: 0
     dogs: 0
   - mice: 2
@@ -22,10 +25,4 @@ MonoBehaviour:
   - mice: 2
     birds: 0
     dogs: 0
-  - mice: 2
-    birds: 0
-    dogs: 0
-  - mice: 2
-    birds: 0
-    dogs: 0
-  beatsToSpawnOn: 0100000003000000
+  beatsToSpawnOn: 01000000

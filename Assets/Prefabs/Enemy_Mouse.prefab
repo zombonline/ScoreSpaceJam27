@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1153690115158390522, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: startHitPoints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1369971762910065995, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_Name
       value: Enemy_Mouse

@@ -32,6 +32,17 @@ using UnityEngine;
         placementManager = FindObjectOfType<PlacementManager>();
     }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(tempTower!= null)
+            {
+                Destroy(tempTower);
+            }
+        }
+    }
+
     public void ReceiveTower(GameObject tower)
     {
         placedTower = Instantiate(tower, transform.position, Quaternion.identity);
@@ -118,7 +129,6 @@ using UnityEngine;
         {
             RemoveTempTower();
         }
-
     }
     #endregion
 

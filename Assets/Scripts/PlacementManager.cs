@@ -19,8 +19,9 @@ public  class PlacementManager : MonoBehaviour
 
     public void Place(MapTile tile)
     {
-        if (!canPlace) { return; }
-        if (towerHeld == null) { return; }
+        if (!canPlace) { return; } 
+        if (towerHeld == null) { return; } //player not holding a tower.
+        if(tile.placedTower != null) { return; } //tower already on tile
         tile.ReceiveTower(towerHeld.towerPrefab);
         tile.SetRefundValue(towerHeld.refundCost);
         FindObjectOfType<Bank>().AdjustCoins(-towerHeld.GetCostOfTower());
@@ -75,6 +76,13 @@ public  class PlacementManager : MonoBehaviour
             FindObjectOfType<Bank>().AdjustCoins(lastSelectedTile.placedTowerRefundValue);
             Destroy(lastSelectedTile.placedTower);
             buttonSellTower.gameObject.SetActive(false); 
+        }
+    }
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            ClearTowerHeld();
         }
     }
 

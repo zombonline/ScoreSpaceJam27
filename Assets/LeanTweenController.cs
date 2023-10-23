@@ -12,7 +12,6 @@ public class LeanTweenController : MonoBehaviour
     }
     public void ScaleObjectX(GameObject item)
     {
-        Debug.Log("Hello");
         LeanTween.scaleX(item, valueToUse, .25f);
     }
 }

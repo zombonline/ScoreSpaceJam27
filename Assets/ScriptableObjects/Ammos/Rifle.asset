@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378edf3a77ec3d94bafc7534cfd4fa6b, type: 3}
   m_Name: Rifle
   m_EditorClassIdentifier: 
-  initialMaxAmount: 0
-  buildRefillCost: 0
-  battleRefillCost: 0
+  initialMaxAmount: 50
+  buildRefillCost: 100
+  battleRefillCost: 200
   bulletPrefab: {fileID: 0}
   bulletIcon: {fileID: 0}
-  upgradeCosts: 
+  upgrades:
+  - cost: 200
+    amount: 10
+  - cost: 350
+    amount: 20
+  - cost: 500
+    amount: 30

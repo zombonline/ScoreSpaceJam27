@@ -14,6 +14,8 @@ public class ButtonTower : MonoBehaviour
     int currentCost;
     float costFontSize;
     bool selected;
+
+    bool coroutineRunning = false;
     private void Awake()
     {
         placementManager = FindObjectOfType<PlacementManager>();
@@ -56,35 +58,40 @@ public class ButtonTower : MonoBehaviour
 
     IEnumerator Animate()
     {
-        var counter = 0;
-        while(counter < 150f)
+        coroutineRunning= true;
+        while (selected)
         {
-            counter++;
-            GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x,transform.eulerAngles.y,transform.eulerAngles.z- .02f);
-            yield return new WaitForSeconds(0.001f);
+            var counter = 0;
+            while (counter < 150f)
+            {
+                counter++;
+                GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - .02f);
+                yield return new WaitForSeconds(0.001f);
+            }
+            counter = 0;
+            while (counter < 150f)
+            {
+                counter++;
+                GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + .02f);
+                yield return new WaitForSeconds(0.001f);
+            }
+            counter = 0;
+            while (counter < 150f)
+            {
+                counter++;
+                GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + .02f);
+                yield return new WaitForSeconds(0.001f);
+            }
+            counter = 0;
+            while (counter < 150f)
+            {
+                counter++;
+                GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - .02f);
+                yield return new WaitForSeconds(0.001f);
+            }
         }
-        counter = 0;
-        while (counter < 150f)
-        {
-            counter++;
-            GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + .02f);
-            yield return new WaitForSeconds(0.001f);
-        }
-        counter = 0;
-        while (counter < 150f)
-        {
-            counter++;
-            GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + .02f);
-            yield return new WaitForSeconds(0.001f);
-        }
-        counter = 0;
-        while (counter < 150f)
-        {
-            counter++;
-            GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - .02f);
-            yield return new WaitForSeconds(0.001f);
-        }
-        if (selected) { StartCoroutine(Animate()); }
+        coroutineRunning = false;
+
     }
     private IEnumerator EnlargeCostTextRoutine()
     {
@@ -108,8 +115,12 @@ public class ButtonTower : MonoBehaviour
 
     public void EnablePressedState()
     {
-        StartCoroutine(Animate());
         selected = true;
+
+        if (!coroutineRunning)
+        {
+            StartCoroutine(Animate());
+        }
     }
 
     public void DisablePressedState()

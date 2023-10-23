@@ -28,12 +28,17 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] UnityEvent onWaveEnd, onWaveStart;
 
+    private void Awake()
+    {
+        LoadNewWave();
+    }
+
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space) && gameMode == GameMode.Build)
         {
             gameMode = GameMode.Battle;
-            LoadNewWave();
+            
             onWaveStart.Invoke();
         }
     }
@@ -42,8 +47,9 @@ public class WaveSystem : MonoBehaviour
     //do every beat
     public void SpawnWaveStep()
     {
-        if(currentWaveStep >= waves[currentWave].waveSteps.Length) { return; } //No more steps left in wave 
 
+        if(currentWaveStep >= waves[currentWave].waveSteps.Length) { return; } //No more steps left in wave 
+        if(gameMode== GameMode.Build) { return; }
         var waveStep = waves[currentWave].waveSteps[currentWaveStep];
         SpawnEnemy(waveStep.mice, pathsMouse, mousePrefab);
         SpawnEnemy(waveStep.birds, pathsBird, birdPrefab);
@@ -59,7 +65,7 @@ public class WaveSystem : MonoBehaviour
 
         gameMode = GameMode.Build;
         onWaveEnd.Invoke();
-
+        LoadNewWave();
     }
 
     private void SpawnEnemy(int enemyCount, Paths[] paths, GameObject enemyPrefab)
@@ -83,7 +89,10 @@ public class WaveSystem : MonoBehaviour
         currentWave++;
         currentWaveStep = 0;
         if (currentWave > waves.Length) { return; } //No waves remain
-
+        if (waves[currentWave].hint != null)
+        {
+            FindObjectOfType<Hintbar>().AssignHintText(waves[currentWave].hint, true);
+        }
         GetComponent<ReactOnBeat>().SetBeatsToReactOn(waves[currentWave].beatsToSpawnOn);
     }
 

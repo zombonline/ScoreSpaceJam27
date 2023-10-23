@@ -16,10 +16,20 @@ MonoBehaviour:
   - mice: 2
     birds: 0
     dogs: 0
+    micelvl2: 0
+    birdslvl2: 0
+    dogslvl2: 0
   - mice: 1
     birds: 0
     dogs: 0
+    micelvl2: 0
+    birdslvl2: 0
+    dogslvl2: 0
   - mice: 2
     birds: 0
     dogs: 0
+    micelvl2: 0
+    birdslvl2: 0
+    dogslvl2: 0
   beatsToSpawnOn: 01000000
+  hint: Welcome to Gun Groove Alley

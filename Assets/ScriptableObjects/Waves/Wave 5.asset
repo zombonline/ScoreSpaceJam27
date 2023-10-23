@@ -16,19 +16,16 @@ MonoBehaviour:
   - mice: 0
     birds: 1
     dogs: 0
-  - mice: 2
+  - mice: 0
     birds: 0
     dogs: 0
   - mice: 2
     birds: 0
-    dogs: 0
-  - mice: 2
-    birds: 2
     dogs: 0
   - mice: 1
     birds: 0
     dogs: 0
   - mice: 2
-    birds: 1
-    dogs: 1
-  beatsToSpawnOn: 0100000003000000
+    birds: 0
+    dogs: 0
+  beatsToSpawnOn: 01000000

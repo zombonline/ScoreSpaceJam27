@@ -14,21 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveSteps:
   - mice: 2
-    birds: 1
-    dogs: 0
-  - mice: 0
     birds: 0
-    dogs: 2
+    dogs: 0
   - mice: 2
     birds: 0
     dogs: 0
   - mice: 2
     birds: 2
     dogs: 0
+  - mice: 2
+    birds: 0
+    dogs: 0
   - mice: 1
     birds: 0
     dogs: 0
-  - mice: 2
-    birds: 1
-    dogs: 2
-  beatsToSpawnOn: 010000000300000004000000
+  beatsToSpawnOn: 01000000
