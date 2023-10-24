@@ -12,8 +12,10 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float speed;
 
     [SerializeField] bool animationControlledByThisScript;
+
     private void Awake()
     {
+        StartCoroutine(MovementRoutine());
     }
 
     public void MoveAlongPath()

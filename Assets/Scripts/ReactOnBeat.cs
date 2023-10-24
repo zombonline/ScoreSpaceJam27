@@ -12,7 +12,10 @@ public class ReactOnBeat : MonoBehaviour
     [SerializeField] UnityEvent reactEvent;
 
     int currentBeat;
-
+    private void Awake()
+    {
+        currentBeat = BeatManager.beat;
+    }
     private void Update()
     {
         if(BeatManager.beat != currentBeat)

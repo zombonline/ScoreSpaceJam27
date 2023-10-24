@@ -82,8 +82,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../Gun Groove Alley/Assets/FMOD/ScoreSpaceJam27FMOD/ScoreSpaceJam27FMOD.fspro
-  sourceBankPath: ../Gun Groove Alley/Assets/FMOD/ScoreSpaceJam27FMOD/Build
+  sourceProjectPath: Assets/FMOD/ScoreSpaceJam27FMOD/ScoreSpaceJam27FMOD.fspro
+  sourceBankPath: Assets/FMOD/ScoreSpaceJam27FMOD/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
