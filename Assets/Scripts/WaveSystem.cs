@@ -47,7 +47,6 @@ public class WaveSystem : MonoBehaviour
     //do every beat
     public void SpawnWaveStep()
     {
-
         if(currentWaveStep >= waves[currentWave].waveSteps.Length) { return; } //No more steps left in wave 
         if(gameMode== GameMode.Build) { return; }
         var waveStep = waves[currentWave].waveSteps[currentWaveStep];

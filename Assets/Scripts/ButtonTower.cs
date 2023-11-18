@@ -36,25 +36,33 @@ public class ButtonTower : MonoBehaviour
 
     public void UpdateCost()
     {
-        StartCoroutine(UpdateCostRoutine());
+        StartCoroutine(UpdateCostRoutine(currentCost, soTower.GetCostOfTower()));
     }
 
-    private IEnumerator UpdateCostRoutine()
+    private IEnumerator UpdateCostRoutine(int valueToUpdate, int newValue)
     {
-        var diffBetweenCost = Mathf.Abs(soTower.GetCostOfTower() - currentCost);
-        Debug.Log(diffBetweenCost);
+        int diffBetweenCost = Mathf.Abs(newValue - valueToUpdate);
         StartCoroutine(EnlargeCostTextRoutine());
-        for (int i = 0; i < diffBetweenCost; i++)
+        while (valueToUpdate != newValue)
         {
-            if (currentCost < soTower.GetCostOfTower()) { currentCost++; }
-            else if (currentCost > soTower.GetCostOfTower()) { currentCost--; }
-            textCost.text = currentCost.ToString();
-            yield return new WaitForSeconds(.5f / diffBetweenCost);
+            if (valueToUpdate < newValue)
+            {
+                valueToUpdate += diffBetweenCost / 10;
+                if (valueToUpdate > newValue) { valueToUpdate = newValue; }
+            }
+            else if (valueToUpdate > newValue)
+            {
+                valueToUpdate -= diffBetweenCost / 10;
+                if (valueToUpdate < newValue) { valueToUpdate = newValue; }
+            }
+            textCost.text = valueToUpdate.ToString();
+            yield return new WaitForSeconds(.05f);
         }
-
+        currentCost = newValue;
+        textCost.text = currentCost.ToString();
     }
 
-   
+
 
     IEnumerator Animate()
     {

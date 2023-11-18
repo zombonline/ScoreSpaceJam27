@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bank : MonoBehaviour
@@ -9,7 +10,6 @@ public class Bank : MonoBehaviour
     public static int coins { get; private set; }
     int coinsDisplayed;
     [SerializeField] TextMeshProUGUI textCoins;
-
 
     private void Awake()
     {
@@ -26,16 +26,23 @@ public class Bank : MonoBehaviour
     }
     private IEnumerator UpdateCoinsRoutine(int valueToUpdate, int newValue)
     {
-        var diffBetweenCost = Mathf.Abs(newValue - valueToUpdate);
-        Debug.Log(diffBetweenCost);
-        for (int i = 0; i < diffBetweenCost; i++)
-        {
-            if (valueToUpdate < newValue) { valueToUpdate++; }
-            else if (valueToUpdate > newValue) { valueToUpdate--; }
+        int diffBetweenCost = Mathf.Abs(newValue - valueToUpdate);
+        while(valueToUpdate != newValue)
+        { 
+            if (valueToUpdate < newValue)
+            {
+                valueToUpdate += diffBetweenCost/10 ;
+                if(valueToUpdate > newValue) { valueToUpdate = newValue; }
+            }
+            else if (valueToUpdate > newValue)
+            {
+                valueToUpdate -= diffBetweenCost/10;
+                if (valueToUpdate < newValue) { valueToUpdate = newValue; }
+            }
             textCoins.text = valueToUpdate.ToString();
-            yield return new WaitForSeconds(.5f / diffBetweenCost);
+            yield return new WaitForSeconds(.05f);
         }
-        coinsDisplayed = valueToUpdate;
+        coinsDisplayed = newValue;
     }
 
 }

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 095bbabb37193574b945a3cdac9a15d6, type: 3}
-  m_Name: Rifle 1
+  m_Name: Mortar
   m_EditorClassIdentifier: 
   buildCost: 700
   battleCost: 800

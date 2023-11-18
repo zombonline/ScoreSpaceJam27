@@ -27,6 +27,7 @@ public class ReactOnBeat : MonoBehaviour
 
     public void NewBeat()
     {
+        if (Base.gameOver) { return; }
         if (beatsToReactOn.Contains(BeatManager.beat) && markersToReactOn.Contains(BeatManager.marker))
         {
             reactEvent.Invoke();

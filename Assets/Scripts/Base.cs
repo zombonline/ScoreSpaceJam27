@@ -14,6 +14,8 @@ public class Base : MonoBehaviour
     [SerializeField] SpriteRenderer spriteBase;
     [SerializeField] float lengthSpriteFlashSeconds = .5f, lengthBetweenFlashesSeconds = .1f;
 
+    public static bool gameOver = false;
+
     private void Awake()
     {
         hitPoints = startHitPoints;
@@ -48,6 +50,7 @@ public class Base : MonoBehaviour
         if(adjustment < 0) { StartCoroutine(FlashSpriteRoutine()); } //if damage taken, flash sprite
         if (hitPoints <= 0)
         {
+            gameOver = true;
             onGameOver.Invoke();
         }
     }
