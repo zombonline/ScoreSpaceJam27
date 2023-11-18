@@ -19,7 +19,6 @@ public class TargetRange : MonoBehaviour
 
     AmmoCache ammoMenu;
 
-
     public void EnableTempTower() { tempTower = true; }
 
     private void Start()
@@ -72,7 +71,6 @@ public class TargetRange : MonoBehaviour
         {
             mapTilesInsideTrigger.Remove(collision.GetComponent<MapTile>());
             if (tempTower) { collision.GetComponent<MapTile>().DisableRangeSprite(); }
-
         }
     }
 
@@ -102,6 +100,28 @@ public class TargetRange : MonoBehaviour
         return currentTarget;
     }
 
+    public void CollectCoins()
+    {
+        if (tempTower) { return; } //check this tower is not a temp display tower.
+        StartCoroutine(CollectCoinsRoutine());
+    }
+    private IEnumerator CollectCoinsRoutine()
+    {
+        yield return new WaitForEndOfFrameUnit();
+        bool coinFound = false;
+        foreach(MapTile targetTile in targetTiles)
+        {
+            if (coinFound) { break; }
+            foreach(Coin coin in targetTile.coins)
+            {
+                LeanTweenController.MoveObject(coin.gameObject, transform.position);
+                targetTile.coins.Remove(coin);
+                yield return new WaitForSeconds(.5f);
+                coin.Collect();
+                coinFound = true;
+            }
+        }
+    }
     public void Shoot()
     {
         if (tempTower) { return; } //check this tower is not a temp display tower.

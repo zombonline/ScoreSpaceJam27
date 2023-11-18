@@ -13,16 +13,25 @@ public class Coin : MonoBehaviour
     [SerializeField] SpriteRenderer spriteRenderer;
 
     bool coRoutineRunning = false;
-
+    public MapTile tile;
     private void Awake()
     {
         timer = timeToDespawn;
+    }
+    private void Start()
+    {
+        tile.coins.Add(this);
 
     }
     private void OnMouseDown()
     {
+        Collect();
+    }
+
+    public  void Collect()
+    {
         FindObjectOfType<Bank>().AdjustCoins(value);
-        if(destroyOnPickup) { Destroy(gameObject); }
+        if (destroyOnPickup) { Destroy(gameObject); }
     }
 
     private void Update()
@@ -35,6 +44,7 @@ public class Coin : MonoBehaviour
 
         if(timer < 0)
         {
+            tile.coins.Remove(this);
             Destroy(gameObject);
         }
     }

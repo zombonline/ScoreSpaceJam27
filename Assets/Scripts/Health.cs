@@ -34,7 +34,8 @@ public class Health : MonoBehaviour
         {
             onDeath.Invoke();
             Destroy(gameObject);
-            Instantiate(coinDrop, new Vector3(transform.position.x,transform.position.y,-1f), Quaternion.identity);
+            var newCoin = Instantiate(coinDrop, new Vector3(transform.position.x,transform.position.y,-1f), Quaternion.identity);
+            newCoin.GetComponent<Coin>().tile = GetComponent<EnemyMovement>().GetCurrentTile();
         }
     }
   

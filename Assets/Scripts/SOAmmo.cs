@@ -23,7 +23,7 @@ public class SOAmmo : ScriptableObject
 
     public int GetCostOfRefill()
     {
-        if (FindObjectOfType<WaveSystem>().gameMode == GameMode.Battle)
+        if (WaveSystem.gameMode == GameMode.Battle)
         {
 
             return battleRefillCost;

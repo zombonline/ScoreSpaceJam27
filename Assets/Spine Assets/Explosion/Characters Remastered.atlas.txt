@@ -1,0 +1,22 @@
+Characters Remastered.png
+	size: 258, 486
+	filter: Linear, Linear
+	pma: true
+Explosion_1
+	bounds: 135, 354, 130, 121
+	rotate: 90
+Explosion_2
+	bounds: 2, 235, 130, 121
+Explosion_3
+	bounds: 134, 222, 130, 121
+	rotate: 90
+Explosion_4
+	bounds: 2, 112, 126, 121
+Explosion_5
+	bounds: 2, 6, 109, 104
+Explosion_6
+	bounds: 113, 2, 109, 104
+Explosion_7
+	bounds: 130, 108, 119, 112
+Explosion_8
+	bounds: 2, 358, 131, 126

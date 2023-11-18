@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     [SerializeField] List<string> possibleTargets;
     [SerializeField] int damagePoints;
     [SerializeField] public SOAmmo ammoType;
+    [SerializeField] float destroyDelay;
     public void Awake()
     {
         StartCoroutine(DamageRoutine());
@@ -36,9 +37,8 @@ public class Bullet : MonoBehaviour
 
                 enemy.GetComponent<Health>().AdjustHitPoints(-damagePoints);
             }
-
         }
-        Destroy(gameObject);
+        Destroy(gameObject,destroyDelay);
     }
 
 }

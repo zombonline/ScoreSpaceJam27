@@ -14,4 +14,8 @@ public class LeanTweenController : MonoBehaviour
     {
         LeanTween.scaleX(item, valueToUse, .25f);
     }
+    public static void MoveObject(GameObject targetObject, Vector2 targetPosition)
+    {
+        LeanTween.move(targetObject, targetPosition, .5f);
+    }
 }

@@ -20,7 +20,7 @@ public class WaveSystem : MonoBehaviour
 
     int currentWave = -1, currentWaveStep;
 
-    public GameMode gameMode { get; private set; } = GameMode.Build;
+    public static GameMode gameMode { get; private set; } = GameMode.Build;
 
     [SerializeField] Paths[] pathsMouse, pathsBird, pathsDog;
 

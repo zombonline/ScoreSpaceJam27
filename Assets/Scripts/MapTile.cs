@@ -24,6 +24,7 @@ using UnityEngine;
     public bool AbleToHoldEnemy { get { return ableToHoldTower; } private set { ableToHoldTower = value; } }
     public List<EnemyMovement> enemies { get; private set; } = new List<EnemyMovement>();
 
+    public List<Coin> coins;
 
     private void Awake()
     {

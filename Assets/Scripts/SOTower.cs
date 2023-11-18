@@ -13,7 +13,7 @@ public class SOTower : ScriptableObject
 
     public int GetCostOfTower()
     {
-        if (FindObjectOfType<WaveSystem>().gameMode == GameMode.Battle)
+        if (WaveSystem.gameMode == GameMode.Battle)
         {
 
             return battleCost;
