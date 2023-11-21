@@ -1,3 +1,5 @@
+using Spine;
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,8 +23,12 @@ public class TargetRange : MonoBehaviour
 
     public void EnableTempTower() { tempTower = true; }
 
+    [SerializeField] SkeletonAnimation skeletonAnimation;
+    Spine.AnimationState spineAnimationState;
+    [SerializeField] string leftAnim, rightAnim, shootAnim, frontSkin, backSkin, magnetAnim;
     private void Start()
     {
+        spineAnimationState = skeletonAnimation.AnimationState;
         foreach(AmmoCache menu in FindObjectsOfType<AmmoCache>())
         {
             if(menu.ammo == bulletPrefab.ammoType)
@@ -33,6 +39,7 @@ public class TargetRange : MonoBehaviour
 
         AssignTargetTiles();
     }
+
     public void AssignTargetTiles()
     {
         if (tempTower) { return; } //Do not target if tower is temporary
@@ -99,6 +106,43 @@ public class TargetRange : MonoBehaviour
         
         return currentTarget;
     }
+    public Coin GetCoinTarget()
+    {
+        Coin coin = null;
+        bool coinFound = false;
+        foreach (MapTile targetTile in targetTiles)
+        {
+            foreach (Coin possible in targetTile.coins)
+            {
+                if (coinFound) { break; }
+                targetTile.coins.Remove(coin);
+                coinFound = true;
+            }
+        }
+        return coin;
+    }
+    public void UpdateSpineAsset()
+    {
+        StartCoroutine(UpdateSpineAssetRoutine());
+    }
+    public IEnumerator UpdateSpineAssetRoutine()
+    {
+        yield return new WaitForEndOfFrameUnit();
+        if (GetTarget() != null)
+        {
+            if (GetTarget().transform.position.y > transform.position.y) { skeletonAnimation.skeleton.SetSkin(backSkin); Debug.Log("facing back"); } //update skin
+            else if(GetTarget().transform.position.y < transform.position.y) { skeletonAnimation.skeleton.SetSkin(frontSkin); Debug.Log("facing front"); } //update skin
+            skeletonAnimation.skeleton.SetSlotsToSetupPose();
+            skeletonAnimation.LateUpdate();
+
+            if (GetTarget().transform.position.x < transform.position.x) { spineAnimationState.SetAnimation(0, leftAnim, true); }
+            else if (GetTarget().transform.position.x > transform.position.x) { spineAnimationState.SetAnimation(0, rightAnim, true); }
+
+
+            Bone bone = skeletonAnimation.skeleton.FindBone("target");
+            bone.SetLocalPosition(skeletonAnimation.transform.InverseTransformDirection(currentTarget.transform.position)); 
+        }
+    }
 
     public void CollectCoins()
     {
@@ -108,19 +152,9 @@ public class TargetRange : MonoBehaviour
     private IEnumerator CollectCoinsRoutine()
     {
         yield return new WaitForEndOfFrameUnit();
-        bool coinFound = false;
-        foreach(MapTile targetTile in targetTiles)
-        {
-            if (coinFound) { break; }
-            foreach(Coin coin in targetTile.coins)
-            {
-                LeanTweenController.MoveObject(coin.gameObject, transform.position);
-                targetTile.coins.Remove(coin);
-                yield return new WaitForSeconds(.5f);
-                coin.Collect();
-                coinFound = true;
-            }
-        }
+        LeanTweenController.MoveObject(GetCoinTarget().gameObject, transform.position);
+        yield return new WaitForSeconds(0.5f);
+        GetCoinTarget().Collect();
     }
     public void Shoot()
     {
@@ -137,6 +171,7 @@ public class TargetRange : MonoBehaviour
             MapTile targetTile = GetTarget().GetCurrentTile();
             if (targetTile != null)
             {
+                spineAnimationState.SetAnimation(1, shootAnim, false);
                 ammoMenu.UseAmmo();
                 Bullet newBullet = Instantiate(bulletPrefab, targetTile.transform.position, Quaternion.identity).GetComponent<Bullet>();
             }

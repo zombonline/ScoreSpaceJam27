@@ -1,6 +1,8 @@
 Heart.png
-	size: 117, 117
+	size: 232, 117
 	filter: Linear, Linear
 	pma: true
-Layer 1
+Heart depleted
 	bounds: 2, 2, 113, 113
+Layer 1
+	bounds: 117, 2, 113, 113

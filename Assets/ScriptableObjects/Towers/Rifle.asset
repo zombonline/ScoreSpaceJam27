@@ -15,5 +15,5 @@ MonoBehaviour:
   buildCost: 450
   battleCost: 550
   refundCost: 350
-  towerPrefab: {fileID: 141293003900377505, guid: aed3f17a99aeefa4eb768967af021492, type: 3}
+  towerPrefab: {fileID: 4437146109528682727, guid: 81bc4359f5e74ad458dc551f4a0eaf83, type: 3}
   card: {fileID: 21300000, guid: 60641826a11def34f9038551f0eba4eb, type: 3}

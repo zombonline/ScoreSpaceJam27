@@ -45,6 +45,7 @@ public  class PlacementManager : MonoBehaviour
         towerHeldButton = buttonTower;
         towerHeldButton.EnablePressedState();
         tempTower = tower;
+        
     }
 
 

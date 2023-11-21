@@ -1,0 +1,9 @@
+Select Tile.png
+	size: 3797, 1912
+	filter: Linear, Linear
+	pma: true
+Glow
+	bounds: 2, 2, 1908, 1915
+	rotate: 90
+Non Glow
+	bounds: 1919, 27, 1876, 1883

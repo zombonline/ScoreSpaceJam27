@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -27,7 +28,11 @@ public class Base : MonoBehaviour
         {
             if (i > hitPoints)
             {
-                healthBar.GetChild(i - 1).gameObject.SetActive(false);
+                var skeletonGrahic = healthBar.GetChild(i - 1).GetComponent<SkeletonGraphic>();
+                skeletonGrahic.Skeleton.SetSkin("Heart Dead");
+                skeletonGrahic.Skeleton.SetSlotsToSetupPose();
+                skeletonGrahic.LateUpdate();
+
             }
         }
     }

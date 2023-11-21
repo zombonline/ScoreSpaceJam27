@@ -9,6 +9,7 @@ using UnityEngine;
 
 
     [SerializeField] SpriteRenderer hoverSprite, rangeSprite, selectSprite;
+    [SerializeField] MeshRenderer hoverMesh, rangeMesh, selectMesh;
 
     [Header("Tower")]
     [SerializeField] bool ableToHoldTower = false;
@@ -57,9 +58,9 @@ using UnityEngine;
 
     public void ReceiveTempTower(GameObject tower)
     {
-        tempTower = Instantiate(tower, transform.position, Quaternion.identity);
         if (ableToHoldTower)
         {
+            tempTower = Instantiate(tower, transform.position, Quaternion.identity);
             tempTower.GetComponent<TargetRange>().EnableTempTower();
         }
     }
@@ -103,8 +104,8 @@ using UnityEngine;
     #region Methods for enabling sprites
     public void EnableRangeSprite() { rangeSprite.enabled = true; }
     public void DisableRangeSprite() { rangeSprite.enabled = false; }
-    public void EnableSelectSprite() { selectSprite.enabled = true; }
-    public void DisableSelectSprite() { selectSprite.enabled = false; }
+    public void EnableSelectSprite() { selectMesh.enabled = true; }
+    public void DisableSelectSprite() { selectMesh.enabled = false; }
     private void OnMouseEnter()
     {
         hoverSprite.enabled = true;

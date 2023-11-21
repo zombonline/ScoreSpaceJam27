@@ -1,0 +1,32 @@
+Open.png
+	size: 4824, 1819
+	filter: Linear, Linear
+	pma: true
+Defend Mode/Cat Left 1
+	bounds: 3228, 48, 380, 557
+Defend Mode/Cat Left 2
+	bounds: 3469, 640, 674, 539
+Defend Mode/Cat Right 1
+	bounds: 3610, 81, 377, 557
+Defend Mode/Cat Right 2
+	bounds: 2552, 65, 674, 540
+Defend Mode/Defend
+	bounds: 2, 967, 2569, 850
+Defend Mode/Grenade Cat
+	bounds: 2573, 1040, 777, 894
+	rotate: 90
+Deploy Mode/Cat Piece
+	bounds: 2573, 607, 431, 721
+	rotate: 90
+Deploy Mode/Deploy
+	bounds: 2, 114, 2548, 851
+Deploy Mode/Left Piece 1
+	bounds: 4145, 601, 594, 677
+	rotate: 90
+Deploy Mode/Left Piece 2
+	bounds: 3469, 1181, 654, 636
+Deploy Mode/Right Piece 1
+	bounds: 3989, 2, 597, 673
+	rotate: 90
+Deploy Mode/Right Piece 2
+	bounds: 4125, 1197, 669, 620
