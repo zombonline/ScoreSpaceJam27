@@ -105,8 +105,8 @@ MonoBehaviour:
   leftAnim: Look Left
   rightAnim: Look Right
   shootAnim: Shoot
-  frontSkin: 
-  backSkin: 
+  frontSkin: Mag Cat Front
+  backSkin: Mag Cat Back
   magnetAnim: Magnetise
 --- !u!114 &6639345657934296495
 MonoBehaviour:
@@ -289,6 +289,6 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: 
+  _animationName: Look Right
   loop: 1
   timeScale: 1

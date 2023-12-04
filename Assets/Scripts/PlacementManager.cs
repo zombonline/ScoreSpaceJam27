@@ -63,6 +63,9 @@ public  class PlacementManager : MonoBehaviour
         {
             buttonSellTower.gameObject.SetActive(true);
             buttonSellTower.GetComponentInChildren<TextMeshProUGUI>().text = "Refund " + lastSelectedTile.placedTowerRefundValue.ToString();
+            var linePoint = new Vector2(lastSelectedTile.transform.position.x - lastSelectedTile.transform.localScale.x/2,
+                lastSelectedTile.transform.position.y);
+            buttonSellTower.GetComponentInChildren<LineRenderer>().SetPosition(1, linePoint);
         }
         else
         {

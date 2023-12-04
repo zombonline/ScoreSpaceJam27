@@ -1,9 +1,29 @@
 Select Tile.png
-	size: 3797, 1912
+	size: 3770, 3756
+	filter: Linear, Linear
+	pma: true
+Non Glow
+	bounds: 1885, 2, 1876, 1883
+	rotate: 90
+Select Glow/Invalid Tile copy
+	bounds: 2, 1880, 1874, 1881
+	rotate: 90
+Select Glow/Range
+	bounds: 1885, 1880, 1874, 1881
+	rotate: 90
+Select Glow/Retire_
+	bounds: 2, 4, 1874, 1881
+	rotate: 90
+
+Select Tile_2.png
+	size: 3827, 3818
 	filter: Linear, Linear
 	pma: true
 Glow
-	bounds: 2, 2, 1908, 1915
+	bounds: 2, 1901, 1908, 1915
+Select Glow/Range Glow
+	bounds: 1912, 1910, 1906, 1913
 	rotate: 90
-Non Glow
-	bounds: 1919, 27, 1876, 1883
+Select Glow/Retire Glow
+	bounds: 1912, 2, 1906, 1913
+	rotate: 90

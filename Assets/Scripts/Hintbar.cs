@@ -25,10 +25,12 @@ public class Hintbar : MonoBehaviour
     List<Hint> hintQueue = new List<Hint>();
     [SerializeField] TextAsset hintTextFile;
     string[] hints;
+    Vector2 originalTextPos;
     private void Awake()
     {
         hints = hintTextFile.text.Split(Environment.NewLine,
                             StringSplitOptions.RemoveEmptyEntries);
+        originalTextPos = hintText.rectTransform.anchoredPosition;
     }
 
     private void Update()
@@ -57,10 +59,10 @@ public class Hintbar : MonoBehaviour
     {
         coroutineRunning = true;
         hintText.text = hint.text;
-        if (hint.isSpecial) { hintText.color = Color.red; }
-        else { hintText.color = Color.black; }
+        if (hint.isSpecial) { hintText.color = Color.green; }
+        else { hintText.color = Color.white; }
 
-        hintText.rectTransform.anchoredPosition = Vector3.zero;
+        hintText.rectTransform.anchoredPosition = originalTextPos;
         while (hintText.rectTransform.anchoredPosition.x >  -1920 - hintText.rectTransform.sizeDelta.x)
         {
             hintText.rectTransform.anchoredPosition = new Vector2(hintText.rectTransform.anchoredPosition.x - 5, hintText.rectTransform.anchoredPosition.y);

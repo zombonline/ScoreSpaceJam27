@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AmmoCache : MonoBehaviour
 {
@@ -44,7 +45,10 @@ public class AmmoCache : MonoBehaviour
     [SerializeField] TextMeshProUGUI[] textUpgradeAmounts;
     [SerializeField] TextMeshProUGUI[] textUpgradeCosts;
 
-    [SerializeField] RectTransform upgradePanel;
+    [SerializeField] RectTransform smallRect, largeRect;
+
+    [SerializeField] UnityEvent mouseEnter, mouseExit;
+    bool mouseOver = false;
 
     private void Awake()
     {
@@ -56,15 +60,19 @@ public class AmmoCache : MonoBehaviour
         for(int i = 0; i< textUpgradeCosts.Length; i++)
         {
             textUpgradeCosts[i].text = ammo.upgrades[i].cost.ToString();
-            textUpgradeAmounts[i].text = ammo.upgrades[i].amount.ToString();
+            textUpgradeAmounts[i].text = "Upgrade \n +" + ammo.upgrades[i].amount.ToString();
         }
     }
-
+    
     public void UpdateRefillCost()
     {
         refillCost = ammo.GetCostOfRefill();
     }
 
+    private void Update()
+    {
+        CheckMousePosition();
+    }
     public void UseAmmo()
     {
         if(currentAmmo <= 0)
@@ -97,12 +105,22 @@ public class AmmoCache : MonoBehaviour
         return currentAmmo;
     }
 
-    public void OpenUpgradesPanel()
+    public void CheckMousePosition()
     {
-        LeanTween.scaleX(upgradePanel.gameObject, 0, 1f);
+        Vector2 localMousePosition = smallRect.InverseTransformPoint(Input.mousePosition);
+        if (smallRect.rect.Contains(localMousePosition) && !mouseOver)
+        {
+            mouseOver = true;
+            Debug.Log("Entered");
+            mouseEnter.Invoke();
+        }
+        else if (!largeRect.rect.Contains(localMousePosition) && mouseOver)
+        {
+            mouseOver = false;
+            Debug.Log("Exitted");
+            mouseExit.Invoke();
+        }
     }
-    public void CloseUpgradesPanel()
-    {
 
-    }
+    
 }

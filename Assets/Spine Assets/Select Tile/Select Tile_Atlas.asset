@@ -16,4 +16,5 @@ MonoBehaviour:
   onDemandTextureLoader: {fileID: 0}
   atlasFile: {fileID: 4900000, guid: 0e03d53d3a91f364c9fdbd70a035f048, type: 3}
   materials:
-  - {fileID: 2100000, guid: e095492c232a01244bf283c35d499b0d, type: 2}
+  - {fileID: 2100000, guid: 71f7717a45c661146a1afc2bb8dc7779, type: 2}
+  - {fileID: 2100000, guid: 59ed1d3b55a7c5c4f98c2c8691fbdf75, type: 2}

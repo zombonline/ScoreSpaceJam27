@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1769470922302707917, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769470922302707917, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2898961334570125688, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

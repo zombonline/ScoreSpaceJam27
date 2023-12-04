@@ -3,7 +3,9 @@ using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class TargetRange : MonoBehaviour
@@ -93,9 +95,7 @@ public class TargetRange : MonoBehaviour
             
             foreach(EnemyMovement newPossibleTarget in tile.enemies)
             {
-
                 if (!possibleTargets.Contains(newPossibleTarget.tag)) { break; } //come out of loop if enemy is not a possible target
-
                 if (currentTarget == null) { currentTarget = newPossibleTarget; } //if no current target assigned, assign this one
                 else if(newPossibleTarget.currentTile > currentTarget.currentTile) //if this enemy is further ahead than current target, assign it this one.
                 {
@@ -103,7 +103,6 @@ public class TargetRange : MonoBehaviour
                 }
             }
         }
-        
         return currentTarget;
     }
     public Coin GetCoinTarget()
@@ -127,21 +126,32 @@ public class TargetRange : MonoBehaviour
     }
     public IEnumerator UpdateSpineAssetRoutine()
     {
-        yield return new WaitForEndOfFrameUnit();
-        if (GetTarget() != null)
+        yield return new WaitForEndOfFrame();
+        GetTarget();
+        if (currentTarget != null)
         {
+            Bone bone = skeletonAnimation.skeleton.FindBone("target");
+            var localPositon = transform.InverseTransformPoint(currentTarget.GetCurrentTile().transform.position);
+            bone.SetLocalPosition(localPositon);
+
+
+
             if (GetTarget().transform.position.y > transform.position.y) { skeletonAnimation.skeleton.SetSkin(backSkin); Debug.Log("facing back"); } //update skin
-            else if(GetTarget().transform.position.y < transform.position.y) { skeletonAnimation.skeleton.SetSkin(frontSkin); Debug.Log("facing front"); } //update skin
+            else if (GetTarget().transform.position.y <= transform.position.y) { skeletonAnimation.skeleton.SetSkin(frontSkin); Debug.Log("facing front"); } //update skin
             skeletonAnimation.skeleton.SetSlotsToSetupPose();
             skeletonAnimation.LateUpdate();
 
             if (GetTarget().transform.position.x < transform.position.x) { spineAnimationState.SetAnimation(0, leftAnim, true); }
-            else if (GetTarget().transform.position.x > transform.position.x) { spineAnimationState.SetAnimation(0, rightAnim, true); }
+            else if (GetTarget().transform.position.x >= transform.position.x) { spineAnimationState.SetAnimation(0, rightAnim, true); }
 
-
-            Bone bone = skeletonAnimation.skeleton.FindBone("target");
-            bone.SetLocalPosition(skeletonAnimation.transform.InverseTransformDirection(currentTarget.transform.position)); 
         }
+    }
+
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawIcon(skeletonAnimation.skeleton.FindBone("target").GetWorldPosition(skeletonAnimation.transform), "Hello!");
     }
 
     public void CollectCoins()
@@ -165,6 +175,7 @@ public class TargetRange : MonoBehaviour
 
     private IEnumerator ShootRoutine()
     {
+        yield return new WaitForEndOfFrameUnit();
         yield return new WaitForEndOfFrameUnit();
         if (GetTarget() != null)
         {

@@ -15,7 +15,7 @@ public class Bank : MonoBehaviour
     {
         coins = startCoins;
         coinsDisplayed = coins;
-        textCoins.text = coins.ToString("00000");
+        textCoins.text = coins.ToString();
         
     }
 

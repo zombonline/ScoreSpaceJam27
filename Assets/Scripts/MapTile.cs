@@ -9,7 +9,7 @@ using UnityEngine;
 
 
     [SerializeField] SpriteRenderer hoverSprite, rangeSprite, selectSprite;
-    [SerializeField] MeshRenderer hoverMesh, rangeMesh, selectMesh;
+    [SerializeField] MeshRenderer hoverMesh, rangeMesh, selectMesh, invalidMesh;
 
     [Header("Tower")]
     [SerializeField] bool ableToHoldTower = false;
@@ -63,6 +63,10 @@ using UnityEngine;
             tempTower = Instantiate(tower, transform.position, Quaternion.identity);
             tempTower.GetComponent<TargetRange>().EnableTempTower();
         }
+        else
+        {
+            EnableInvalidSprite();
+        }
     }
 
     public void RemoveTempTower()
@@ -102,13 +106,15 @@ using UnityEngine;
 
 
     #region Methods for enabling sprites
-    public void EnableRangeSprite() { rangeSprite.enabled = true; }
-    public void DisableRangeSprite() { rangeSprite.enabled = false; }
+    public void EnableRangeSprite() { rangeMesh.enabled = true; }
+    public void DisableRangeSprite() { rangeMesh.enabled = false; }
     public void EnableSelectSprite() { selectMesh.enabled = true; }
     public void DisableSelectSprite() { selectMesh.enabled = false; }
+    public void EnableInvalidSprite() { invalidMesh.enabled = true; }
+    public void DisableInvalidSprite() { invalidMesh.enabled = false; }
     private void OnMouseEnter()
     {
-        hoverSprite.enabled = true;
+        hoverMesh.enabled = true;
         if(placedTower != null)
         {
             placedTower.GetComponent<TargetRange>().EnableTargetTileRangeSprites();
@@ -122,7 +128,8 @@ using UnityEngine;
 
     private void OnMouseExit() 
     {
-        hoverSprite.enabled = false;
+        hoverMesh.enabled = false;
+        invalidMesh.enabled = false;
         if (placedTower != null)
         {
             placedTower.GetComponent<TargetRange>().DisableTargetTileRangeSprites();

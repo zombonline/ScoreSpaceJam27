@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3593917583158086788, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
+      propertyPath: _animationName
+      value: Look Right
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593917583158086788, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: initialSkinName
       value: Mag Cat Front
       objectReference: {fileID: 0}

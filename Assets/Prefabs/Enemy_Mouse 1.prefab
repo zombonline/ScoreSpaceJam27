@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1769470922302707917, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_Color.g
+      value: 0.72794306
+      objectReference: {fileID: 0}
+    - target: {fileID: 1769470922302707917, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2358146484431022789, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: animationControlledByThisScript
       value: 1

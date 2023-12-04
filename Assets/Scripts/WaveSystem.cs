@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -28,6 +29,7 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] UnityEvent onWaveEnd, onWaveStart;
 
+    [SerializeField] TextMeshProUGUI textWaveCounter;
     private void Awake()
     {
         LoadNewWave();
@@ -86,6 +88,7 @@ public class WaveSystem : MonoBehaviour
     public void LoadNewWave()
     {
         currentWave++;
+        textWaveCounter.text = "Wave " + (currentWave+1).ToString();
         currentWaveStep = 0;
         if (currentWave > waves.Length) { return; } //No waves remain
         if (waves[currentWave].hint != null)

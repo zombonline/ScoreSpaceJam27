@@ -493,7 +493,7 @@ namespace Spine {
 		/// <summary>Sets a skin by name (see <see cref="SetSkin(Skin)"/>).</summary>
 		public void SetSkin (string skinName) {
 			Skin foundSkin = data.FindSkin(skinName);
-			if (foundSkin == null) throw new ArgumentException("Skin not found: " + skinName, "skinName");
+			//if (foundSkin == null) throw new ArgumentException("Skin not found: " + skinName, "skinName");
 			SetSkin(foundSkin);
 		}
 
