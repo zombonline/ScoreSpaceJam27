@@ -17,6 +17,7 @@ public class Health : MonoBehaviour
     [SerializeField] Slider healthSlider;
 
     [SerializeField] GameObject coinDrop;
+    bool dead = false;
     private void Awake()
     {
         hitPoints = startHitPoints;
@@ -27,11 +28,11 @@ public class Health : MonoBehaviour
 
     public void AdjustHitPoints(int adjustment)
     {
-        Debug.Log(gameObject.name + "says ouch!");
         hitPoints += adjustment;
         UpdateHealthSlider();
-        if(hitPoints <= 0)
+        if(hitPoints <= 0 && !dead)
         {
+            dead = true;
             onDeath.Invoke();
             Destroy(gameObject);
             var newCoin = Instantiate(coinDrop, new Vector3(transform.position.x,transform.position.y,-1f), Quaternion.identity);
