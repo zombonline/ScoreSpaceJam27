@@ -1,3 +1,4 @@
+using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,6 +49,7 @@ using UnityEngine;
     public void ReceiveTower(GameObject tower)
     {
         placedTower = Instantiate(tower, transform.position, Quaternion.identity);
+        placedTower.GetComponentInChildren<MeshRenderer>().sortingOrder = -(int)transform.position.y;
     }    
 
     public void RemoveTower() 

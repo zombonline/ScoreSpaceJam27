@@ -28,6 +28,7 @@ public class TargetRange : MonoBehaviour
     [SerializeField] SkeletonAnimation skeletonAnimation;
     Spine.AnimationState spineAnimationState;
     [SerializeField] string leftAnim, rightAnim, shootAnim, frontSkin, backSkin, magnetAnim;
+
     private void Start()
     {
         spineAnimationState = skeletonAnimation.AnimationState;
@@ -105,21 +106,6 @@ public class TargetRange : MonoBehaviour
         }
         return currentTarget;
     }
-    public Coin GetCoinTarget()
-    {
-        Coin coin = null;
-        bool coinFound = false;
-        foreach (MapTile targetTile in targetTiles)
-        {
-            foreach (Coin possible in targetTile.coins)
-            {
-                if (coinFound) { break; }
-                targetTile.coins.Remove(coin);
-                coinFound = true;
-            }
-        }
-        return coin;
-    }
     public void UpdateSpineAsset()
     {
         StartCoroutine(UpdateSpineAssetRoutine());
@@ -157,15 +143,46 @@ public class TargetRange : MonoBehaviour
     public void CollectCoins()
     {
         if (tempTower) { return; } //check this tower is not a temp display tower.
-        StartCoroutine(CollectCoinsRoutine());
+        bool coinFound = false;
+        foreach (MapTile targetTile in targetTiles)
+        {
+            if (coinFound) { break; }
+            foreach (Coin coin in targetTile.coins)
+            {
+                if (!coinFound)
+                {
+                    Bone bone = skeletonAnimation.skeleton.FindBone("target");
+                    var localPositon = transform.InverseTransformPoint(targetTile.transform.position);
+                    bone.SetLocalPosition(localPositon);
+
+                    if (targetTile.transform.position.y > transform.position.y) { skeletonAnimation.skeleton.SetSkin(backSkin); } //update skin
+                    else if (targetTile.transform.position.y <= transform.position.y) { skeletonAnimation.skeleton.SetSkin(frontSkin); } //update skin
+                    skeletonAnimation.skeleton.SetSlotsToSetupPose();
+                    skeletonAnimation.LateUpdate();
+
+                    if (targetTile.transform.position.x < transform.position.x) { spineAnimationState.SetAnimation(0, leftAnim, true); }
+                    else if (targetTile.transform.position.x >= transform.position.x) { spineAnimationState.SetAnimation(0, rightAnim, true); }
+
+
+
+                    spineAnimationState.SetAnimation(1, magnetAnim, false);
+
+                }
+                StartCoroutine(CollectCoinsRoutine(coin));
+                targetTile.coins.Remove(coin);
+                coinFound = true;
+            }
+        }
     }
-    private IEnumerator CollectCoinsRoutine()
+    private IEnumerator CollectCoinsRoutine(Coin coin)
     {
         yield return new WaitForEndOfFrameUnit();
-        LeanTweenController.MoveObject(GetCoinTarget().gameObject, transform.position);
+        LeanTween.move(coin.gameObject, (Vector2)transform.position, .5f).setEaseInOutElastic();
         yield return new WaitForSeconds(0.5f);
-        GetCoinTarget().Collect();
+        coin.Collect();
     }
+        
+    
     public void Shoot()
     {
         if (tempTower) { return; } //check this tower is not a temp display tower.

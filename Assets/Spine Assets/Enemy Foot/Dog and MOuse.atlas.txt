@@ -1,0 +1,61 @@
+Dog and MOuse.png
+	size: 3114, 426
+	filter: Linear, Linear
+	pma: true
+Dog 1/Dog Body 1
+	bounds: 2757, 186, 188, 238
+Dog 1/Dog Head 1
+	bounds: 838, 15, 409, 359
+	rotate: 90
+Dog 1/Left Hand
+	bounds: 2947, 344, 80, 109
+	rotate: 90
+Dog 1/Rigt Hand
+	bounds: 2853, 84, 76, 100
+Dog 2/Dog Body 2
+	bounds: 2352, 185, 187, 239
+Dog 2/Dog Head 2
+	bounds: 2, 2, 416, 422
+Dog 2/Left Hand
+	bounds: 2947, 181, 79, 109
+	rotate: 90
+Dog 2/Rigt Hand
+	bounds: 2853, 7, 75, 100
+	rotate: 90
+Dog 3/Dog Body 3
+	bounds: 2541, 186, 214, 238
+Dog 3/Dog Head 3
+	bounds: 420, 2, 416, 422
+Dog 3/Left Hand
+	bounds: 2947, 262, 80, 109
+	rotate: 90
+Dog 3/Rigt Hand
+	bounds: 2955, 104, 75, 100
+	rotate: 90
+Mouse 1/Left Hand Mouse
+	bounds: 3058, 201, 53, 73
+Mouse 1/Mouse Body 1
+	bounds: 2352, 4, 162, 179
+Mouse 1/Mouse Head 1
+	bounds: 1199, 26, 398, 383
+	rotate: 90
+Mouse 1/Right Hand Mouse
+	bounds: 3057, 63, 51, 67
+Mouse 2/Left Hand Mouse
+	bounds: 3058, 351, 54, 73
+Mouse 2/Mouse Body 2
+	bounds: 2516, 4, 162, 179
+Mouse 2/Mouse Head 2
+	bounds: 1584, 26, 398, 383
+	rotate: 90
+Mouse 2/Right Hand Mouse
+	bounds: 3058, 132, 52, 67
+Mouse 3/Right Hand Mouse
+	bounds: 3058, 132, 52, 67
+Mouse 3/Left Hand Mouse
+	bounds: 3058, 276, 54, 73
+Mouse 3/Mouse Body 3
+	bounds: 2680, 7, 171, 177
+Mouse 3/Mouse Head 3
+	bounds: 1969, 28, 396, 381
+	rotate: 90

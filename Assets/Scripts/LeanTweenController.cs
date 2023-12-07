@@ -18,4 +18,8 @@ public class LeanTweenController : MonoBehaviour
     {
         LeanTween.move(targetObject, targetPosition, .5f);
     }
+    public static void MoveObjectUI(RectTransform targetObject, Vector2 targetPosition)
+    {
+        LeanTween.move(targetObject, targetPosition, .5f);
+    }
 }

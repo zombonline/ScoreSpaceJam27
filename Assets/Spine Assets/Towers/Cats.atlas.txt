@@ -1,0 +1,63 @@
+Cats.png
+	size: 227, 1057
+	filter: Linear, Linear
+	pma: true
+Blast 1
+	bounds: 2, 827, 140, 112
+Blast 2
+	bounds: 2, 941, 144, 114
+Blast 3
+	bounds: 2, 604, 112, 108
+Body
+	bounds: 2, 68, 70, 68
+Body Back
+	bounds: 152, 66, 68, 64
+Grenade
+	bounds: 111, 200, 102, 106
+	rotate: 90
+Grenade Cat Back
+	bounds: 79, 130, 71, 68
+Grenade Cat Front
+	bounds: 2, 206, 72, 69
+Head
+	bounds: 116, 522, 109, 109
+Head Back
+	bounds: 2, 495, 110, 107
+Head Grenade cat Back
+	bounds: 123, 633, 119, 102
+	rotate: 90
+Head Grenade cat Front
+	bounds: 2, 714, 119, 111
+Mag Cat Back Bod
+	bounds: 74, 64, 68, 64
+Mag Cat Back Head
+	bounds: 114, 413, 110, 107
+Mag Cat Front
+	bounds: 114, 304, 107, 107
+Mag Cat front-1
+	bounds: 152, 132, 68, 66
+Magnet
+	bounds: 144, 842, 87, 80
+	rotate: 90
+Pistol
+	bounds: 144, 23, 41, 72
+	rotate: 90
+Rifle
+	bounds: 148, 931, 124, 55
+	rotate: 90
+Rifle Back Body
+	bounds: 2, 2, 68, 64
+Rifle Back Head
+	bounds: 2, 386, 110, 107
+Rifle Front Body
+	bounds: 2, 138, 75, 66
+Rifle Front Head
+	bounds: 2, 277, 107, 107
+Wifi_1
+	bounds: 72, 11, 55, 51
+Wifi_2
+	bounds: 144, 754, 86, 76
+	rotate: 90
+Wifi_3
+	bounds: 76, 238, 37, 30
+	rotate: 90

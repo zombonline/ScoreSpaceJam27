@@ -14,9 +14,11 @@ public struct WaveStep
     [Range(0, 2)]
     public int micelvl2;
     [Range(0, 2)]
-    public int birdslvl2;
-    [Range(0, 2)]
     public int dogslvl2;
+    [Range(0, 2)]
+    public int micelvl3;
+    [Range(0, 2)]
+    public int dogslvl3;
 }
 [CreateAssetMenu(fileName = "New Wave", menuName = "Wave")]
 

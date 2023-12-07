@@ -1,0 +1,18 @@
+Use the cards below to pick out your feline goon, and if you can afford to hire them, you'll be able to
+place them on any available tile occupied by back alley junk! You must choose wisely 
+as once they have been placed, you can retire them but do not expect all your money back!
+Once you're happy with your set up. Hit space to begin your next battle. Keep an eye on your
+ammo stash in the bottom left! Each goon will use up a certain ammo type,so you will have to
+stay on top of it to ensure you don't leave your gang defenceless! Upgrade your capacity or refill at a cost.
+You may notice that hiring new goons and refilling ammo costs a little more if you're midway through a battle.
+Try to avoid those costs by planning ahead during the 'deploy' stage.
+
+notes:
+'esc' to cancel placing a cat.
+hover over cards to raise them up
+hover over ammo to open the capacity upgrade window
+hover over already placed cats to take a look at their range
+space to begin a new wave.
+
+
+

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3115576892509292675
+--- !u!1 &6176896266604862043
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5252222437661889952}
-  - component: {fileID: 853674435397969672}
-  - component: {fileID: 1598737674104606017}
-  - component: {fileID: 9222524025357358700}
+  - component: {fileID: 585280677347853636}
+  - component: {fileID: 4855868412851233069}
+  - component: {fileID: 7118261047752400781}
+  - component: {fileID: 3341710982454835270}
   m_Layer: 0
-  m_Name: Spine GameObject (Remastered UI)
+  m_Name: Spine GameObject (Coin)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5252222437661889952
+--- !u!4 &585280677347853636
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3115576892509292675}
+  m_GameObject: {fileID: 6176896266604862043}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.1, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 213254342471176652}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &853674435397969672
+--- !u!33 &4855868412851233069
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3115576892509292675}
+  m_GameObject: {fileID: 6176896266604862043}
   m_Mesh: {fileID: 0}
---- !u!23 &1598737674104606017
+--- !u!23 &7118261047752400781
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3115576892509292675}
+  m_GameObject: {fileID: 6176896266604862043}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ad5323565287a94a8999fd8f71b1efd, type: 2}
+  - {fileID: 2100000, guid: e50acd47a087ac94a820c34bf802ef03, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,23 +80,23 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1499287221
-  m_SortingLayer: 2
-  m_SortingOrder: -1
+  m_SortingLayerID: -1406798775
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &9222524025357358700
+--- !u!114 &3341710982454835270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3115576892509292675}
+  m_GameObject: {fileID: 6176896266604862043}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonDataAsset: {fileID: 11400000, guid: e0fa67fa201dbfb4eaa8e69349be7b1b, type: 2}
+  skeletonDataAsset: {fileID: 11400000, guid: d3eba18b72fb18047bc0285eacbd9062, type: 2}
   initialSkinName: 
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
@@ -156,7 +156,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5252222437661889952}
+  - {fileID: 585280677347853636}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1524266638318566819
@@ -223,10 +223,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11f38cf1e076957469f58b29d3d4e771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 10
+  value: 5
   destroyOnPickup: 1
-  timeToDespawn: 10
-  spriteRenderer: {fileID: 1524266638318566819}
+  timeToDespawn: 6
+  meshRenderer: {fileID: 7118261047752400781}
+  collectPoint: {x: -21.75, y: 2.75}
   tile: {fileID: 0}
 --- !u!61 &4653513713193942597
 BoxCollider2D:

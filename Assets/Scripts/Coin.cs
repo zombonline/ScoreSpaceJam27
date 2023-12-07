@@ -10,7 +10,8 @@ public class Coin : MonoBehaviour
     [SerializeField] bool destroyOnPickup;
     [SerializeField] float timeToDespawn;
     float timer;
-    [SerializeField] SpriteRenderer spriteRenderer;
+    [SerializeField] MeshRenderer meshRenderer;
+    [SerializeField] Vector2 collectPoint;
 
     bool coRoutineRunning = false;
     public MapTile tile;
@@ -25,6 +26,14 @@ public class Coin : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        StartCoroutine(ClickRoutine());
+    }
+
+    IEnumerator ClickRoutine()
+    {
+        tile.coins.Remove(this);
+        LeanTween.move(gameObject, collectPoint, .5f).setEaseInExpo();
+        yield return new WaitForSeconds(.5f);
         Collect();
     }
 
@@ -58,10 +67,9 @@ public class Coin : MonoBehaviour
             var timeToWait = .1f * timer;
             if(timeToWait < .125f) { timeToWait = .125f; }
             if (timeToWait > .5f) { timeToWait = .5f; }
-            Color c = spriteRenderer.color;
-            spriteRenderer.color = new Color(c.r, c.g, c.b, 0);
+            meshRenderer.enabled = false;
             yield return new WaitForSeconds(timeToWait);
-            spriteRenderer.color = new Color(c.r, c.g, c.b, 1f);
+            meshRenderer.enabled = true;
             yield return new WaitForSeconds(timeToWait);
         }
     }

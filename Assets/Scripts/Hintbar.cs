@@ -63,9 +63,9 @@ public class Hintbar : MonoBehaviour
         else { hintText.color = Color.white; }
 
         hintText.rectTransform.anchoredPosition = originalTextPos;
-        while (hintText.rectTransform.anchoredPosition.x >  -1920 - hintText.rectTransform.sizeDelta.x)
+        while (hintText.rectTransform.anchoredPosition.x >  -GetComponent<RectTransform>().sizeDelta.x - hintText.rectTransform.sizeDelta.x)
         {
-            hintText.rectTransform.anchoredPosition = new Vector2(hintText.rectTransform.anchoredPosition.x - 5, hintText.rectTransform.anchoredPosition.y);
+            hintText.rectTransform.anchoredPosition = new Vector2(hintText.rectTransform.anchoredPosition.x - 8.75f, hintText.rectTransform.anchoredPosition.y);
             yield return new WaitForSeconds(0.02f);
         }
         hintText.rectTransform.anchoredPosition = Vector3.zero;

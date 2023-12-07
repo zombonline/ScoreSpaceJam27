@@ -25,11 +25,14 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] Paths[] pathsMouse, pathsBird, pathsDog;
 
-    [SerializeField] GameObject mousePrefab, birdPrefab, dogPrefab;
+    [SerializeField] GameObject mousePrefab, birdPrefab, dogPrefab, mouseLvl2Prefab, dogLvl2Prefab, mouseLvl3Prefab, dogLvl3Prefab;
 
     [SerializeField] UnityEvent onWaveEnd, onWaveStart;
 
     [SerializeField] TextMeshProUGUI textWaveCounter;
+
+    float newWaveDelay = 5f;
+    float newWaveDelayTimer;
     private void Awake()
     {
         LoadNewWave();
@@ -37,7 +40,8 @@ public class WaveSystem : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && gameMode == GameMode.Build)
+        newWaveDelayTimer -= Time.deltaTime;
+        if(Input.GetKeyDown(KeyCode.Space) && gameMode == GameMode.Build && newWaveDelayTimer <= 0)
         {
             gameMode = GameMode.Battle;
             
@@ -55,7 +59,10 @@ public class WaveSystem : MonoBehaviour
         SpawnEnemy(waveStep.mice, pathsMouse, mousePrefab);
         SpawnEnemy(waveStep.birds, pathsBird, birdPrefab);
         SpawnEnemy(waveStep.dogs, pathsDog, dogPrefab);
-
+        SpawnEnemy(waveStep.micelvl2, pathsMouse, mouseLvl2Prefab);
+        SpawnEnemy(waveStep.dogslvl2, pathsDog, dogLvl2Prefab);
+        SpawnEnemy(waveStep.micelvl3, pathsMouse, mouseLvl3Prefab);
+        SpawnEnemy(waveStep.dogslvl3, pathsDog, dogLvl3Prefab);
         currentWaveStep++;
     }
     //do every beat
@@ -65,6 +72,7 @@ public class WaveSystem : MonoBehaviour
         if (FindObjectsOfType<EnemyMovement>().Length > 0) { return; } //Wave still has active enemies. Wave not over.
 
         gameMode = GameMode.Build;
+        newWaveDelayTimer = newWaveDelay;
         onWaveEnd.Invoke();
         LoadNewWave();
     }
@@ -98,5 +106,8 @@ public class WaveSystem : MonoBehaviour
         GetComponent<ReactOnBeat>().SetBeatsToReactOn(waves[currentWave].beatsToSpawnOn);
     }
 
-
+    public void SetGameMode(GameMode val)
+    {
+        gameMode = val;
+    }
 }

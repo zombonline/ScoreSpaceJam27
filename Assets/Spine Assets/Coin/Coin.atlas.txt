@@ -1,0 +1,44 @@
+Coin.png
+	size: 3460, 184
+	filter: Linear, Linear
+	pma: true
+Coin_10
+	bounds: 2, 2, 180, 180
+Coin_11
+	bounds: 184, 2, 180, 180
+Coin_21
+	bounds: 184, 2, 180, 180
+Coin_12
+	bounds: 366, 2, 180, 180
+Coin_13
+	bounds: 548, 2, 180, 180
+Coin_14
+	bounds: 730, 2, 180, 180
+Coin_15
+	bounds: 912, 2, 180, 180
+Coin_16
+	bounds: 1094, 2, 180, 180
+Coin_17
+	bounds: 1276, 2, 180, 180
+Coin_18
+	bounds: 1458, 2, 180, 180
+Coin_19
+	bounds: 1640, 2, 180, 180
+Coin_2
+	bounds: 1822, 2, 180, 180
+Coin_20
+	bounds: 2004, 2, 180, 180
+Coin_3
+	bounds: 2186, 2, 180, 180
+Coin_4
+	bounds: 2368, 2, 180, 180
+Coin_5
+	bounds: 2550, 2, 180, 180
+Coin_6
+	bounds: 2732, 2, 180, 180
+Coin_7
+	bounds: 2914, 2, 180, 180
+Coin_8
+	bounds: 3096, 2, 180, 180
+Coin_9
+	bounds: 3278, 2, 180, 180

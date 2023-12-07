@@ -18,9 +18,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 0}
   bulletIcon: {fileID: 0}
   upgrades:
-  - cost: 200
+  - cost: 150
     amount: 10
-  - cost: 350
+  - cost: 250
     amount: 20
-  - cost: 500
+  - cost: 325
     amount: 30

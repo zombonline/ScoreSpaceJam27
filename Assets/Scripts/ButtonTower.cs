@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,130 +12,94 @@ public class ButtonTower : MonoBehaviour
     [SerializeField] SOTower soTower;
     [SerializeField] Image imgCard;
     [SerializeField] TextMeshProUGUI textCost;
-    int currentCost;
+    int costDisplayed;
     float costFontSize;
-    bool selected;
+    [SerializeField] Button purchaseButton;
 
-    bool coroutineRunning = false;
+    bool mouseOver = false, selected = false;
+
+    Vector2 initialPosition, hoveredPosition;
+    RectTransform cardTransform;
+
+    [SerializeField] RectTransform smallRect, largeRect;
     private void Awake()
     {
         placementManager = FindObjectOfType<PlacementManager>();
+        cardTransform = imgCard.GetComponent<RectTransform>();
 
-        imgCard.sprite = soTower.card;
-        currentCost = soTower.GetCostOfTower();
-        textCost.text = currentCost.ToString();
+        costDisplayed = soTower.GetCostOfTower();
+        textCost.text = costDisplayed.ToString();
 
         costFontSize = textCost.fontSize;
+
+        initialPosition = cardTransform.anchoredPosition;
+        hoveredPosition = new Vector2(cardTransform.anchoredPosition.x, cardTransform.anchoredPosition.y + (cardTransform.rect.height*.8f));        
     }
+
+    private void Update()
+    {
+        purchaseButton.interactable = soTower.GetCostOfTower() <= Bank.coins;
+        if(soTower.GetCostOfTower() <= Bank.coins)
+        {
+            imgCard.sprite = soTower.cardGlow;
+        }
+        else
+        {
+            imgCard.sprite = soTower.card;
+        }
+        CheckMousePosition();
+    }
+
+
 
     public void Press()
     {
-        if(soTower.GetCostOfTower() > Bank.coins) { UnableToPurchase(); return; } //Player does not have enough coins.
+        if(soTower.GetCostOfTower() > Bank.coins) { return; } //Player does not have enough coins.
         placementManager.AssignTowerHeld(soTower, this);
+        foreach(var towerButton in FindObjectsOfType<ButtonTower>())
+        {
+            towerButton.DisablePressedState();
+        }
         EnablePressedState();
     }
 
     public void UpdateCost()
     {
-        StartCoroutine(UpdateCostRoutine(currentCost, soTower.GetCostOfTower()));
+        LeanTween.value(costDisplayed, soTower.GetCostOfTower(), .25f).setOnUpdate(UpdateValueDisplay);
+    }
+    public void UpdateValueDisplay(float value)
+    {
+        costDisplayed = (int)value;
+        textCost.text = costDisplayed.ToString();
     }
 
-    private IEnumerator UpdateCostRoutine(int valueToUpdate, int newValue)
-    {
-        int diffBetweenCost = Mathf.Abs(newValue - valueToUpdate);
-        StartCoroutine(EnlargeCostTextRoutine());
-        while (valueToUpdate != newValue)
-        {
-            if (valueToUpdate < newValue)
-            {
-                valueToUpdate += diffBetweenCost / 10;
-                if (valueToUpdate > newValue) { valueToUpdate = newValue; }
-            }
-            else if (valueToUpdate > newValue)
-            {
-                valueToUpdate -= diffBetweenCost / 10;
-                if (valueToUpdate < newValue) { valueToUpdate = newValue; }
-            }
-            textCost.text = valueToUpdate.ToString();
-            yield return new WaitForSeconds(.05f);
-        }
-        currentCost = newValue;
-        textCost.text = currentCost.ToString();
-    }
-
-
-
-    IEnumerator Animate()
-    {
-        coroutineRunning= true;
-        while (selected)
-        {
-            var counter = 0;
-            while (counter < 150f)
-            {
-                counter++;
-                GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - .02f);
-                yield return new WaitForSeconds(0.001f);
-            }
-            counter = 0;
-            while (counter < 150f)
-            {
-                counter++;
-                GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + .02f);
-                yield return new WaitForSeconds(0.001f);
-            }
-            counter = 0;
-            while (counter < 150f)
-            {
-                counter++;
-                GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z + .02f);
-                yield return new WaitForSeconds(0.001f);
-            }
-            counter = 0;
-            while (counter < 150f)
-            {
-                counter++;
-                GetComponent<RectTransform>().eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z - .02f);
-                yield return new WaitForSeconds(0.001f);
-            }
-        }
-        coroutineRunning = false;
-
-    }
-    private IEnumerator EnlargeCostTextRoutine()
-    {
-        var diffBetweenSizes = Mathf.Abs(textCost.fontSize - costFontSize *1.2f);
-        while (textCost.fontSize < costFontSize * 1.2f)
-        {
-            textCost.fontSize++;
-            yield return new WaitForSeconds((.5f / diffBetweenSizes)/2f);
-        }
-        while (textCost.fontSize > costFontSize)
-        {
-            textCost.fontSize--;
-            yield return new WaitForSeconds((.5f / diffBetweenSizes) / 2f);
-        }
-    }
-
-    private void UnableToPurchase()
+    public void CheckMousePosition()
     {
 
+        Vector2 localMousePosition = smallRect.InverseTransformPoint(Input.mousePosition);
+        if (smallRect.rect.Contains(localMousePosition) && !mouseOver)
+        {
+            mouseOver= true;
+            LeanTween.move(cardTransform, hoveredPosition, .5f).setEase(LeanTweenType.easeInBack);
+
+        }
+        localMousePosition = largeRect.InverseTransformPoint(Input.mousePosition);
+        if (!largeRect.rect.Contains(localMousePosition) && mouseOver && !selected)
+        {
+            mouseOver= false;
+            LeanTween.move(cardTransform, initialPosition, .5f).setEase(LeanTweenType.easeOutBounce);
+
+        }
     }
 
     public void EnablePressedState()
     {
         selected = true;
-
-        if (!coroutineRunning)
-        {
-            StartCoroutine(Animate());
-        }
     }
 
     public void DisablePressedState()
     {
         selected = false;
     }
-
 
 }

@@ -22,27 +22,13 @@ public class Bank : MonoBehaviour
     public void AdjustCoins(int amount)
     {
         coins += amount;
-        StartCoroutine(UpdateCoinsRoutine(coinsDisplayed, coins));
-    }
-    private IEnumerator UpdateCoinsRoutine(int valueToUpdate, int newValue)
-    {
-        int diffBetweenCost = Mathf.Abs(newValue - valueToUpdate);
-        while(valueToUpdate != newValue)
-        { 
-            if (valueToUpdate < newValue)
-            {
-                valueToUpdate += diffBetweenCost/10 ;
-                if(valueToUpdate > newValue) { valueToUpdate = newValue; }
-            }
-            else if (valueToUpdate > newValue)
-            {
-                valueToUpdate -= diffBetweenCost/10;
-                if (valueToUpdate < newValue) { valueToUpdate = newValue; }
-            }
-            textCoins.text = valueToUpdate.ToString();
-            yield return new WaitForSeconds(.05f);
-        }
-        coinsDisplayed = newValue;
+        LeanTween.value(coinsDisplayed, coins, .25f).setOnUpdate(UpdateCoinDisplay);
     }
 
+    public void UpdateCoinDisplay(float value)
+    {
+        coinsDisplayed= (int)value;
+        textCoins.text = coinsDisplayed.ToString();
+    }
+    
 }
