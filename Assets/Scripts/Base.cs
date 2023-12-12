@@ -19,6 +19,7 @@ public class Base : MonoBehaviour
 
     private void Awake()
     {
+        gameOver = false;
         hitPoints = startHitPoints;
     }
 

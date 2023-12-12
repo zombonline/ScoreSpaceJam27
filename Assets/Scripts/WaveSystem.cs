@@ -35,6 +35,7 @@ public class WaveSystem : MonoBehaviour
     float newWaveDelayTimer;
     private void Awake()
     {
+        
         LoadNewWave();
     }
 

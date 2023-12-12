@@ -10,51 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a7db8e99092e394bb7a4ad6884f09a5, type: 3}
-  m_Name: Wave 20
+  m_Name: Wave 22
   m_EditorClassIdentifier: 
   waveSteps:
-  - mice: 1
-    birds: 0
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 1
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 1
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 0
-    micelvl2: 1
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 1
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 1
-    micelvl3: 0
-    dogslvl3: 0
   - mice: 2
     birds: 0
     dogs: 0
@@ -84,10 +42,52 @@ MonoBehaviour:
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 2
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 2
+  - mice: 0
     birds: 2
     dogs: 0
     micelvl2: 0
     dogslvl2: 0
+    micelvl3: 1
+    dogslvl3: 1
+  - mice: 0
+    birds: 0
+    dogs: 2
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 2
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 2
+    birds: 2
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 1
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
@@ -95,10 +95,10 @@ MonoBehaviour:
     dogs: 0
     micelvl2: 0
     dogslvl2: 2
-    micelvl3: 0
+    micelvl3: 2
     dogslvl3: 0
   - mice: 2
-    birds: 0
+    birds: 1
     dogs: 0
     micelvl2: 0
     dogslvl2: 1
@@ -135,37 +135,93 @@ MonoBehaviour:
   - mice: 0
     birds: 1
     dogs: 0
-    micelvl2: 0
+    micelvl2: 1
     dogslvl2: 0
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
     birds: 2
     dogs: 0
-    micelvl2: 2
+    micelvl2: 0
+    dogslvl2: 1
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 1
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
     dogslvl2: 1
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
-    birds: 0
+    birds: 1
     dogs: 0
     micelvl2: 0
-    dogslvl2: 2
-    micelvl3: 0
+    dogslvl2: 0
+    micelvl3: 2
     dogslvl3: 0
   - mice: 0
     birds: 0
     dogs: 0
     micelvl2: 0
-    dogslvl2: 2
-    micelvl3: 0
+    dogslvl2: 1
+    micelvl3: 2
     dogslvl3: 0
-  - mice: 0
+  - mice: 2
     birds: 0
     dogs: 0
     micelvl2: 0
     dogslvl2: 0
     micelvl3: 0
     dogslvl3: 0
-  beatsToSpawnOn: 010000000200000003000000
+  - mice: 1
+    birds: 1
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 1
+  - mice: 0
+    birds: 2
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 1
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 1
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 1
+  beatsToSpawnOn: 0100000004000000
   hint: 

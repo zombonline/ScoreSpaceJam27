@@ -11,4 +11,5 @@ public class GameOverScreen : MonoBehaviour
         LeanTween.move(rectTransform, Vector2.zero, 1f).setEaseOutBounce().setDelay(1f);
         FindObjectOfType<WaveSystem>().SetGameMode(GameMode.Build);
     }
+
 }

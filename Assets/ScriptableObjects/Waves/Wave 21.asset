@@ -10,10 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a7db8e99092e394bb7a4ad6884f09a5, type: 3}
-  m_Name: Wave 20
+  m_Name: Wave 21
   m_EditorClassIdentifier: 
   waveSteps:
-  - mice: 1
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 1
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 1
+  - mice: 2
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 2
     birds: 0
     dogs: 0
     micelvl2: 0
@@ -25,108 +46,115 @@ MonoBehaviour:
     dogs: 0
     micelvl2: 0
     dogslvl2: 0
+    micelvl3: 1
+    dogslvl3: 0
+  - mice: 0
+    birds: 1
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 1
+    micelvl3: 1
+    dogslvl3: 0
+  - mice: 2
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 1
+  - mice: 1
+    birds: 2
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 1
+  - mice: 0
+    birds: 0
+    dogs: 2
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 2
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 0
+    birds: 2
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 1
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 2
+    micelvl3: 2
+    dogslvl3: 0
+  - mice: 2
+    birds: 1
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 1
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
     birds: 0
     dogs: 1
-    micelvl2: 0
+    micelvl2: 2
     dogslvl2: 0
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
     birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 0
+    birds: 2
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 0
+    birds: 1
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 1
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 0
+    birds: 1
     dogs: 0
     micelvl2: 1
     dogslvl2: 0
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
-    birds: 1
+    birds: 2
     dogs: 0
     micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
+    dogslvl2: 1
+    micelvl3: 2
     dogslvl3: 0
   - mice: 0
     birds: 0
     dogs: 0
     micelvl2: 0
     dogslvl2: 1
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 2
-    birds: 0
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 2
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
+    micelvl3: 2
     dogslvl3: 0
   - mice: 0
     birds: 0
-    dogs: 2
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 0
-    micelvl2: 2
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 2
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 2
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 2
-    birds: 0
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 1
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 1
-    micelvl2: 2
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 2
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 1
     dogs: 0
     micelvl2: 0
     dogslvl2: 1
@@ -137,35 +165,8 @@ MonoBehaviour:
     dogs: 0
     micelvl2: 0
     dogslvl2: 0
-    micelvl3: 0
+    micelvl3: 2
     dogslvl3: 0
-  - mice: 0
-    birds: 2
-    dogs: 0
-    micelvl2: 2
-    dogslvl2: 1
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 2
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 2
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 0
-    birds: 0
-    dogs: 0
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  beatsToSpawnOn: 010000000200000003000000
-  hint: 
+  beatsToSpawnOn: 0100000003000000
+  hint: Frogue magazine - "If you're still not wearing a bullet proof vest, you have
+    0 sense of style."

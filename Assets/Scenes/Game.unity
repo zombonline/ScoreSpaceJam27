@@ -2104,14 +2104,14 @@ RectTransform:
   - {fileID: 873262147}
   - {fileID: 1529805609}
   - {fileID: 600968224}
-  - {fileID: 1927749487}
-  - {fileID: 1033632233}
-  - {fileID: 1305512857}
-  - {fileID: 1634693832}
   - {fileID: 803463696}
   - {fileID: 1081620424}
   - {fileID: 891443135}
   - {fileID: 682919503}
+  - {fileID: 1927749487}
+  - {fileID: 1033632233}
+  - {fileID: 1305512857}
+  - {fileID: 1634693832}
   - {fileID: 31326435}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3515,7 +3515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -3565,6 +3565,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6112,7 +6124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &600968224
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6146,7 +6158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -6848,6 +6860,10 @@ PrefabInstance:
     - target: {fileID: 2709439546983026578, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Name
       value: Tower Button (Magnet)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738220215143806127, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443259156478775932, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Pivot.x
@@ -8499,7 +8515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241, y: -48.399902}
+  m_AnchoredPosition: {x: 265.87, y: -57.101746}
   m_SizeDelta: {x: 282, y: 79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &873262148
@@ -8549,8 +8565,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8825,6 +8841,10 @@ PrefabInstance:
     - target: {fileID: 2709439546983026578, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Name
       value: Tower Button (Grenade)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738220215143806127, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443259156478775932, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Pivot.x
@@ -9960,15 +9980,15 @@ RectTransform:
   m_GameObject: {fileID: 966494142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 181568943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 53.69995, y: -48.399902}
-  m_SizeDelta: {x: 141, y: 158}
+  m_AnchoredPosition: {x: 74.8712, y: -52}
+  m_SizeDelta: {x: 74.8712, y: 83.8982}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &966494144
 MonoBehaviour:
@@ -10573,7 +10593,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -701.85, y: 412.6001}
+  m_AnchoredPosition: {x: -676.98, y: 403.89825}
   m_SizeDelta: {x: 316.3, y: 79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1033632234
@@ -10623,8 +10643,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10855,7 +10875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -10963,6 +10983,10 @@ PrefabInstance:
     - target: {fileID: 2709439546983026578, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Name
       value: Tower Button (Rifle)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738220215143806127, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443259156478775932, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Pivot.x
@@ -13137,7 +13161,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -906.30005, y: 418.89}
+  m_AnchoredPosition: {x: -885.13, y: 403.89825}
   m_SizeDelta: {x: 80.174, y: 66.4202}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1305512858
@@ -13817,6 +13841,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6b57a9e73fbedc64e9478a0d410035bf, type: 2}
   - {fileID: 11400000, guid: e181d631bacb93c49a8fb51ec1a1626d, type: 2}
   - {fileID: 11400000, guid: 30c76b103d015fd45a546a6bc6222647, type: 2}
+  - {fileID: 11400000, guid: d92e7b1d9f6a43344b4aa9b8f51a8ca9, type: 2}
+  - {fileID: 11400000, guid: 29e464c2ae2e0a44f80783b0b14aea23, type: 2}
+  - {fileID: 11400000, guid: c1ef776bc1ee66b48aaee67ebb8266d6, type: 2}
   pathsMouse:
   - path:
     - {fileID: 2079773742}
@@ -15683,7 +15710,7 @@ RectTransform:
   m_GameObject: {fileID: 1529805608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1397954804}
@@ -15700,7 +15727,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -193}
+  m_AnchoredPosition: {x: 50, y: -213.10175}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1543268994
@@ -15998,7 +16025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f844e2e821abcd4c8465ca469e55721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCoins: 550
+  startCoins: 650
   textCoins: {fileID: 873262148}
 --- !u!1001 &1562511870
 PrefabInstance:
@@ -16281,9 +16308,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634693831}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 181568943}
@@ -18896,8 +18923,28 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 181568943}
     m_Modifications:
+    - target: {fileID: 646399179678440667, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1370700893946292989, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1444927264876803055, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2718935263196422928, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2979622179561750740, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4129387611318864932, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4325160320377514106, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
@@ -18910,19 +18957,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325160320377514106, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4325160320377514106, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4325160320377514106, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4325160320377514106, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4325160320377514106, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_SizeDelta.x
@@ -18962,11 +19009,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4325160320377514106, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -630
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 4325160320377514106, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -327
+      value: 185
       objectReference: {fileID: 0}
     - target: {fileID: 4325160320377514106, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18980,16 +19027,44 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4426578628837206437, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4487367146522268982, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4849922931625536323, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4944404918971781002, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_Name
       value: Ammo Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5741039041868187783, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6005925617703823283, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6303210369456636466, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7930138158585533576, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8724150410263282026, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8807459743448235513, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -21656,6 +21731,10 @@ PrefabInstance:
     - target: {fileID: 2709439546983026578, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Name
       value: Tower Button (Pistol)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738220215143806127, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443259156478775932, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Pivot.x

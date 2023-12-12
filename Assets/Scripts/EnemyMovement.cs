@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    MapTile[] path;
+    public MapTile[] path;
     public int currentTile { get; private set; } = 0;
 
     bool move = true;

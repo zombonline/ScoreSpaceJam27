@@ -98,7 +98,7 @@ public class TargetRange : MonoBehaviour
             {
                 if (!possibleTargets.Contains(newPossibleTarget.tag)) { break; } //come out of loop if enemy is not a possible target
                 if (currentTarget == null) { currentTarget = newPossibleTarget; } //if no current target assigned, assign this one
-                else if(newPossibleTarget.currentTile > currentTarget.currentTile) //if this enemy is further ahead than current target, assign it this one.
+                else if(newPossibleTarget.currentTile/newPossibleTarget.path.Length > currentTarget.currentTile/currentTarget.path.Length) //if this enemy is further ahead than current target, assign it this one.
                 {
                     currentTarget = newPossibleTarget;
                 }

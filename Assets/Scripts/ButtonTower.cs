@@ -80,7 +80,7 @@ public class ButtonTower : MonoBehaviour
         if (smallRect.rect.Contains(localMousePosition) && !mouseOver)
         {
             mouseOver= true;
-            LeanTween.move(cardTransform, hoveredPosition, .5f).setEase(LeanTweenType.easeInBack);
+            LeanTween.move(cardTransform, hoveredPosition, .25f).setEase(LeanTweenType.easeInBack);
 
         }
         localMousePosition = largeRect.InverseTransformPoint(Input.mousePosition);

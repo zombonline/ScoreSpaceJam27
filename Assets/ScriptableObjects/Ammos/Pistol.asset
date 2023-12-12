@@ -19,8 +19,8 @@ MonoBehaviour:
   bulletIcon: {fileID: 0}
   upgrades:
   - cost: 175
-    amount: 25
-  - cost: 300
     amount: 50
-  - cost: 450
+  - cost: 300
     amount: 75
+  - cost: 450
+    amount: 100
