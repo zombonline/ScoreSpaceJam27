@@ -17,6 +17,8 @@ public  class PlacementManager : MonoBehaviour
 
     [SerializeField] Button buttonSellTower;
 
+    [SerializeField] Image imagePlaceCancelCat;
+
     public void Place(MapTile tile)
     {
         if (!canPlace) { return; } 
@@ -32,6 +34,7 @@ public  class PlacementManager : MonoBehaviour
 
     public void ClearTowerHeld()
     {
+        imagePlaceCancelCat.enabled = false;
         tempTower = null;
         towerHeld = null;
         towerHeldButton.DisablePressedState();
@@ -41,6 +44,7 @@ public  class PlacementManager : MonoBehaviour
     {
         if(!canPlace) { return; }
         //check if player can afford
+        imagePlaceCancelCat.enabled = true;
         towerHeld = tower;
         towerHeldButton = buttonTower;
         towerHeldButton.EnablePressedState();
@@ -81,7 +85,7 @@ public  class PlacementManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetMouseButtonDown(1))
         {
             ClearTowerHeld();
         }

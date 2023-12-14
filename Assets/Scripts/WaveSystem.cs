@@ -31,6 +31,10 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI textWaveCounter;
 
+    [SerializeField] TextMeshProUGUI textBeginPrompt,textWaveEnd;
+
+  
+
     float newWaveDelay = 5f;
     float newWaveDelayTimer;
     private void Awake()
@@ -42,10 +46,14 @@ public class WaveSystem : MonoBehaviour
     private void Update()
     {
         newWaveDelayTimer -= Time.deltaTime;
-        if(Input.GetKeyDown(KeyCode.Space) && gameMode == GameMode.Build && newWaveDelayTimer <= 0)
+        textBeginPrompt.enabled = (newWaveDelayTimer < -5f && gameMode == GameMode.Build);
+        // prompt player to begin if they can.
+        if(gameMode == GameMode.Battle) { return; } //already in a wave, don't start new one.
+        if(newWaveDelayTimer > 0) { return; } //wave delay timer not finished.
+        if (Base.gameOver) { return; } //game over, can't start new wave.
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             gameMode = GameMode.Battle;
-            
             onWaveStart.Invoke();
         }
     }
@@ -70,7 +78,9 @@ public class WaveSystem : MonoBehaviour
     public void CheckForWaveEnd()
     {
         if (currentWaveStep < waves[currentWave].waveSteps.Length) { return; } //Wave still has unactioned steps. Wave not over.
-        if (FindObjectsOfType<EnemyMovement>().Length > 0) { return; } //Wave still has active enemies. Wave not over.
+        if (FindObjectsOfType<EnemyMovement>().Length > 0 || 
+            FindObjectsOfType<Coin>().Length > 0) { return; }
+        //Wave still has active enemies or coins to be collected. Wave not over.
 
         gameMode = GameMode.Build;
         newWaveDelayTimer = newWaveDelay;
@@ -98,6 +108,7 @@ public class WaveSystem : MonoBehaviour
     {
         currentWave++;
         textWaveCounter.text = "Wave " + (currentWave+1).ToString();
+        textWaveEnd.text = "Waves complete: " + (currentWave + 1).ToString();
         currentWaveStep = 0;
         if (currentWave > waves.Length) { return; } //No waves remain
         if (waves[currentWave].hint != null)
