@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{414e1747-59a4-401a-a15e-8adb35dd5435}">
+		<property name="assetPath">
+			<value>SFX/UI/Armory/Upgrade Box/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e262c25e-1e1a-4a97-a512-e60b0c073004}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{4dbd0988-3d7d-4fd9-850a-fecdef50a7f7}">
+		<property name="assetPath">
+			<value>SFX/UI/Buttons/General/Button_Hover.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.083446712018140592</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e262c25e-1e1a-4a97-a512-e60b0c073004}</destination>
+		</relationship>
+	</object>
+</objects>

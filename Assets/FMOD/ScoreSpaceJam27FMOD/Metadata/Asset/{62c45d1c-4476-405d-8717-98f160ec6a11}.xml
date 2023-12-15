@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{62c45d1c-4476-405d-8717-98f160ec6a11}">
+		<property name="assetPath">
+			<value>SFX/Cats/Cat_Place/Meows/Grenade/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e262c25e-1e1a-4a97-a512-e60b0c073004}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b50ab0a9-a1d9-439d-b834-9ac9b35172a0}">
+		<property name="assetPath">
+			<value>SFX/Cats/Cat_Place/Meows/Magnet/Cat_Place_Meow_Magnet_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.2983219954648526</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e262c25e-1e1a-4a97-a512-e60b0c073004}</destination>
+		</relationship>
+	</object>
+</objects>

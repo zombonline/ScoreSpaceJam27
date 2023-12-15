@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{4d7abbd5-d4eb-4f76-b2e6-34c91e96ca69}">
+		<property name="assetPath">
+			<value>SFX/Cats/Cat_Click/Cat_Click_Angry/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e262c25e-1e1a-4a97-a512-e60b0c073004}</destination>
+		</relationship>
+	</object>
+</objects>
