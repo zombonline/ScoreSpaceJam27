@@ -98,12 +98,11 @@ using UnityEngine;
 
     public void OnMouseDown()
     {
-        if(ableToHoldTower)
+        placementManager.SetLastSelectedTile(this);
+        if (ableToHoldTower)
         {
             placementManager.Place(this);
         }
-        placementManager.SetLastSelectedTile(this);
-
     }
 
 

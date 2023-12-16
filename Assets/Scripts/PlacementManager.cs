@@ -64,11 +64,13 @@ public  class PlacementManager : MonoBehaviour
 
     public void SetLastSelectedTile(MapTile tile)
     {
+        if(towerHeld != null) { return; }
         if(lastSelectedTile!= null){ lastSelectedTile.DisableSelectSprite(); } //disable previously selected tile selectsprite if it exists
         lastSelectedTile = tile; //assign new selected tile
         lastSelectedTile.EnableSelectSprite(); //show selectsprite on new tile
         if(lastSelectedTile.placedTower != null) //if tower on last selected tile, enable refund option
         {
+            FMODController.PlaySFX("event:/SFX/Cats/Clicking/Cat_Click");
             buttonSellTower.gameObject.SetActive(true);
             buttonSellTower.GetComponentInChildren<TextMeshProUGUI>().text = "+" + lastSelectedTile.placedTowerRefundValue.ToString();
         }
