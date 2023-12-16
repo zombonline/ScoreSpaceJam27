@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{53cd6024-d078-4b70-9bcb-5d98050e1357}">
+		<property name="name">
+			<value>Refill</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e27a589a-436c-4e4f-96ea-2129998dd88b}</destination>
+		</relationship>
+	</object>
+</objects>

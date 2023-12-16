@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{55f18fea-ecb3-4d21-bb1b-be913d186881}">
+		<property name="name">
+			<value>GrenadeAmmo</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b4324fa-a787-4d4b-9e7a-dcdcd3f86578}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f068e67e-a383-4bd4-b5db-7ff2f62ff18d}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f068e67e-a383-4bd4-b5db-7ff2f62ff18d}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>Yes</value>
+			<value>No</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

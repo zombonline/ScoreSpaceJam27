@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{36ab6514-3387-4fc3-ba9a-8110ada3a7bd}">
+		<property name="name">
+			<value>Rifle</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7445916d-0073-4331-9f47-c7f1408218d4}</destination>
+		</relationship>
+	</object>
+</objects>

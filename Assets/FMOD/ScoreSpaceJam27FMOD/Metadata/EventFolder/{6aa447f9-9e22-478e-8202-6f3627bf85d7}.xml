@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{6aa447f9-9e22-478e-8202-6f3627bf85d7}">
+		<property name="name">
+			<value>Mouse</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ea276324-1473-4628-ab3d-46d70ccb869d}</destination>
+		</relationship>
+	</object>
+</objects>
