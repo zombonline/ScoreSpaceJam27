@@ -18,3 +18,4 @@ MonoBehaviour:
   towerPrefab: {fileID: 4437146109528682727, guid: 02da94a365653ca4fa67e37e9e018e28, type: 3}
   card: {fileID: 21300000, guid: 1c040c9be6d39c04aaf939cf67a05966, type: 3}
   cardGlow: {fileID: 21300000, guid: d97b93ee2896df741b2648705bb19277, type: 3}
+  placeSFX: event:/SFX/Cats/Placing/Cat_Place_Grenade

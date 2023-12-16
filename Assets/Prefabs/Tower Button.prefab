@@ -143,6 +143,8 @@ MonoBehaviour:
   purchaseButton: {fileID: 2738220215143806127}
   smallRect: {fileID: 568828311345585282}
   largeRect: {fileID: 6698522150637330642}
+  cardOpenSFX: event:/SFX/UI/Cards/Card_Show
+  cardCloseSFX: event:/SFX/UI/Cards/Card_Hide
 --- !u!1 &3308612519515755753
 GameObject:
   m_ObjectHideFlags: 0

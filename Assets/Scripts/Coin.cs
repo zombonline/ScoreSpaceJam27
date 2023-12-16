@@ -15,6 +15,8 @@ public class Coin : MonoBehaviour
 
     bool coRoutineRunning = false;
     public MapTile tile;
+    bool flashing = false;
+    bool collected = false;
     private void Awake()
     {
         timer = timeToDespawn;
@@ -26,14 +28,22 @@ public class Coin : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        StartCoroutine(ClickRoutine());
+        if (!collected)
+        {
+            collected = true;
+            StartCoroutine(ClickRoutine());
+        }
     }
 
     IEnumerator ClickRoutine()
     {
         tile.coins.Remove(this);
+        FMODController.PlaySFX("event:/SFX/Map/Coins/Coin_Click");
+        flashing = false;
+        meshRenderer.enabled = true;
         LeanTween.move(gameObject, collectPoint, .5f).setEaseInExpo();
         yield return new WaitForSeconds(.5f);
+        FMODController.PlaySFX("event:/SFX/Map/Coins/Coin_Added");
         Collect();
     }
 
@@ -61,7 +71,7 @@ public class Coin : MonoBehaviour
     IEnumerator DespawnFlash()
     {
         coRoutineRunning = true;
-        var flashing = true;
+        flashing = true;
         while(flashing)
         {
             var timeToWait = .1f * timer;

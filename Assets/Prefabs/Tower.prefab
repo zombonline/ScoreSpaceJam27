@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatsToReactOn: 01000000020000000300000004000000
   markersToReactOn:
-  - Wave
+  - Defend
   reactEvent:
     m_PersistentCalls:
       m_Calls:
@@ -276,7 +276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatsToReactOn: 01000000020000000300000004000000
   markersToReactOn:
-  - Wave
+  - Defend
   reactEvent:
     m_PersistentCalls:
       m_Calls:

@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06dfdf5efe5cf304aac8d1b006c594a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  path: []
   speed: 8
   animationControlledByThisScript: 0
 --- !u!114 &8243472646969724047
@@ -79,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatsToReactOn: 01000000020000000300000004000000
   markersToReactOn:
-  - Wave
+  - Defend
   reactEvent:
     m_PersistentCalls:
       m_Calls:

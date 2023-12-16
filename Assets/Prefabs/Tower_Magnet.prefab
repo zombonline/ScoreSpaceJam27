@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: initialSkinName
       value: Mag Cat Front
       objectReference: {fileID: 0}
+    - target: {fileID: 3962405949392240066, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
+      objectReference: {fileID: 0}
     - target: {fileID: 4616960656316526965, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -290,7 +294,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6639345657934296495, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: markersToReactOn.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6639345657934296495, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
@@ -306,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6639345657934296495, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: markersToReactOn.Array.data[1]
-      value: Wave_Intro
+      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: 6639345657934296495, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: markersToReactOn.Array.data[2]

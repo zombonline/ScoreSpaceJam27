@@ -22,6 +22,8 @@ public class ButtonTower : MonoBehaviour
     RectTransform cardTransform;
 
     [SerializeField] RectTransform smallRect, largeRect;
+
+    [SerializeField] string cardOpenSFX, cardCloseSFX;
     private void Awake()
     {
         placementManager = FindObjectOfType<PlacementManager>();
@@ -81,14 +83,14 @@ public class ButtonTower : MonoBehaviour
         {
             mouseOver= true;
             LeanTween.move(cardTransform, hoveredPosition, .25f).setEase(LeanTweenType.easeInBack);
-
+            FMODController.PlaySFX(cardOpenSFX);
         }
         localMousePosition = largeRect.InverseTransformPoint(Input.mousePosition);
         if (!largeRect.rect.Contains(localMousePosition) && mouseOver && !selected)
         {
             mouseOver= false;
             LeanTween.move(cardTransform, initialPosition, .5f).setEase(LeanTweenType.easeOutBounce);
-
+            FMODController.PlaySFX(cardCloseSFX);
         }
     }
 

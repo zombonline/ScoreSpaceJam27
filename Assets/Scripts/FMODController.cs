@@ -1,22 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
 public class FMODController : MonoBehaviour
 {
 
-    public void ChangMenuToBuilding( int value)
-    {
-        FindObjectOfType<BeatManager>().instance.setParameterByName("Menu to Building", value, false);
-    }
     public void ChangeMusicState(int value)
     {
-        FindObjectOfType<BeatManager>().instance.setParameterByName("Music State" , value, false);
+        FindObjectOfType<BeatManager>().instance.setParameterByName("Music State New" , value, false);
     }
-    public void TransitionToBuild()
+    public static void PlaySFX(string val)
     {
-        //wave has ended, music should transition to a calm version of the song
-        //marker will b esomething like build which means enemies are not spawning or moving on each beat.
+        var newAudioEvent = RuntimeManager.CreateInstance(val);
+        newAudioEvent.start();
     }
-
 }

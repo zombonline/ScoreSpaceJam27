@@ -6669,7 +6669,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -14367,7 +14367,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14514,7 +14514,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14659,7 +14659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   beatsToReactOn: 01000000
   markersToReactOn:
-  - Wave
+  - Defend
   reactEvent:
     m_PersistentCalls:
       m_Calls:
@@ -16338,7 +16338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f844e2e821abcd4c8465ca469e55721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCoins: 650
+  startCoins: 10729
   textCoins: {fileID: 873262148}
 --- !u!1001 &1562511870
 PrefabInstance:
@@ -16442,6 +16442,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5789532488401293510, guid: 1f57375ff8a723243973f1e29ed287e4, type: 3}
   m_PrefabInstance: {fileID: 1562511870}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1571917107
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1571917109}
+  - component: {fileID: 1571917108}
+  m_Layer: 0
+  m_Name: Ambience Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1571917108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571917107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1046822793
+      Data2: 1201314356
+      Data3: 1455920015
+      Data4: -1171962619
+    Path: event:/SFX/Ambience/Ambience_Main
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!4 &1571917109
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571917107}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1577659316 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 261422541088979055, guid: 1f57375ff8a723243973f1e29ed287e4, type: 3}
@@ -19248,6 +19311,34 @@ PrefabInstance:
       propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1883969854070867193, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: refillSFX
+      value: event:/SFX/UI/Armory/Refill/Refill_Pistol
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883969854070867193, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: ammoDrawerOpenSFX
+      value: event:/SFX/UI/Armory/Upgrade Box/UpgradeBox_Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883969854070867193, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: ammoDrawerCloseSFX
+      value: event:/SFX/UI/Armory/Upgrade Box/UpgradeBox_Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883969854070867193, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883969854070867193, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.data[0]
+      value: event:/SFX/UI/Armory/Upgrade Box/Pistol/UpgradeBox_Pistol_Tier1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883969854070867193, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.data[1]
+      value: event:/SFX/UI/Armory/Upgrade Box/Pistol/UpgradeBox_Pistol_Tier2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883969854070867193, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.data[2]
+      value: event:/SFX/UI/Armory/Upgrade Box/Pistol/UpgradeBox_Pistol_Tier3
+      objectReference: {fileID: 0}
     - target: {fileID: 2718935263196422928, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0
@@ -19255,6 +19346,34 @@ PrefabInstance:
     - target: {fileID: 2979622179561750740, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3992112383647365938, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: refillSFX
+      value: event:/SFX/UI/Armory/Refill/Refill_Grenade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3992112383647365938, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: ammoDrawerOpenSFX
+      value: event:/SFX/UI/Armory/Upgrade Box/UpgradeBox_Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 3992112383647365938, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: ammoDrawerCloseSFX
+      value: event:/SFX/UI/Armory/Upgrade Box/UpgradeBox_Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 3992112383647365938, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3992112383647365938, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.data[0]
+      value: event:/SFX/UI/Armory/Upgrade Box/Grenade/UpgradeBox_Grenade_Tier1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3992112383647365938, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.data[1]
+      value: event:/SFX/UI/Armory/Upgrade Box/Grenade/UpgradeBox_Grenade_Tier2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3992112383647365938, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.data[2]
+      value: event:/SFX/UI/Armory/Upgrade Box/Grenade/UpgradeBox_Grenade_Tier3
       objectReference: {fileID: 0}
     - target: {fileID: 4129387611318864932, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_Navigation.m_Mode
@@ -19371,6 +19490,34 @@ PrefabInstance:
     - target: {fileID: 7930138158585533576, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084780714275942254, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: refillSFX
+      value: event:/SFX/UI/Armory/Refill/Refill_Rifle
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084780714275942254, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: ammoDrawerOpenSFX
+      value: event:/SFX/UI/Armory/Upgrade Box/UpgradeBox_Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084780714275942254, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: ammoDrawerCloseSFX
+      value: event:/SFX/UI/Armory/Upgrade Box/UpgradeBox_Close
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084780714275942254, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084780714275942254, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.data[0]
+      value: event:/SFX/UI/Armory/Upgrade Box/Rifle/UpgradeBox_Rifle_Tier1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084780714275942254, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.data[1]
+      value: event:/SFX/UI/Armory/Upgrade Box/Rifle/UpgradeBox_Rifle_Tier2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084780714275942254, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
+      propertyPath: upgradeSFX.Array.data[2]
+      value: event:/SFX/UI/Armory/Upgrade Box/Rifle/UpgradeBox_Rifle_Tier3
       objectReference: {fileID: 0}
     - target: {fileID: 8724150410263282026, guid: 9b6b3758ad4f56844a5b21bcae9100fa, type: 3}
       propertyPath: m_LocalScale.x
@@ -22413,6 +22560,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5367794452783951173, guid: 101f3d5e4d3327947aebb51efa60ee78, type: 3}
+      propertyPath: StopEvent
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367794452783951173, guid: 101f3d5e4d3327947aebb51efa60ee78, type: 3}
+      propertyPath: Params.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367794452783951173, guid: 101f3d5e4d3327947aebb51efa60ee78, type: 3}
+      propertyPath: Params.Array.data[0].Name
+      value: Music State New
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367794452783951173, guid: 101f3d5e4d3327947aebb51efa60ee78, type: 3}
       propertyPath: Params.Array.data[0].Value
       value: 1
       objectReference: {fileID: 0}
@@ -22426,7 +22585,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6545314609947543855, guid: 101f3d5e4d3327947aebb51efa60ee78, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6545314609947543855, guid: 101f3d5e4d3327947aebb51efa60ee78, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -22495,3 +22654,4 @@ SceneRoots:
   - {fileID: 431516693}
   - {fileID: 962591824}
   - {fileID: 377478857}
+  - {fileID: 1571917109}

@@ -18,3 +18,4 @@ MonoBehaviour:
   towerPrefab: {fileID: 4437146109528682727, guid: bd1b35fb6b8abbf439193b095bb3b50f, type: 3}
   card: {fileID: 21300000, guid: f01d743fae3102d4ea8d77208067a390, type: 3}
   cardGlow: {fileID: 21300000, guid: 1f2311575ec0c3d44a13f3cb334881a8, type: 3}
+  placeSFX: event:/SFX/Cats/Placing/Cat_Place_Pistol

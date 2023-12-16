@@ -26,6 +26,7 @@ public  class PlacementManager : MonoBehaviour
         if(tile.placedTower != null) { return; } //tower already on tile
         tile.ReceiveTower(towerHeld.towerPrefab);
         tile.SetRefundValue(towerHeld.refundCost);
+        FMODController.PlaySFX(towerHeld.placeSFX);
         FindObjectOfType<Bank>().AdjustCoins(-towerHeld.GetCostOfTower());
 
         //if the player now has less than cost of currently held tower
@@ -34,6 +35,8 @@ public  class PlacementManager : MonoBehaviour
 
     public void ClearTowerHeld()
     {
+        if (towerHeld == null) { return; }
+        FMODController.PlaySFX("event:/SFX/UI/Buttons/Hire/Button_Hire_Cancel");
         imagePlaceCancelCat.enabled = false;
         tempTower = null;
         towerHeld = null;
@@ -44,6 +47,7 @@ public  class PlacementManager : MonoBehaviour
     {
         if(!canPlace) { return; }
         //check if player can afford
+        FMODController.PlaySFX("event:/SFX/UI/Buttons/Hire/Button_Hire");
         imagePlaceCancelCat.enabled = true;
         towerHeld = tower;
         towerHeldButton = buttonTower;
@@ -77,6 +81,7 @@ public  class PlacementManager : MonoBehaviour
     {
         if (lastSelectedTile.placedTower != null) //if tower on last selected tile
         {
+            FMODController.PlaySFX("event:/SFX/UI/Buttons/Retire/Button_Retire");
             lastSelectedTile.RemoveTower();
             FindObjectOfType<Bank>().AdjustCoins(lastSelectedTile.placedTowerRefundValue);
             Destroy(lastSelectedTile.placedTower);

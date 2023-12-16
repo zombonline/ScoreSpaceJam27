@@ -88,10 +88,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1882537970
-      Data2: 1278926371
-      Data3: -339778628
-      Data4: 1975016611
+      Data1: -730681810
+      Data2: 1174356856
+      Data3: -1042313336
+      Data4: 47932649
     Path: event:/Music/Music
   Event: 
   PlayEvent: 1
@@ -100,11 +100,7 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   AllowNonRigidbodyDoppler: 0
-  Params:
-  - Name: Menu to Building
-    Value: 0
-  - Name: Music State
-    Value: 0
+  Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20

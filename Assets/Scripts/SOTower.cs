@@ -10,6 +10,7 @@ public class SOTower : ScriptableObject
     public int refundCost;
     public GameObject towerPrefab;
     public Sprite card,cardGlow;
+    public string placeSFX;
 
     public int GetCostOfTower()
     {

@@ -731,6 +731,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5367794452783951173, guid: 101f3d5e4d3327947aebb51efa60ee78, type: 3}
+      propertyPath: Params.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5367794452783951173, guid: 101f3d5e4d3327947aebb51efa60ee78, type: 3}
+      propertyPath: Params.Array.data[0].Name
+      value: Music State New
+      objectReference: {fileID: 0}
     - target: {fileID: 6545314609947543855, guid: 101f3d5e4d3327947aebb51efa60ee78, type: 3}
       propertyPath: m_Name
       value: Music Player
@@ -1030,7 +1038,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1221521993}
         m_TargetAssemblyTypeName: FMODController, Assembly-CSharp
-        m_MethodName: ChangMenuToBuilding
+        m_MethodName: ChangeMusicState
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3449,6 +3457,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2055493645}
   m_CullTransparentMesh: 1
+--- !u!4 &475921467572475770
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852864847225415678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1715345149483728655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3506,6 +3529,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e138277e7fa77e248bc8aac303ad7ca2, type: 3}
+--- !u!1 &2852864847225415678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475921467572475770}
+  - component: {fileID: 3980325681488135060}
+  m_Layer: 0
+  m_Name: Ambience Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &3980325681488135060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2852864847225415678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1273728489
+      Data2: 1143827962
+      Data3: 881617553
+      Data4: 75034836
+    Path: event:/SFX/Ambience/Ambience_Menu
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3514,6 +3585,7 @@ SceneRoots:
   - {fileID: 1823106488}
   - {fileID: 1189428965}
   - {fileID: 418341773}
+  - {fileID: 475921467572475770}
   - {fileID: 1221521994}
   - {fileID: 1715345149483728655}
   - {fileID: 282674573}

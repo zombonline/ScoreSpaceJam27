@@ -18,3 +18,4 @@ MonoBehaviour:
   towerPrefab: {fileID: 5393874914054829247, guid: 80894abb076e0704d8a0246f35ab01a6, type: 3}
   card: {fileID: 21300000, guid: e6a10d41b44b1de4ab4455a625cb5130, type: 3}
   cardGlow: {fileID: 21300000, guid: 465f6c5981ce7004092c1632034ad15f, type: 3}
+  placeSFX: event:/SFX/Cats/Placing/Cat_Place_Magnet

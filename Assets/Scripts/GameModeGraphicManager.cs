@@ -16,6 +16,8 @@ public class GameModeGraphicManager : MonoBehaviour
     public void ToggleGameModeGraphic(string mode)
     {
         StartCoroutine(ToggleGameModeGraphicRoutine(mode));
+        if(mode == "Deploy Mode") { FMODController.PlaySFX("event:/SFX/Map/Titles/Title_Deploy"); }
+        else { FMODController.PlaySFX("event:/SFX/Map/Titles/Title_Defend"); }
     }
 
     IEnumerator ToggleGameModeGraphicRoutine(string mode)

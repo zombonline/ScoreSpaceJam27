@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-
 public class AmmoCache : MonoBehaviour
 {
     [SerializeField] public SOAmmo ammo;
+    [SerializeField] string refillSFX;
+    [SerializeField] string[] upgradeSFX;
+    [SerializeField] string ammoDrawerOpenSFX, ammoDrawerCloseSFX;
 
     int _maxAmmo;
     int maxAmmo
@@ -88,6 +90,7 @@ public class AmmoCache : MonoBehaviour
         if(Bank.coins >= refillCost)
         {
             FindObjectOfType<Bank>().AdjustCoins(-refillCost);
+            FMODController.PlaySFX(refillSFX);
             currentAmmo = maxAmmo;
         }
     }
@@ -97,6 +100,7 @@ public class AmmoCache : MonoBehaviour
         {
             FindObjectOfType<Bank>().AdjustCoins(-ammo.upgrades[tier].cost);
             maxAmmo += ammo.upgrades[tier].amount;
+            FMODController.PlaySFX(upgradeSFX[tier]);
         }
     }
 
@@ -111,14 +115,14 @@ public class AmmoCache : MonoBehaviour
         if (smallRect.rect.Contains(localMousePosition) && !mouseOver)
         {
             mouseOver = true;
-            Debug.Log("Entered");
             mouseEnter.Invoke();
+            FMODController.PlaySFX(ammoDrawerOpenSFX);
         }
         else if (!largeRect.rect.Contains(localMousePosition) && mouseOver)
         {
             mouseOver = false;
-            Debug.Log("Exitted");
             mouseExit.Invoke();
+            FMODController.PlaySFX(ammoDrawerCloseSFX);
         }
     }
 

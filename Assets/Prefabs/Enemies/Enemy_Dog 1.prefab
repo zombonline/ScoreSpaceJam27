@@ -148,6 +148,10 @@ PrefabInstance:
       propertyPath: beatsToReactOn.Array.data[2]
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: -768980030469369415, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
+      objectReference: {fileID: 0}
     - target: {fileID: 1153690115158390522, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: startHitPoints
       value: 30
