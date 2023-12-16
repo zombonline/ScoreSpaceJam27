@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{020e9f72-cee2-4d69-8bb3-ea2032f01605}">
+		<property name="name">
+			<value>Music Detune</value>
+		</property>
+		<relationship name="folder">
+			<destination>{1b4324fa-a787-4d4b-9e7a-dcdcd3f86578}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{1071b7da-7c8a-4e54-9c4f-4b02ccf355de}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{1071b7da-7c8a-4e54-9c4f-4b02ccf355de}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeed">
+			<value>1.7000000476837158</value>
+		</property>
+	</object>
+</objects>

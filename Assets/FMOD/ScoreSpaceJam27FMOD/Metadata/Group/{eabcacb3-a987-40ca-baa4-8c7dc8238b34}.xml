@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{eabcacb3-a987-40ca-baa4-8c7dc8238b34}">
+		<property name="name">
+			<value>TreasureTrash</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{965d949a-dac8-47e6-8534-a62ab6cb97b8}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{b176a2a6-cb9b-4646-8c74-f044e4069d0a}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{2da2085e-ac79-4cc3-9a4a-316082d520e1}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{965d949a-dac8-47e6-8534-a62ab6cb97b8}">
+		<relationship name="effects">
+			<destination>{4f7bec3a-4714-4e90-8f0b-e4fb12eb2aa9}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{b176a2a6-cb9b-4646-8c74-f044e4069d0a}" />
+	<object class="MixerBusFader" id="{4f7bec3a-4714-4e90-8f0b-e4fb12eb2aa9}" />
+</objects>

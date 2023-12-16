@@ -59,10 +59,14 @@
 			<destination>{f1a62def-6ec6-448d-89b2-437680020237}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{235373d3-e7a3-465e-9c65-c2c456392410}</destination>
+			<destination>{d666037c-0b96-42d9-b4aa-da100f98694f}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{8849c0e5-ef75-4f4f-986e-a6f261c150e5}" />
+	<object class="EventAutomatableProperties" id="{8849c0e5-ef75-4f4f-986e-a6f261c150e5}">
+		<property name="priority">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{b14e87fb-cdf3-40e3-b060-c9ebc6f53a19}" />
 	<object class="GroupTrack" id="{a88ae7c8-56d3-42b2-a489-5faf38a5e20b}">
 		<relationship name="mixerGroup">
@@ -81,7 +85,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{a99514af-b8ed-4528-84f7-7c76cc3600f7}">
 		<property name="volume">
-			<value>-9</value>
+			<value>-10</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{d8829682-70f6-43a5-b726-458c2157c56d}</destination>
@@ -121,11 +125,12 @@
 	<object class="MixerBusEffectChain" id="{d8829682-70f6-43a5-b726-458c2157c56d}">
 		<relationship name="effects">
 			<destination>{b5da7465-49d2-4a6f-85f1-ec10bbe0e1ef}</destination>
+			<destination>{f24119a4-70e1-41c8-918c-dcb27b36cf5e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{3b6d3f14-dccc-4318-8b12-0701737cc4f4}">
 		<property name="stereoPan">
-			<value>56</value>
+			<value>28</value>
 		</property>
 	</object>
 	<object class="MultiSound" id="{9325da98-ed9c-450d-baad-651dfd9a2a1d}">
@@ -151,6 +156,17 @@
 	</object>
 	<object class="MixerBusPanner" id="{5f0132fd-1cc1-403e-ab50-d9ec69f7af82}" />
 	<object class="MixerBusFader" id="{b5da7465-49d2-4a6f-85f1-ec10bbe0e1ef}" />
+	<object class="MixerSend" id="{f24119a4-70e1-41c8-918c-dcb27b36cf5e}">
+		<property name="level">
+			<value>0</value>
+		</property>
+		<property name="inputFormat">
+			<value>1</value>
+		</property>
+		<relationship name="mixerReturn">
+			<destination>{71915fe5-d1b9-40f6-9055-e59c245f78a7}</destination>
+		</relationship>
+	</object>
 	<object class="RandomizerModulator" id="{7f3f3d19-f517-4add-9997-1d667ced866c}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
