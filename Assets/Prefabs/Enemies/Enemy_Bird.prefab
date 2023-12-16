@@ -39,11 +39,11 @@ PrefabInstance:
     - target: {fileID: 3303524598629720487, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: skeletonDataAsset
       value: 
-      objectReference: {fileID: 11400000, guid: b26453300f427514197f7f0dd5cc1ed6, type: 2}
+      objectReference: {fileID: 11400000, guid: fa438cf73fc6aeb4ca44724d8d5eef62, type: 2}
     - target: {fileID: 4944810408795440115, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9589027019ac2b4488a503e72fc79195, type: 2}
+      objectReference: {fileID: 2100000, guid: c30e65bfb01d56a449fe00cca03a211b, type: 2}
     - target: {fileID: 5030495180544423178, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

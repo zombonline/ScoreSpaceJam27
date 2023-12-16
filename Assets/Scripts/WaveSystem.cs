@@ -33,7 +33,7 @@ public class WaveSystem : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI textBeginPrompt,textWaveEnd;
 
-  
+    [SerializeField] string miceSpawnSFX, mice2SpawnSFX, mice3SpawnSFX, birdSpawnSFX, dogSpawnSFX, dog2SpawnSFX, dog3SpawnSFX;
 
     float newWaveDelay = 5f;
     float newWaveDelayTimer;
@@ -65,13 +65,13 @@ public class WaveSystem : MonoBehaviour
         if(currentWaveStep >= waves[currentWave].waveSteps.Length) { return; } //No more steps left in wave 
         if(gameMode== GameMode.Build) { return; }
         var waveStep = waves[currentWave].waveSteps[currentWaveStep];
-        SpawnEnemy(waveStep.mice, pathsMouse, mousePrefab);
-        SpawnEnemy(waveStep.birds, pathsBird, birdPrefab);
-        SpawnEnemy(waveStep.dogs, pathsDog, dogPrefab);
-        SpawnEnemy(waveStep.micelvl2, pathsMouse, mouseLvl2Prefab);
-        SpawnEnemy(waveStep.dogslvl2, pathsDog, dogLvl2Prefab);
-        SpawnEnemy(waveStep.micelvl3, pathsMouse, mouseLvl3Prefab);
-        SpawnEnemy(waveStep.dogslvl3, pathsDog, dogLvl3Prefab);
+        SpawnEnemy(waveStep.mice, pathsMouse, mousePrefab,miceSpawnSFX);
+        SpawnEnemy(waveStep.birds, pathsBird, birdPrefab, birdSpawnSFX);
+        SpawnEnemy(waveStep.dogs, pathsDog, dogPrefab,dogSpawnSFX);
+        SpawnEnemy(waveStep.micelvl2, pathsMouse, mouseLvl2Prefab, mice2SpawnSFX);
+        SpawnEnemy(waveStep.dogslvl2, pathsDog, dogLvl2Prefab, dog2SpawnSFX);
+        SpawnEnemy(waveStep.micelvl3, pathsMouse, mouseLvl3Prefab, mice3SpawnSFX);
+        SpawnEnemy(waveStep.dogslvl3, pathsDog, dogLvl3Prefab, dog3SpawnSFX);
         currentWaveStep++;
     }
     //do every beat
@@ -88,7 +88,7 @@ public class WaveSystem : MonoBehaviour
         LoadNewWave();
     }
 
-    private void SpawnEnemy(int enemyCount, Paths[] paths, GameObject enemyPrefab)
+    private void SpawnEnemy(int enemyCount, Paths[] paths, GameObject enemyPrefab, string sfxToPlay)
     {
         for (int i = 0; i < enemyCount; i++)
         {
@@ -101,6 +101,11 @@ public class WaveSystem : MonoBehaviour
             var newEnemy = Instantiate(enemyPrefab, path[0].transform.position, Quaternion.identity).GetComponent<EnemyMovement>();
             newEnemy.SetPath(path);
             path[0].ReceiveEnemy(newEnemy);
+
+            if(i == 0)
+            {
+                FMODController.PlaySFX(sfxToPlay);
+            }
         }
     }
 
