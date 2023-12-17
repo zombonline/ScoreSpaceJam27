@@ -34,6 +34,7 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] TextMeshProUGUI textBeginPrompt,textWaveEnd;
 
     [SerializeField] string miceSpawnSFX, mice2SpawnSFX, mice3SpawnSFX, birdSpawnSFX, dogSpawnSFX, dog2SpawnSFX, dog3SpawnSFX;
+    [SerializeField] List<string> playedSFX = new List<string>();   
 
     float newWaveDelay = 5f;
     float newWaveDelayTimer;
@@ -102,9 +103,10 @@ public class WaveSystem : MonoBehaviour
             newEnemy.SetPath(path);
             path[0].ReceiveEnemy(newEnemy);
 
-            if(i == 0)
+            if (i == 0 && !playedSFX.Contains(sfxToPlay)) 
             {
                 FMODController.PlaySFX(sfxToPlay);
+                playedSFX.Add(sfxToPlay);   
             }
         }
     }

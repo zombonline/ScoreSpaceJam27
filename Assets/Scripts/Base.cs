@@ -14,6 +14,8 @@ public class Base : MonoBehaviour
     [SerializeField] UnityEvent onGameOver;
     [SerializeField] SpriteRenderer spriteBase;
     [SerializeField] float lengthSpriteFlashSeconds = .5f, lengthBetweenFlashesSeconds = .1f;
+    [SerializeField] string baseDamageSFX;
+    [SerializeField] float snapShotDuration = .5f;
 
     public static bool gameOver = false;
 
@@ -33,7 +35,6 @@ public class Base : MonoBehaviour
                 skeletonGrahic.Skeleton.SetSkin("Heart Dead");
                 skeletonGrahic.Skeleton.SetSlotsToSetupPose();
                 skeletonGrahic.LateUpdate();
-
             }
         }
     }
@@ -46,13 +47,13 @@ public class Base : MonoBehaviour
             yield return new WaitForSeconds(lengthBetweenFlashesSeconds);
             spriteBase.color = Color.white;
         }
-        
     }
 
     public void AdjustHitPoints(int adjustment)
     {
         hitPoints += adjustment;
         UpdateHealthBar();
+        StartCoroutine(DamageSFXRoutine());
         if(adjustment < 0) { StartCoroutine(FlashSpriteRoutine()); } //if damage taken, flash sprite
         if (hitPoints <= 0)
         {
@@ -61,5 +62,11 @@ public class Base : MonoBehaviour
         }
     }
 
-
+    IEnumerator DamageSFXRoutine()
+    {
+        FMODController.PlaySnapshot();
+        FMODController.PlaySFX(baseDamageSFX);
+        yield return new WaitForSeconds(snapShotDuration);
+        FMODController.StopSnapshot();
+    }
 }

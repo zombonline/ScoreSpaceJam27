@@ -88,6 +88,10 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 5613958249003174049, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: backSkin
       value: Pistol Back Side
@@ -95,6 +99,10 @@ PrefabInstance:
     - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: leftAnim
       value: Look Left
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
+      propertyPath: shootSFX
+      value: event:/SFX/Cats/Shooting/Cat_Shoot_Pistol
       objectReference: {fileID: 0}
     - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: frontSkin

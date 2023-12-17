@@ -229,6 +229,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1221521993}
+        m_TargetAssemblyTypeName: FMODController, Assembly-CSharp
+        m_MethodName: PlayReadingSnapshot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &68768896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,6 +697,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1221521993}
+        m_TargetAssemblyTypeName: FMODController, Assembly-CSharp
+        m_MethodName: StopReadingSnapshot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &322974903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,6 +1072,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1221521993}
+        m_TargetAssemblyTypeName: FMODController, Assembly-CSharp
+        m_MethodName: StopReadingSnapshot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &658219952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1327,6 +1363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 799246340}
   - component: {fileID: 799246342}
+  - component: {fileID: 799246343}
   - component: {fileID: 799246341}
   m_Layer: 5
   m_Name: Settings Screen
@@ -1396,6 +1433,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799246339}
   m_CullTransparentMesh: 1
+--- !u!114 &799246343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799246339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a70f98a194948f4ab773eca6c5f1696, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSlider: {fileID: 1787182672}
+  sfxSlider: {fileID: 853442214}
 --- !u!1 &853442211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,9 +1549,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 799246343}
         m_TargetAssemblyTypeName: VolumeControl, Assembly-CSharp
-        m_MethodName: SetMusicVolume
+        m_MethodName: SetSFXVolume
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2291,6 +2342,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1221521993}
+        m_TargetAssemblyTypeName: FMODController, Assembly-CSharp
+        m_MethodName: StopReadingSnapshot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1589220604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2695,7 +2758,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 799246343}
         m_TargetAssemblyTypeName: VolumeControl, Assembly-CSharp
         m_MethodName: SetMusicVolume
         m_Mode: 0

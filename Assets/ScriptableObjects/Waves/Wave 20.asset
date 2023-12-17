@@ -151,14 +151,14 @@ MonoBehaviour:
     dogs: 0
     micelvl2: 0
     dogslvl2: 2
-    micelvl3: 0
+    micelvl3: 1
     dogslvl3: 0
   - mice: 0
     birds: 0
     dogs: 0
     micelvl2: 0
-    dogslvl2: 2
-    micelvl3: 0
+    dogslvl2: 0
+    micelvl3: 2
     dogslvl3: 0
   - mice: 0
     birds: 0
@@ -166,6 +166,7 @@ MonoBehaviour:
     micelvl2: 0
     dogslvl2: 0
     micelvl3: 0
-    dogslvl3: 0
+    dogslvl3: 1
   beatsToSpawnOn: 010000000200000003000000
-  hint: 
+  hint: '''Still walking around without full body armor? Get with the times!'' says
+    fashion guru Rob McBuster'

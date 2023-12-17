@@ -41,6 +41,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: fa438cf73fc6aeb4ca44724d8d5eef62, type: 2}
     - target: {fileID: 4944810408795440115, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944810408795440115, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 137080691
+      objectReference: {fileID: 0}
+    - target: {fileID: 4944810408795440115, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c30e65bfb01d56a449fe00cca03a211b, type: 2}

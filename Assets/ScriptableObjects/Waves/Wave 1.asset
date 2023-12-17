@@ -13,23 +13,30 @@ MonoBehaviour:
   m_Name: Wave 1
   m_EditorClassIdentifier: 
   waveSteps:
-  - mice: 2
+  - mice: 1
     birds: 2
-    dogs: 2
+    dogs: 0
     micelvl2: 0
     dogslvl2: 0
     micelvl3: 0
     dogslvl3: 0
-  - mice: 2
-    birds: 2
-    dogs: 2
-    micelvl2: 0
-    dogslvl2: 0
-    micelvl3: 0
-    dogslvl3: 0
-  - mice: 2
+  - mice: 1
     birds: 1
-    dogs: 2
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 2
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 2
+    birds: 0
+    dogs: 0
     micelvl2: 0
     dogslvl2: 0
     micelvl3: 0

@@ -168,5 +168,4 @@ MonoBehaviour:
     micelvl3: 2
     dogslvl3: 0
   beatsToSpawnOn: 0100000003000000
-  hint: Frogue magazine - "If you're still not wearing a bullet proof vest, you have
-    0 sense of style."
+  hint: 

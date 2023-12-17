@@ -29,6 +29,7 @@ public class TargetRange : MonoBehaviour
     Spine.AnimationState spineAnimationState;
     [SerializeField] string leftAnim, rightAnim, shootAnim, frontSkin, backSkin, magnetAnim;
 
+    [SerializeField] string shootSFX;
     private void Start()
     {
         spineAnimationState = skeletonAnimation.AnimationState;
@@ -168,6 +169,7 @@ public class TargetRange : MonoBehaviour
                     spineAnimationState.SetAnimation(1, magnetAnim, false);
 
                 }
+                FMODController.PlaySFX(shootSFX);
                 StartCoroutine(CollectCoinsRoutine(coin));
                 targetTile.coins.Remove(coin);
                 coinFound = true;
@@ -196,6 +198,7 @@ public class TargetRange : MonoBehaviour
         yield return new WaitForEndOfFrameUnit();
         if (GetTarget() != null)
         {
+            FMODController.PlaySFX(shootSFX);
             MapTile targetTile = GetTarget().GetCurrentTile();
             if (targetTile != null)
             {

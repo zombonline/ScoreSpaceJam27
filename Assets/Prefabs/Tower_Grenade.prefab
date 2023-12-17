@@ -109,6 +109,10 @@ PrefabInstance:
       value: Look Left
       objectReference: {fileID: 0}
     - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
+      propertyPath: shootSFX
+      value: event:/SFX/Cats/Shooting/Cat_Shoot_Grenade
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: frontSkin
       value: Grenade Cat Front
       objectReference: {fileID: 0}
