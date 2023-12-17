@@ -19,10 +19,13 @@ public class Base : MonoBehaviour
 
     public static bool gameOver = false;
 
+    int hitPointsLastBeat = 0;
+
     private void Awake()
     {
         gameOver = false;
         hitPoints = startHitPoints;
+        hitPointsLastBeat = hitPoints;
     }
 
     public void UpdateHealthBar()
@@ -68,5 +71,14 @@ public class Base : MonoBehaviour
         FMODController.PlaySFX(baseDamageSFX);
         yield return new WaitForSeconds(snapShotDuration);
         FMODController.StopSnapshot();
+    }
+
+    public void CheckIfDamaged()
+    {
+        if(hitPoints != hitPointsLastBeat)
+        {
+            FMODController.ToggleMusicDetune();
+        }
+        hitPointsLastBeat = hitPoints;
     }
 }

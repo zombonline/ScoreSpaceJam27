@@ -6,14 +6,31 @@ public class FMODController : MonoBehaviour
 {
     static FMOD.Studio.EventInstance snapshotHealthDown, snapshotReading;
 
+    static BeatManager beatManager;
+
     private void Awake()
     {
         snapshotHealthDown = RuntimeManager.CreateInstance("snapshot:/Health Down");
         snapshotReading = RuntimeManager.CreateInstance("snapshot:/Reading");
+
+        beatManager = FindObjectOfType<BeatManager>();
     }
+
     public void ChangeMusicState(int value)
     {
-        FindObjectOfType<BeatManager>().instance.setParameterByName("Music State New" , value, false);
+        beatManager.instance.setParameterByName("Music State New" , value, false);
+    }
+    public static void ToggleMusicDetune()
+    {
+        beatManager.instance.getParameterByName("Music Detune", out float value);
+        if (value == 0)
+        {
+            beatManager.instance.setParameterByName("Music Detune", 1, false);
+        }
+        else if (value == 1) 
+        {
+            beatManager.instance.setParameterByName("Music Detune", 0 , false);
+        }
     }
     public static void PlaySFX(string val)
     {

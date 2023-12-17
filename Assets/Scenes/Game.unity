@@ -6610,6 +6610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 623299308}
   - component: {fileID: 623299309}
+  - component: {fileID: 623299310}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -6679,6 +6680,36 @@ MonoBehaviour:
   lengthBetweenFlashesSeconds: 0.1
   baseDamageSFX: event:/SFX/Map/Treasure Trash/TreasureTrash_DamageReceived
   snapShotDuration: 0.4
+--- !u!114 &623299310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623299307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601c8fd89f86d1f4abe40180d4f3c05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatsToReactOn: 01000000020000000300000004000000
+  markersToReactOn:
+  - Defend
+  reactEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 623299309}
+        m_TargetAssemblyTypeName: Base, Assembly-CSharp
+        m_MethodName: CheckIfDamaged
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &639794654
 PrefabInstance:
   m_ObjectHideFlags: 0
