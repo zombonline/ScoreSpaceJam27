@@ -2042,6 +2042,7 @@
 		<relationship name="effects">
 			<destination>{e856e40d-f206-4768-ac6e-834ba4115488}</destination>
 			<destination>{4e335cf6-6d1c-4fac-98bc-75ba9eca82ab}</destination>
+			<destination>{efd564a9-0386-47cc-b827-d7b5b8f5f983}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{5457f39f-ed7e-42f8-879d-4aa0cd09ca42}" />
@@ -2619,6 +2620,7 @@
 			<destination>{1cb2ed6d-5b55-4225-b3eb-80204ceac35e}</destination>
 		</relationship>
 	</object>
+	<object class="CompressorEffect" id="{efd564a9-0386-47cc-b827-d7b5b8f5f983}" />
 	<object class="AutomationPoint" id="{1cfdec1a-95b6-45c7-8900-73de042f11b5}">
 		<property name="position">
 			<value>1</value>

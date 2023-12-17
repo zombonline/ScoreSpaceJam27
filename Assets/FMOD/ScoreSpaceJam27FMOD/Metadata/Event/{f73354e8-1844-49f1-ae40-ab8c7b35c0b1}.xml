@@ -59,12 +59,15 @@
 			<destination>{f1a62def-6ec6-448d-89b2-437680020237}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{d666037c-0b96-42d9-b4aa-da100f98694f}</destination>
+			<destination>{ff7984ca-22e2-4c6d-bf72-532797ede043}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{8849c0e5-ef75-4f4f-986e-a6f261c150e5}">
 		<property name="priority">
 			<value>1</value>
+		</property>
+		<property name="triggerCooldown">
+			<value>200</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{b14e87fb-cdf3-40e3-b060-c9ebc6f53a19}" />
@@ -158,7 +161,7 @@
 	<object class="MixerBusFader" id="{b5da7465-49d2-4a6f-85f1-ec10bbe0e1ef}" />
 	<object class="MixerSend" id="{f24119a4-70e1-41c8-918c-dcb27b36cf5e}">
 		<property name="level">
-			<value>0</value>
+			<value>7</value>
 		</property>
 		<property name="inputFormat">
 			<value>1</value>

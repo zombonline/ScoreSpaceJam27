@@ -199,6 +199,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d21d6f75-77f5-4485-8644-b4180cb6068f}">
+		<property name="volume">
+			<value>2.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -220,6 +223,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{78c5e5f2-a1dd-4dee-8e26-ea74b26b231e}" />
 	<object class="MultiSound" id="{8f5ef13a-38e3-4b9a-9f0a-f244a1d2da45}">
+		<property name="volume">
+			<value>1</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{bb05563f-5b40-4f0c-8522-de09429f4028}</destination>
 		</relationship>
@@ -229,6 +235,9 @@
 		</relationship>
 	</object>
 	<object class="MultiSound" id="{7d0166db-d37d-4a02-9849-d449fd645134}">
+		<property name="volume">
+			<value>-0.5</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{54988a16-f17f-483e-aca2-2ce4e69a4d71}</destination>
 		</relationship>

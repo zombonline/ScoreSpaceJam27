@@ -66,6 +66,9 @@
 		<property name="priority">
 			<value>4</value>
 		</property>
+		<property name="triggerCooldown">
+			<value>200</value>
+		</property>
 	</object>
 	<object class="MarkerTrack" id="{e92856fa-1e59-40b2-ab81-d756819d06e7}" />
 	<object class="GroupTrack" id="{ab8010fa-25ec-427b-bfa0-f43d2a2da3e2}">

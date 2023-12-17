@@ -131,6 +131,9 @@
 		<property name="start">
 			<value>1</value>
 		</property>
+		<property name="volume">
+			<value>1.5</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{726616b1-11de-4598-ad28-14a15bb001a1}</destination>
 			<destination>{08bce855-e424-4080-a094-eda35deedce6}</destination>
@@ -150,6 +153,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{fbe01fe1-3189-477c-86c9-0624d250b391}">
+		<property name="volume">
+			<value>2</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -321,7 +327,7 @@
 	<object class="MixerBusFader" id="{12875cd2-7ca5-4c13-991a-7b69441e9eb1}" />
 	<object class="MixerSend" id="{c090fc98-eebb-4f0c-9778-b66c264834ee}">
 		<property name="level">
-			<value>-18.5</value>
+			<value>-12</value>
 		</property>
 		<property name="inputFormat">
 			<value>1</value>
