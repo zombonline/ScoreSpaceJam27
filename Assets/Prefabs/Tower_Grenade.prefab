@@ -125,6 +125,10 @@ PrefabInstance:
       value: Shoot 3
       objectReference: {fileID: 0}
     - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
+      propertyPath: shootParam
+      value: GrenadeAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 8132501958771171034, guid: aa73854724e351a4bae4890105d23951, type: 3}

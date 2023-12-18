@@ -26,7 +26,9 @@ public  class PlacementManager : MonoBehaviour
         if(tile.placedTower != null) { return; } //tower already on tile
         tile.ReceiveTower(towerHeld.towerPrefab);
         tile.SetRefundValue(towerHeld.refundCost);
-        FMODController.PlaySFX(towerHeld.placeSFX);
+
+        FMODController.PlaySFX(towerHeld.placeSFX, "Material", ((int)tile.catPlaceMaterial));
+
         FindObjectOfType<Bank>().AdjustCoins(-towerHeld.GetCostOfTower());
 
         //if the player now has less than cost of currently held tower

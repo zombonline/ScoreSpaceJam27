@@ -29,7 +29,7 @@ public class TargetRange : MonoBehaviour
     Spine.AnimationState spineAnimationState;
     [SerializeField] string leftAnim, rightAnim, shootAnim, frontSkin, backSkin, magnetAnim;
 
-    [SerializeField] string shootSFX;
+    [SerializeField] string shootSFX, shootParam;
     private void Start()
     {
         spineAnimationState = skeletonAnimation.AnimationState;
@@ -123,13 +123,13 @@ public class TargetRange : MonoBehaviour
 
 
 
-            if (GetTarget().transform.position.y > transform.position.y) { skeletonAnimation.skeleton.SetSkin(backSkin); Debug.Log("facing back"); } //update skin
-            else if (GetTarget().transform.position.y <= transform.position.y) { skeletonAnimation.skeleton.SetSkin(frontSkin); Debug.Log("facing front"); } //update skin
+            if (GetTarget().transform.position.y > transform.position.y) { skeletonAnimation.skeleton.SetSkin(backSkin); } //update skin
+            else if (GetTarget().transform.position.y <= transform.position.y) { skeletonAnimation.skeleton.SetSkin(frontSkin); } //update skin
             skeletonAnimation.skeleton.SetSlotsToSetupPose();
             skeletonAnimation.LateUpdate();
 
-            if (GetTarget().transform.position.x < transform.position.x) { spineAnimationState.SetAnimation(0, leftAnim, true); }
-            else if (GetTarget().transform.position.x >= transform.position.x) { spineAnimationState.SetAnimation(0, rightAnim, true); }
+            if (GetTarget().transform.position.x < transform.position.x) { spineAnimationState.SetAnimation(1, leftAnim, true); }
+            else if (GetTarget().transform.position.x >= transform.position.x) { spineAnimationState.SetAnimation(1, rightAnim, true); }
 
         }
     }
@@ -161,12 +161,12 @@ public class TargetRange : MonoBehaviour
                     skeletonAnimation.skeleton.SetSlotsToSetupPose();
                     skeletonAnimation.LateUpdate();
 
-                    if (targetTile.transform.position.x < transform.position.x) { spineAnimationState.SetAnimation(0, leftAnim, true); }
-                    else if (targetTile.transform.position.x >= transform.position.x) { spineAnimationState.SetAnimation(0, rightAnim, true); }
+                    if (targetTile.transform.position.x < transform.position.x) { spineAnimationState.SetAnimation(1, leftAnim, true); }
+                    else if (targetTile.transform.position.x >= transform.position.x) { spineAnimationState.SetAnimation(1, rightAnim, true); }
 
 
 
-                    spineAnimationState.SetAnimation(1, magnetAnim, false);
+                    spineAnimationState.SetAnimation(2, magnetAnim, false);
 
                 }
                 FMODController.PlaySFX(shootSFX);
@@ -188,27 +188,30 @@ public class TargetRange : MonoBehaviour
     public void Shoot()
     {
         if (tempTower) { return; } //check this tower is not a temp display tower.
-        if(ammoMenu.GetAmmoCount() <= 0) { return; } //check player has enough of correct ammo
         StartCoroutine(ShootRoutine());
     }
 
     private IEnumerator ShootRoutine()
     {
+        bool canShoot = true;
         yield return new WaitForEndOfFrameUnit();
         yield return new WaitForEndOfFrameUnit();
-        if (GetTarget() != null)
+        if (GetTarget() == null) { canShoot = false; } //no target in sight.
+        if (ammoMenu.GetAmmoCount() <= 0 && canShoot)
         {
-            FMODController.PlaySFX(shootSFX);
+            FMODController.PlaySFX(shootSFX, shootParam, 1);
+            canShoot = false;
+        } //check player has enough of correct ammo
+        if (canShoot)
+        {
+            FMODController.PlaySFX(shootSFX, shootParam, 0);
             MapTile targetTile = GetTarget().GetCurrentTile();
             if (targetTile != null)
             {
-                spineAnimationState.SetAnimation(1, shootAnim, false);
+                spineAnimationState.SetAnimation(2, shootAnim, false);
                 ammoMenu.UseAmmo();
                 Bullet newBullet = Instantiate(bulletPrefab, targetTile.transform.position, Quaternion.identity).GetComponent<Bullet>();
             }
         }
     }    
-
-
-
 }

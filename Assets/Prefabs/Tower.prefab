@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5c9123c0852a2b14d814cb5c0cdf63e8, type: 2}
+  - {fileID: 2100000, guid: 5c4e381cf7ce3df4f9caa8840c440491, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -121,7 +121,7 @@ MonoBehaviour:
   disableRenderingOnOverride: 1
   updateTiming: 1
   unscaledTime: 0
-  _animationName: Look Right
+  _animationName: 
   loop: 1
   timeScale: 1
 --- !u!1 &4988982266470259240
@@ -136,7 +136,9 @@ GameObject:
   - component: {fileID: 5380856808800302863}
   - component: {fileID: 6069892793969425065}
   - component: {fileID: 6639345657934296495}
+  - component: {fileID: 1630330969596654463}
   - component: {fileID: 3962405949392240066}
+  - component: {fileID: 198721352049781760}
   m_Layer: 2
   m_Name: Tower
   m_TagString: Untagged
@@ -232,6 +234,8 @@ MonoBehaviour:
   frontSkin: Mag Cat Front
   backSkin: Mag Cat Back
   magnetAnim: Magnetise
+  shootSFX: 
+  shootParam: 
 --- !u!114 &6639345657934296495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +266,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1630330969596654463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4988982266470259240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0645bb3a1f86a8d4ea684d1376a2f0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonGraphic: {fileID: 0}
+  skeletonAnimation: {fileID: 2491601783701784108}
 --- !u!114 &3962405949392240066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,5 +308,47 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1630330969596654463}
+        m_TargetAssemblyTypeName: SpineAnimator, Assembly-CSharp
+        m_MethodName: SetAnimation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Bopping Wave
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &198721352049781760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4988982266470259240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 601c8fd89f86d1f4abe40180d4f3c05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beatsToReactOn: 01000000020000000300000004000000
+  markersToReactOn:
+  - Deploy
+  reactEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1630330969596654463}
+        m_TargetAssemblyTypeName: SpineAnimator, Assembly-CSharp
+        m_MethodName: SetAnimation
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Bopping Idle
           m_BoolArgument: 0
         m_CallState: 2

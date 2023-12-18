@@ -125,6 +125,10 @@ PrefabInstance:
       value: Shoot 2
       objectReference: {fileID: 0}
     - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
+      propertyPath: shootParam
+      value: RifleAmmo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: bulletPrefab
       value: 
       objectReference: {fileID: 2874362198139741126, guid: dc0c208e70f83d743864c793505fb4f5, type: 3}

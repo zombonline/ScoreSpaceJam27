@@ -116,6 +116,10 @@ PrefabInstance:
       propertyPath: shootAnim
       value: Shoot 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6069892793969425065, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
+      propertyPath: shootParam
+      value: PistolAmmo
+      objectReference: {fileID: 0}
     - target: {fileID: 6639345657934296495, guid: f7d7c5cd7b5cbbe4baafd0d0f23344dd, type: 3}
       propertyPath: reactEvent.m_PersistentCalls.m_Calls.Array.size
       value: 1

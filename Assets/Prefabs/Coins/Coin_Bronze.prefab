@@ -61,8 +61,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: e50acd47a087ac94a820c34bf802ef03, type: 2}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -97,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: d3eba18b72fb18047bc0285eacbd9062, type: 2}
-  initialSkinName: 
+  initialSkinName: Bronze
   fixPrefabOverrideViaMeshFilter: 2
   initialFlipX: 0
   initialFlipY: 0
@@ -137,7 +136,7 @@ GameObject:
   - component: {fileID: 5774498480259062716}
   - component: {fileID: 4653513713193942597}
   m_Layer: 0
-  m_Name: Coin
+  m_Name: Coin_Bronze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

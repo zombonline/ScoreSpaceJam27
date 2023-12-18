@@ -1,9 +1,21 @@
 using Spine.Unity;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteAlways]
+
+[System.Serializable]
+public enum CatPlaceMaterial
+{
+    TRASH = 0,
+    WOOD = 1,
+    BOX = 2,
+    DUMPSTER = 3,
+    SPEAKER = 4
+}
+
  public class MapTile : MonoBehaviour
 {
     PlacementManager placementManager;
@@ -27,6 +39,8 @@ using UnityEngine;
     public List<EnemyMovement> enemies { get; private set; } = new List<EnemyMovement>();
 
     public List<Coin> coins;
+
+    [SerializeField] public CatPlaceMaterial catPlaceMaterial;
 
     private void Awake()
     {

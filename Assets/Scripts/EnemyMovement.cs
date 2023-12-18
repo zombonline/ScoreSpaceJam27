@@ -42,14 +42,17 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (move && currentTile+1 < path.Length)
+        if (currentTile + 1 < path.Length)
         {
-            transform.position = Vector3.MoveTowards(transform.position, path[currentTile+1].transform.position, speed * Time.deltaTime); ;
-        }
-        if(transform.position == path[currentTile+1].transform.position && move == true)
-        {
-            if (animationControlledByThisScript) { GetComponent<SpineAnimator>().SetAnimation("Idle"); }
-            move = false;
+            if (move)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, path[currentTile + 1].transform.position, speed * Time.deltaTime); ;
+            }
+            if (transform.position == path[currentTile + 1].transform.position && move)
+            {
+                if (animationControlledByThisScript) { GetComponent<SpineAnimator>().SetAnimation("Idle"); }
+                move = false;
+            }
         }
     }
 
@@ -63,7 +66,10 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnDestroy()
     {
-        path[currentTile].RemoveEnemy(this);
+        foreach(MapTile tile in path)
+        {
+            if (tile.enemies.Contains(this)) { tile.enemies.Remove(this);}
+        }
     }
 
 }

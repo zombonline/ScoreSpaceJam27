@@ -153,6 +153,10 @@ PrefabInstance:
       value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 1153690115158390522, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: coinDrop
+      value: 
+      objectReference: {fileID: 8991187299824449127, guid: c661fe2e6fbef87498f642c755a0e002, type: 3}
+    - target: {fileID: 1153690115158390522, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: startHitPoints
       value: 20
       objectReference: {fileID: 0}

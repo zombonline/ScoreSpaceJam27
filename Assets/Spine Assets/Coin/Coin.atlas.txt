@@ -1,44 +1,124 @@
 Coin.png
-	size: 3460, 184
+	size: 3460, 548
 	filter: Linear, Linear
 	pma: true
-Coin_10
+BCoin_10
+	bounds: 2, 366, 180, 180
+BCoin_11
+	bounds: 2, 184, 180, 180
+BCoin_21
+	bounds: 2, 184, 180, 180
+BCoin_12
+	bounds: 184, 366, 180, 180
+BCoin_13
 	bounds: 2, 2, 180, 180
-Coin_11
+BCoin_14
+	bounds: 184, 184, 180, 180
+BCoin_15
+	bounds: 366, 366, 180, 180
+BCoin_16
 	bounds: 184, 2, 180, 180
-Coin_21
-	bounds: 184, 2, 180, 180
-Coin_12
+BCoin_17
+	bounds: 366, 184, 180, 180
+BCoin_18
+	bounds: 548, 366, 180, 180
+BCoin_19
 	bounds: 366, 2, 180, 180
-Coin_13
+BCoin_2
+	bounds: 548, 184, 180, 180
+BCoin_20
+	bounds: 730, 366, 180, 180
+BCoin_3
 	bounds: 548, 2, 180, 180
-Coin_14
+BCoin_4
+	bounds: 730, 184, 180, 180
+BCoin_5
+	bounds: 912, 366, 180, 180
+BCoin_6
 	bounds: 730, 2, 180, 180
-Coin_15
+BCoin_7
+	bounds: 912, 184, 180, 180
+BCoin_8
+	bounds: 1094, 366, 180, 180
+BCoin_9
 	bounds: 912, 2, 180, 180
-Coin_16
+Coin_10
+	bounds: 1094, 184, 180, 180
+Coin_11
+	bounds: 1276, 366, 180, 180
+Coin_21
+	bounds: 1276, 366, 180, 180
+Coin_12
 	bounds: 1094, 2, 180, 180
-Coin_17
+Coin_13
+	bounds: 1276, 184, 180, 180
+Coin_14
+	bounds: 1458, 366, 180, 180
+Coin_15
 	bounds: 1276, 2, 180, 180
+Coin_16
+	bounds: 1458, 184, 180, 180
+Coin_17
+	bounds: 1640, 366, 180, 180
 Coin_18
 	bounds: 1458, 2, 180, 180
 Coin_19
-	bounds: 1640, 2, 180, 180
+	bounds: 1640, 184, 180, 180
 Coin_2
-	bounds: 1822, 2, 180, 180
+	bounds: 1822, 366, 180, 180
 Coin_20
-	bounds: 2004, 2, 180, 180
+	bounds: 1640, 2, 180, 180
 Coin_3
-	bounds: 2186, 2, 180, 180
+	bounds: 1822, 184, 180, 180
 Coin_4
-	bounds: 2368, 2, 180, 180
+	bounds: 2004, 366, 180, 180
 Coin_5
-	bounds: 2550, 2, 180, 180
+	bounds: 1822, 2, 180, 180
 Coin_6
-	bounds: 2732, 2, 180, 180
+	bounds: 2004, 184, 180, 180
 Coin_7
-	bounds: 2914, 2, 180, 180
+	bounds: 2186, 366, 180, 180
 Coin_8
-	bounds: 3096, 2, 180, 180
+	bounds: 2004, 2, 180, 180
 Coin_9
+	bounds: 2186, 184, 180, 180
+SCoin_10
+	bounds: 2368, 366, 180, 180
+SCoin_11
+	bounds: 2186, 2, 180, 180
+SCoin_21
+	bounds: 2186, 2, 180, 180
+SCoin_12
+	bounds: 2368, 184, 180, 180
+SCoin_13
+	bounds: 2550, 366, 180, 180
+SCoin_14
+	bounds: 2368, 2, 180, 180
+SCoin_15
+	bounds: 2550, 184, 180, 180
+SCoin_16
+	bounds: 2732, 366, 180, 180
+SCoin_17
+	bounds: 2550, 2, 180, 180
+SCoin_18
+	bounds: 2732, 184, 180, 180
+SCoin_19
+	bounds: 2914, 366, 180, 180
+SCoin_2
+	bounds: 2732, 2, 180, 180
+SCoin_20
+	bounds: 2914, 184, 180, 180
+SCoin_3
+	bounds: 3096, 366, 180, 180
+SCoin_4
+	bounds: 2914, 2, 180, 180
+SCoin_5
+	bounds: 3096, 184, 180, 180
+SCoin_6
+	bounds: 3278, 366, 180, 180
+SCoin_7
+	bounds: 3096, 2, 180, 180
+SCoin_8
+	bounds: 3278, 184, 180, 180
+SCoin_9
 	bounds: 3278, 2, 180, 180

@@ -30,7 +30,6 @@ public class Bullet : MonoBehaviour
         foreach(var tile in tiles)
         {
             if (tile.enemies.Count <= 0) { continue; }
-            Debug.Log(tile.enemies.Count);
             foreach (EnemyMovement enemy in tile.enemies)
             {
                 if (!possibleTargets.Contains(enemy.tag)) { break; }
