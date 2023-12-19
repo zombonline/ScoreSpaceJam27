@@ -34,5 +34,19 @@ MonoBehaviour:
     dogslvl2: 0
     micelvl3: 0
     dogslvl3: 0
+  - mice: 2
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 2
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
   beatsToSpawnOn: 01000000
   hint: Reports of droves of mice swarming in on Gun Groove Alley

@@ -1,0 +1,17 @@
+Trash.png
+	size: 599, 803
+	filter: Linear, Linear
+	pma: true
+Trash 1
+	bounds: 331, 238, 266, 234
+Trash 2
+	bounds: 2, 15, 267, 234
+Trash 3
+	bounds: 331, 474, 327, 242
+	rotate: 90
+Trash 4
+	bounds: 2, 251, 327, 260
+Trash 5
+	bounds: 2, 513, 327, 288
+trash 0
+	bounds: 271, 2, 266, 234

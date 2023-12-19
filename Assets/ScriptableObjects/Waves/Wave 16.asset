@@ -73,7 +73,7 @@ MonoBehaviour:
     birds: 0
     dogs: 0
     micelvl2: 0
-    dogslvl2: 2
+    dogslvl2: 1
     micelvl3: 0
     dogslvl3: 0
   - mice: 0

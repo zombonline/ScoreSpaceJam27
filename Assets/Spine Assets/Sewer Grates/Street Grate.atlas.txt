@@ -1,0 +1,8 @@
+Street Grate.png
+	size: 252, 128
+	filter: Linear, Linear
+	pma: true
+Sewer Grate
+	bounds: 2, 2, 123, 124
+Sewer Hole
+	bounds: 127, 2, 123, 124

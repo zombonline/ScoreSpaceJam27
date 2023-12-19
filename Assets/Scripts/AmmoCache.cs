@@ -87,6 +87,7 @@ public class AmmoCache : MonoBehaviour
 
     public void RefillAmmo()
     {
+        if(currentAmmo == maxAmmo) { return; }
         if(Bank.coins >= refillCost)
         {
             FindObjectOfType<Bank>().AdjustCoins(-refillCost);
