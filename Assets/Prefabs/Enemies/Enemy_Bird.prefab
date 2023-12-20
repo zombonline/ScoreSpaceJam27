@@ -24,10 +24,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Bird
       objectReference: {fileID: 0}
-    - target: {fileID: 1472688669804275167, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2898961334570125688, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -99,6 +95,10 @@ PrefabInstance:
     - target: {fileID: 6250676985772931009, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_LocalScale.y
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250676985772931009, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 8469384898851888978, guid: db9369c3f73734b438747cc0a9131f48, type: 3}
       propertyPath: m_AnchorMax.y

@@ -40,7 +40,6 @@ public class WaveSystem : MonoBehaviour
     float newWaveDelayTimer;
     private void Awake()
     {
-        
         LoadNewWave();
     }
 
@@ -128,5 +127,10 @@ public class WaveSystem : MonoBehaviour
     public void SetGameMode(GameMode val)
     {
         gameMode = val;
+    }
+    private void OnDisable()
+    {
+        gameMode = GameMode.Build;
+        Debug.Log("gamemode set to " + gameMode.ToString());
     }
 }
