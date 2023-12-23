@@ -6981,9 +6981,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1221521993}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 153357705}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DecrementSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VolumeControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3377560434755618098, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7081,9 +7113,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1221521993}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 153357705}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: IncrementSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VolumeControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7843915452284337353, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
       propertyPath: m_Name
       value: Slider SFX Volume
@@ -10560,9 +10624,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1221521993}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 153357705}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: DecrementMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VolumeControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2797494635578797203, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3377560434755618098, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10660,9 +10756,41 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1221521993}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 153357705}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: IncrementMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: VolumeControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_FloatArgument
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6853910086573481100, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7843915452284337353, guid: 1374547e271378f4b8aea5812fefc8ad, type: 3}
       propertyPath: m_Name
       value: Slider Music Volume

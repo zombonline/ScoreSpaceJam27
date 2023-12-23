@@ -22,7 +22,7 @@ public class VolumeControl : MonoBehaviour
     public void SetMusicVolume(float val)
     {
         music.setVolume(val);
-        PlayerPrefs.SetFloat(MUSIC_VOL_KEY, val);
+        PlayerPrefs.SetFloat(MUSIC_VOL_KEY, musicSlider.value);
     }
     public void SetSFXVolume(float val)
     {
@@ -30,6 +30,25 @@ public class VolumeControl : MonoBehaviour
         PlayerPrefs.SetFloat(SFX_VOL_KEY, val);
     }
 
-
+    public void DecrementMusicVolume(float amount)
+    {
+        musicSlider.value -= amount;
+        PlayerPrefs.SetFloat(MUSIC_VOL_KEY, musicSlider.value);
+    }
+    public void IncrementMusicVolume(float amount)
+    {
+        musicSlider.value += amount;
+        PlayerPrefs.SetFloat(MUSIC_VOL_KEY, musicSlider.value);
+    }
+    public void DecrementSFXVolume(float amount)
+    {
+        sfxSlider.value -= amount;
+        PlayerPrefs.SetFloat(SFX_VOL_KEY, sfxSlider.value);
+    }
+    public void IncrementSFXVolume(float amount)
+    {
+        sfxSlider.value += amount;
+        PlayerPrefs.SetFloat(SFX_VOL_KEY, sfxSlider.value);
+    }
 
 }
