@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   initialMaxAmount: 100
-  buildRefillCost: 75
-  battleRefillCost: 150
+  buildRefillCost: 50
+  battleRefillCost: 100
   bulletPrefab: {fileID: 0}
   bulletIcon: {fileID: 0}
   upgrades:
   - cost: 175
     amount: 50
-  - cost: 300
+  - cost: 225
     amount: 75
-  - cost: 450
+  - cost: 300
     amount: 100

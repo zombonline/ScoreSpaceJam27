@@ -14,6 +14,7 @@ public class TargetRange : MonoBehaviour
 
     public List<MapTile> targetTiles { get; private set; } = new List<MapTile>();
     bool tempTower = false;
+    bool invalidTile = false;
 
     [SerializeField] string[] possibleTargets;
 
@@ -23,7 +24,6 @@ public class TargetRange : MonoBehaviour
 
     AmmoCache ammoMenu;
 
-    public void EnableTempTower() { tempTower = true; }
 
     [SerializeField] SkeletonAnimation skeletonAnimation;
     Spine.AnimationState spineAnimationState;
@@ -43,7 +43,9 @@ public class TargetRange : MonoBehaviour
 
         AssignTargetTiles();
     }
+    public void EnableTempTower() { tempTower = true; }
 
+    public void EnableInvalidTile() { invalidTile = true; }
     public void AssignTargetTiles()
     {
         if (tempTower) { return; } //Do not target if tower is temporary
@@ -72,7 +74,7 @@ public class TargetRange : MonoBehaviour
         if(collision.GetComponent<MapTile>() != null)
         {
             mapTilesInsideTrigger.Add(collision.GetComponent<MapTile>());
-            if(tempTower) { collision.GetComponent<MapTile>().EnableRangeSprite(); }
+            if(tempTower && !invalidTile) { collision.GetComponent<MapTile>().EnableRangeSprite(); }
         }
     }
 
@@ -99,7 +101,7 @@ public class TargetRange : MonoBehaviour
             {
                 if (!possibleTargets.Contains(newPossibleTarget.tag)) { break; } //come out of loop if enemy is not a possible target
                 if (currentTarget == null) { currentTarget = newPossibleTarget; } //if no current target assigned, assign this one
-                else if(newPossibleTarget.currentTile/newPossibleTarget.path.Length > currentTarget.currentTile/currentTarget.path.Length) //if this enemy is further ahead than current target, assign it this one.
+                else if((newPossibleTarget.currentTile/newPossibleTarget.path.Length) > (currentTarget.currentTile/currentTarget.path.Length)) //if this enemy is further ahead than current target, assign it this one.
                 {
                     currentTarget = newPossibleTarget;
                 }

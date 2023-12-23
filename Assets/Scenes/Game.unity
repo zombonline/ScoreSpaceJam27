@@ -968,12 +968,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale
@@ -2099,7 +2107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3533,12 +3541,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale
@@ -4224,12 +4240,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale
@@ -4434,12 +4458,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale
@@ -7115,12 +7147,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale
@@ -7836,6 +7876,10 @@ PrefabInstance:
       propertyPath: soTower
       value: 
       objectReference: {fileID: 11400000, guid: adc1dfb430994e54793a042cab6f6040, type: 2}
+    - target: {fileID: 1042123207310830217, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
+      propertyPath: keyShortcut
+      value: 52
+      objectReference: {fileID: 0}
     - target: {fileID: 2709439546983026578, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Name
       value: Tower Button (Magnet)
@@ -8246,10 +8290,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1722030083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -736.67163, y: 0}
-  m_SizeDelta: {x: 446.6566, y: 201}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 389, y: 0}
+  m_SizeDelta: {x: 778.3817, y: 201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &762252390
 PrefabInstance:
@@ -8838,12 +8882,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale
@@ -10008,6 +10060,10 @@ PrefabInstance:
       propertyPath: soTower
       value: 
       objectReference: {fileID: 11400000, guid: 2b9c87478b8ff9d48be65050124040cb, type: 2}
+    - target: {fileID: 1042123207310830217, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
+      propertyPath: keyShortcut
+      value: 51
+      objectReference: {fileID: 0}
     - target: {fileID: 2709439546983026578, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Name
       value: Tower Button (Grenade)
@@ -12117,10 +12173,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1722030083}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -948.0635, y: 0}
-  m_SizeDelta: {x: 23.873, y: 201}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 11.936523, y: 0}
+  m_SizeDelta: {x: 23.872986, y: 201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1081620423
 PrefabInstance:
@@ -12134,6 +12190,10 @@ PrefabInstance:
       propertyPath: soTower
       value: 
       objectReference: {fileID: 11400000, guid: 9f7564e52cdea1240ba5974b4cd52edd, type: 2}
+    - target: {fileID: 1042123207310830217, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
+      propertyPath: keyShortcut
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 2709439546983026578, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Name
       value: Tower Button (Rifle)
@@ -14554,12 +14614,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale
@@ -15048,6 +15116,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d92e7b1d9f6a43344b4aa9b8f51a8ca9, type: 2}
   - {fileID: 11400000, guid: 29e464c2ae2e0a44f80783b0b14aea23, type: 2}
   - {fileID: 11400000, guid: c1ef776bc1ee66b48aaee67ebb8266d6, type: 2}
+  - {fileID: 11400000, guid: cdffb74c79f538b478cda3c40a951e65, type: 2}
+  - {fileID: 11400000, guid: 6008d51f433ed1d46b727307ac70c9d5, type: 2}
   pathsMouse:
   - path:
     - {fileID: 2079773742}
@@ -17266,7 +17336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f844e2e821abcd4c8465ca469e55721, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCoins: 650
+  startCoins: 520
   textCoins: {fileID: 873262148}
 --- !u!1001 &1562511870
 PrefabInstance:
@@ -18580,9 +18650,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 893875314}
   - {fileID: 747538776}
   - {fileID: 1078565008}
-  - {fileID: 893875314}
   m_Father: {fileID: 181568943}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -22800,12 +22870,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale
@@ -23614,12 +23692,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale
@@ -24458,13 +24544,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 181568943}
     m_Modifications:
+    - target: {fileID: 1042123207310830217, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
+      propertyPath: keyShortcut
+      value: 49
+      objectReference: {fileID: 0}
     - target: {fileID: 2709439546983026578, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Name
       value: Tower Button (Pistol)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2738220215143806127, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3443259156478775932, guid: 1d79748d98697644e8e818febefb1f79, type: 3}
       propertyPath: m_Pivot.x
@@ -24568,12 +24654,20 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[0]
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: beatsToReactOn.Array.data[1]
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2862511552699405625, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
+      propertyPath: markersToReactOn.Array.data[0]
+      value: Defend
       objectReference: {fileID: 0}
     - target: {fileID: 3393456186376399615, guid: 1bea55aaa441cb745bb03a746f3c3da7, type: 3}
       propertyPath: timeScale

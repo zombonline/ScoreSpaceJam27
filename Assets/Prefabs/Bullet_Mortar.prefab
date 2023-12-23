@@ -638,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: debf77d2eaa994847aa69be9c9a6239b, type: 2}
     - target: {fileID: 7928686679903576516, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
       propertyPath: damagePoints
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7928686679903576516, guid: dcaf44f3d677d5f459ec855f8c6c5d5b, type: 3}
       propertyPath: destroyDelay

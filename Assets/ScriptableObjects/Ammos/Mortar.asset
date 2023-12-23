@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Mortar
   m_EditorClassIdentifier: 
   initialMaxAmount: 15
-  buildRefillCost: 150
-  battleRefillCost: 300
+  buildRefillCost: 100
+  battleRefillCost: 200
   bulletPrefab: {fileID: 0}
   bulletIcon: {fileID: 0}
   upgrades:

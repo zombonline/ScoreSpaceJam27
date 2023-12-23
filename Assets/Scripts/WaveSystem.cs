@@ -19,7 +19,9 @@ public class WaveSystem : MonoBehaviour
 {
     [SerializeField] SOWave[] waves;
 
-    int currentWave = -1, currentWaveStep;
+    int currentWaveIndex = -1, currentWaveStep;
+
+    SOWave currentWave;
 
     public static GameMode gameMode { get; private set; } = GameMode.Build;
 
@@ -38,6 +40,8 @@ public class WaveSystem : MonoBehaviour
 
     float newWaveDelay = 5f;
     float newWaveDelayTimer;
+
+    int extraWaveStepAmount = 2;
     private void Awake()
     {
         LoadNewWave();
@@ -62,9 +66,9 @@ public class WaveSystem : MonoBehaviour
     //do every beat
     public void SpawnWaveStep()
     {
-        if(currentWaveStep >= waves[currentWave].waveSteps.Length) { return; } //No more steps left in wave 
+        if(currentWaveStep >= currentWave.waveSteps.Length) { return; } //No more steps left in wave 
         if(gameMode== GameMode.Build) { return; }
-        var waveStep = waves[currentWave].waveSteps[currentWaveStep];
+        var waveStep = currentWave.waveSteps[currentWaveStep];
         SpawnEnemy(waveStep.mice, pathsMouse, mousePrefab,miceSpawnSFX);
         SpawnEnemy(waveStep.birds, pathsBird, birdPrefab, birdSpawnSFX);
         SpawnEnemy(waveStep.dogs, pathsDog, dogPrefab,dogSpawnSFX);
@@ -77,7 +81,7 @@ public class WaveSystem : MonoBehaviour
     //do every beat
     public void CheckForWaveEnd()
     {
-        if (currentWaveStep < waves[currentWave].waveSteps.Length) { return; } //Wave still has unactioned steps. Wave not over.
+        if (currentWaveStep < currentWave.waveSteps.Length) { return; } //Wave still has unactioned steps. Wave not over.
         if (FindObjectsOfType<EnemyMovement>().Length > 0 || 
             FindObjectsOfType<Coin>().Length > 0) { return; }
         //Wave still has active enemies or coins to be collected. Wave not over.
@@ -112,16 +116,44 @@ public class WaveSystem : MonoBehaviour
 
     public void LoadNewWave()
     {
-        currentWave++;
-        textWaveCounter.text = "Wave " + (currentWave+1).ToString();
-        textWaveEnd.text = "Waves complete: " + (currentWave + 1).ToString();
+        currentWaveIndex++;
+        if (currentWaveIndex >= waves.Length) { currentWave = GenerateWaveVariation(currentWave); } //No waves remain, generate a variation of current.
+        else { currentWave = waves[currentWaveIndex]; }
+        textWaveCounter.text = "Wave " + (currentWaveIndex+1).ToString();
+        textWaveEnd.text = "Waves complete: " + (currentWaveIndex + 1).ToString();
         currentWaveStep = 0;
-        if (currentWave > waves.Length) { return; } //No waves remain
-        if (waves[currentWave].hint != null)
+        
+        if (currentWave.hint != null)
         {
-            FindObjectOfType<Hintbar>().AssignHintText(waves[currentWave].hint, true);
+            FindObjectOfType<Hintbar>().AssignHintText(currentWave.hint, true);
         }
-        GetComponent<ReactOnBeat>().SetBeatsToReactOn(waves[currentWave].beatsToSpawnOn);
+        GetComponent<ReactOnBeat>().SetBeatsToReactOn(currentWave.beatsToSpawnOn);
+    }
+
+    public SOWave GenerateWaveVariation(SOWave waveToGenerateFrom)
+    {
+        var newWave = ScriptableObject.CreateInstance<SOWave>();
+        newWave.beatsToSpawnOn = waveToGenerateFrom.beatsToSpawnOn;
+
+
+        //shuffle steps around to be given to new wave
+        var waveSteps = new List<WaveStep>();
+        foreach (WaveStep waveStep in waveToGenerateFrom.waveSteps)
+        {
+            waveSteps.Insert(Random.Range(0, waveSteps.Count), waveStep);
+        }
+
+        //duplicate a random step to make wave longer.
+        for (int i = 0; i < extraWaveStepAmount; i++)
+        {
+            WaveStep randomStepToDuplicate = waveSteps[Random.Range(0, waveSteps.Count)];
+            waveSteps.Insert(Random.Range(0, waveSteps.Count), randomStepToDuplicate);
+        }
+        extraWaveStepAmount = Mathf.FloorToInt(extraWaveStepAmount * 1.5f); //upon next wave generation, more steps will be duplicated each time.
+
+
+        newWave.waveSteps = waveSteps.ToArray();
+        return newWave;
     }
 
     public void SetGameMode(GameMode val)
@@ -133,4 +165,6 @@ public class WaveSystem : MonoBehaviour
         gameMode = GameMode.Build;
         Debug.Log("gamemode set to " + gameMode.ToString());
     }
+
+    
 }

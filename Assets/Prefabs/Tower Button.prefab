@@ -145,6 +145,7 @@ MonoBehaviour:
   largeRect: {fileID: 6698522150637330642}
   cardOpenSFX: event:/SFX/UI/Cards/Card_Show
   cardCloseSFX: event:/SFX/UI/Cards/Card_Hide
+  keyShortcut: 0
 --- !u!1 &3308612519515755753
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,7 +382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -415,18 +416,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1042123207310830217}
         m_TargetAssemblyTypeName: ButtonTower, Assembly-CSharp
         m_MethodName: Press
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1042123207310830217}
-        m_TargetAssemblyTypeName: ButtonTower, Assembly-CSharp
-        m_MethodName: EnablePressedState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

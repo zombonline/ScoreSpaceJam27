@@ -74,13 +74,12 @@ public enum CatPlaceMaterial
 
     public void ReceiveTempTower(GameObject tower)
     {
-        if (ableToHoldTower)
+        tempTower = Instantiate(tower, transform.position, Quaternion.identity);
+        tempTower.GetComponent<TargetRange>().EnableTempTower();
+
+        if (!ableToHoldTower)
         {
-            tempTower = Instantiate(tower, transform.position, Quaternion.identity);
-            tempTower.GetComponent<TargetRange>().EnableTempTower();
-        }
-        else
-        {
+            tempTower.GetComponent<TargetRange>().EnableInvalidTile();
             EnableInvalidSprite();
         }
     }

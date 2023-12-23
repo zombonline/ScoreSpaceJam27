@@ -56,4 +56,4 @@ MonoBehaviour:
     micelvl3: 0
     dogslvl3: 0
   beatsToSpawnOn: 01000000
-  hint: 
+  hint: You can press 1,2,3 or 4 to quickly hire a cat!

@@ -9,7 +9,7 @@ public class Base : MonoBehaviour
     [SerializeField] RectTransform healthBar;
 
     [SerializeField] int startHitPoints;
-    int hitPoints;
+    public int hitPoints { get; private set; } = 0;
 
     [SerializeField] UnityEvent onGameOver;
     [SerializeField] float lengthSpriteFlashSeconds = .5f, lengthBetweenFlashesSeconds = .1f;

@@ -16,28 +16,65 @@ MonoBehaviour:
   - mice: 0
     birds: 0
     dogs: 1
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
   - mice: 0
-    birds: 0
-    dogs: 0
-  - mice: 0
-    birds: 0
-    dogs: 1
-  - mice: 0
-    birds: 0
-    dogs: 0
-  - mice: 0
-    birds: 0
-    dogs: 2
-  - mice: 2
-    birds: 2
-    dogs: 1
-  - mice: 2
-    birds: 0
-    dogs: 0
-  - mice: 1
     birds: 1
     dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
   - mice: 2
     birds: 0
     dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 2
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 0
+    birds: 0
+    dogs: 1
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 2
+    birds: 1
+    dogs: 1
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 2
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 1
+    birds: 0
+    dogs: 0
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
+  - mice: 2
+    birds: 0
+    dogs: 1
+    micelvl2: 0
+    dogslvl2: 0
+    micelvl3: 0
+    dogslvl3: 0
   beatsToSpawnOn: 01000000
+  hint: 

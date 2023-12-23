@@ -24,6 +24,8 @@ public class ButtonTower : MonoBehaviour
     [SerializeField] RectTransform smallRect, largeRect;
 
     [SerializeField] string cardOpenSFX, cardCloseSFX;
+
+    [SerializeField] KeyCode keyShortcut;
     private void Awake()
     {
         placementManager = FindObjectOfType<PlacementManager>();
@@ -50,6 +52,11 @@ public class ButtonTower : MonoBehaviour
             imgCard.sprite = soTower.card;
         }
         CheckMousePosition();
+
+        if(Input.GetKeyDown(keyShortcut))
+        {
+            Press();
+        }
     }
 
 
@@ -81,21 +88,32 @@ public class ButtonTower : MonoBehaviour
         Vector2 localMousePosition = smallRect.InverseTransformPoint(Input.mousePosition);
         if (smallRect.rect.Contains(localMousePosition) && !mouseOver)
         {
-            mouseOver= true;
-            LeanTween.move(cardTransform, hoveredPosition, .25f).setEase(LeanTweenType.easeInBack);
-            FMODController.PlaySFX(cardOpenSFX);
+            OpenCard();
         }
         localMousePosition = largeRect.InverseTransformPoint(Input.mousePosition);
         if (!largeRect.rect.Contains(localMousePosition) && mouseOver && !selected)
         {
-            mouseOver= false;
-            LeanTween.move(cardTransform, initialPosition, .5f).setEase(LeanTweenType.easeOutBounce);
-            FMODController.PlaySFX(cardCloseSFX);
+            CloseCard();
         }
+    }
+
+    private void CloseCard()
+    {
+        mouseOver = false;
+        LeanTween.move(cardTransform, initialPosition, .5f).setEase(LeanTweenType.easeOutBounce);
+        FMODController.PlaySFX(cardCloseSFX);
+    }
+
+    private void OpenCard()
+    {
+        mouseOver = true;
+        LeanTween.move(cardTransform, hoveredPosition, .25f).setEase(LeanTweenType.easeInBack);
+        FMODController.PlaySFX(cardOpenSFX);
     }
 
     public void EnablePressedState()
     {
+        OpenCard();
         selected = true;
     }
 

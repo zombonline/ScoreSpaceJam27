@@ -72,7 +72,14 @@ public  class PlacementManager : MonoBehaviour
         lastSelectedTile.EnableSelectSprite(); //show selectsprite on new tile
         if(lastSelectedTile.placedTower != null) //if tower on last selected tile, enable refund option
         {
-            FMODController.PlaySFX("event:/SFX/Cats/Clicking/Cat_Click");
+            if(FindObjectOfType<Base>().hitPoints <=2)
+            {
+                FMODController.PlaySFX("event:/SFX/Cats/Clicking/Cat_Click", "PurrfectScore", 1);
+            }
+            else
+            {
+                FMODController.PlaySFX("event:/SFX/Cats/Clicking/Cat_Click");
+            }
             buttonSellTower.gameObject.SetActive(true);
             buttonSellTower.GetComponentInChildren<TextMeshProUGUI>().text = "+" + lastSelectedTile.placedTowerRefundValue.ToString();
         }

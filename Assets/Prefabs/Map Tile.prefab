@@ -81,9 +81,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1630173013
-  m_SortingLayer: 3
-  m_SortingOrder: -1
+  m_SortingLayerID: -1739719117
+  m_SortingLayer: 2
+  m_SortingOrder: 2
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &4163643045675962598
 MonoBehaviour:
@@ -206,9 +206,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1630173013
-  m_SortingLayer: 3
-  m_SortingOrder: -1
+  m_SortingLayerID: -1739719117
+  m_SortingLayer: 2
+  m_SortingOrder: 1
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &2389594968777564290
 MonoBehaviour:
@@ -331,9 +331,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1630173013
-  m_SortingLayer: 3
-  m_SortingOrder: -1
+  m_SortingLayerID: -1739719117
+  m_SortingLayer: 2
+  m_SortingOrder: 3
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &1294922160764216111
 MonoBehaviour:
@@ -494,8 +494,8 @@ Transform:
   - {fileID: 968712612644284206}
   - {fileID: 1477771887435620701}
   - {fileID: 8092557051869779317}
-  - {fileID: 6762508936958898034}
   - {fileID: 8665852585355414715}
+  - {fileID: 6762508936958898034}
   - {fileID: 5141968389417382721}
   - {fileID: 1363248041207055768}
   m_Father: {fileID: 0}
@@ -522,6 +522,7 @@ MonoBehaviour:
   ableToHoldTower: 0
   ableToHoldEnemy: 0
   coins: []
+  catPlaceMaterial: 0
 --- !u!61 &1557649296594011549
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -674,9 +675,9 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1630173013
-  m_SortingLayer: 3
-  m_SortingOrder: -1
+  m_SortingLayerID: -1739719117
+  m_SortingLayer: 2
+  m_SortingOrder: 4
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &8994105495858758722
 MonoBehaviour:

@@ -24,7 +24,7 @@ MonoBehaviour:
     birds: 0
     dogs: 0
     micelvl2: 0
-    dogslvl2: 2
+    dogslvl2: 1
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
@@ -77,14 +77,14 @@ MonoBehaviour:
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
-    birds: 2
+    birds: 1
     dogs: 0
     micelvl2: 1
     dogslvl2: 0
     micelvl3: 0
     dogslvl3: 0
-  - mice: 0
-    birds: 1
+  - mice: 2
+    birds: 0
     dogs: 0
     micelvl2: 0
     dogslvl2: 0
@@ -112,13 +112,13 @@ MonoBehaviour:
     micelvl3: 0
     dogslvl3: 0
   - mice: 0
-    birds: 0
-    dogs: 2
+    birds: 1
+    dogs: 1
     micelvl2: 0
     dogslvl2: 0
     micelvl3: 0
     dogslvl3: 0
-  - mice: 0
+  - mice: 1
     birds: 0
     dogs: 0
     micelvl2: 0
@@ -136,8 +136,8 @@ MonoBehaviour:
     birds: 1
     dogs: 0
     micelvl2: 1
-    dogslvl2: 1
+    dogslvl2: 0
     micelvl3: 0
     dogslvl3: 0
-  beatsToSpawnOn: 0100000004000000
+  beatsToSpawnOn: 0100000003000000
   hint: 
