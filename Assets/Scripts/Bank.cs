@@ -8,27 +8,33 @@ public class Bank : MonoBehaviour
 {
     [SerializeField] int startCoins;
     public static int coins { get; private set; }
-    int coinsDisplayed;
+    static int coinsDisplayed;
     [SerializeField] TextMeshProUGUI textCoins;
+
+    public static event System.Action<int> OnCoinsChanged;
 
     private void Awake()
     {
         coins = startCoins;
         coinsDisplayed = coins;
         textCoins.text = coins.ToString();
-        
+        OnCoinsChanged += UpdateDisplayValue;
     }
 
-    public void AdjustCoins(int amount)
+    public static void AdjustCoins(int amount)
     {
         coins += amount;
-        LeanTween.value(coinsDisplayed, coins, .25f).setOnUpdate(UpdateCoinDisplay);
+        OnCoinsChanged?.Invoke(coins);
     }
 
-    public void UpdateCoinDisplay(float value)
+    public void UpdateDisplayValue(int value)
     {
-        coinsDisplayed= (int)value;
-        textCoins.text = coinsDisplayed.ToString();
+        LeanTween.value(coinsDisplayed, coins, .25f).setOnUpdate(UpdateDisplay);
+        void UpdateDisplay(float value)
+        {
+            coinsDisplayed = (int)value;
+            textCoins.text = coinsDisplayed.ToString();
+        }
     }
     
 }

@@ -49,7 +49,7 @@ public class Coin : MonoBehaviour
 
     public  void Collect()
     {
-        FindObjectOfType<Bank>().AdjustCoins(value);
+        Bank.AdjustCoins(value);
         if (destroyOnPickup) { Destroy(gameObject); }
     }
 

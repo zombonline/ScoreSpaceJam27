@@ -90,7 +90,7 @@ public class AmmoCache : MonoBehaviour
         if(currentAmmo == maxAmmo) { return; }
         if(Bank.coins >= refillCost)
         {
-            FindObjectOfType<Bank>().AdjustCoins(-refillCost);
+            Bank.AdjustCoins(-refillCost);
             FMODController.PlaySFX(refillSFX);
             currentAmmo = maxAmmo;
         }
@@ -99,7 +99,7 @@ public class AmmoCache : MonoBehaviour
     {
         if(Bank.coins >= ammo.upgrades[tier].cost)
         {
-            FindObjectOfType<Bank>().AdjustCoins(-ammo.upgrades[tier].cost);
+            Bank.AdjustCoins(-ammo.upgrades[tier].cost);
             maxAmmo += ammo.upgrades[tier].amount;
             FMODController.PlaySFX(upgradeSFX[tier]);
         }

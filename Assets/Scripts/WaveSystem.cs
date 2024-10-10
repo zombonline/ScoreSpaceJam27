@@ -42,8 +42,11 @@ public class WaveSystem : MonoBehaviour
     float newWaveDelayTimer;
 
     int extraWaveStepAmount = 2;
+
+    ReactOnBeat reactOnBeat;
     private void Awake()
     {
+        reactOnBeat = GetComponent<ReactOnBeat>();
         LoadNewWave();
     }
 
@@ -117,7 +120,8 @@ public class WaveSystem : MonoBehaviour
     public void LoadNewWave()
     {
         currentWaveIndex++;
-        if (currentWaveIndex >= waves.Length) { currentWave = GenerateWaveVariation(currentWave); } //No waves remain, generate a variation of current.
+        //No waves remain, generate a variation of current.
+        if (currentWaveIndex >= waves.Length) { currentWave = GenerateWaveVariation(currentWave); } 
         else { currentWave = waves[currentWaveIndex]; }
         textWaveCounter.text = "Wave " + (currentWaveIndex+1).ToString();
         textWaveEnd.text = "Waves complete: " + (currentWaveIndex + 1).ToString();
@@ -125,9 +129,9 @@ public class WaveSystem : MonoBehaviour
         
         if (currentWave.hint != null)
         {
-            FindObjectOfType<Hintbar>().AssignHintText(currentWave.hint, true);
+            Hintbar.AssignHintText(currentWave.hint, true);
         }
-        GetComponent<ReactOnBeat>().SetBeatsToReactOn(currentWave.beatsToSpawnOn);
+        reactOnBeat.SetBeatsToReactOn(currentWave.beatsToSpawnOn);
     }
 
     public SOWave GenerateWaveVariation(SOWave waveToGenerateFrom)
@@ -149,7 +153,8 @@ public class WaveSystem : MonoBehaviour
             WaveStep randomStepToDuplicate = waveSteps[Random.Range(0, waveSteps.Count)];
             waveSteps.Insert(Random.Range(0, waveSteps.Count), randomStepToDuplicate);
         }
-        extraWaveStepAmount = Mathf.FloorToInt(extraWaveStepAmount * 1.5f); //upon next wave generation, more steps will be duplicated each time.
+        //upon next wave generation, more steps will be duplicated each time.
+        extraWaveStepAmount = Mathf.FloorToInt(extraWaveStepAmount * 1.5f); 
 
 
         newWave.waveSteps = waveSteps.ToArray();

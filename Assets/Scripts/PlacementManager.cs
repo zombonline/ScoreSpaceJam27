@@ -29,7 +29,7 @@ public  class PlacementManager : MonoBehaviour
 
         FMODController.PlaySFX(towerHeld.placeSFX, "Material", ((int)tile.catPlaceMaterial));
 
-        FindObjectOfType<Bank>().AdjustCoins(-towerHeld.GetCostOfTower());
+        Bank.AdjustCoins(-towerHeld.GetCostOfTower());
 
         //if the player now has less than cost of currently held tower
         ClearTowerHeld();
@@ -94,7 +94,7 @@ public  class PlacementManager : MonoBehaviour
         {
             FMODController.PlaySFX("event:/SFX/UI/Buttons/Retire/Button_Retire");
             lastSelectedTile.RemoveTower();
-            FindObjectOfType<Bank>().AdjustCoins(lastSelectedTile.placedTowerRefundValue);
+            Bank.AdjustCoins(lastSelectedTile.placedTowerRefundValue);
             Destroy(lastSelectedTile.placedTower);
             buttonSellTower.gameObject.SetActive(false); 
         }

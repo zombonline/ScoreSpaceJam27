@@ -16,32 +16,36 @@ public struct Hint
         this.isSpecial = special;
     }
 }
-
-
 public class Hintbar : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI hintText;
-    bool coroutineRunning = false;
-    List<Hint> hintQueue = new List<Hint>();
+    static bool coroutineRunning = false;
+    static List<Hint> hintQueue = new List<Hint>();
     [SerializeField] TextAsset hintTextFile;
     string[] hints;
     Vector2 originalTextPos;
+
+    public static event System.Action<Hint> OnHintQueuePopulated;
+
     private void Awake()
     {
         hints = hintTextFile.text.Split(Environment.NewLine,
                             StringSplitOptions.RemoveEmptyEntries);
         originalTextPos = hintText.rectTransform.anchoredPosition;
+
+        OnHintQueuePopulated += Scroll;
     }
 
     private void Update()
     {
         if(hintQueue.Count < 1)
         {
+            //assign random non special hint.
             AssignHintText(hints[UnityEngine.Random.Range(0, hints.Length)],false);
         }
     }
 
-    public void AssignHintText(string text, bool isSpecial)
+    public static void AssignHintText(string text, bool isSpecial)
     {
         var newHint = new Hint(text, isSpecial);
 
@@ -52,9 +56,15 @@ public class Hintbar : MonoBehaviour
         }
         else
         {
-            StartCoroutine(ScrollRoutine(newHint));
+            OnHintQueuePopulated?.Invoke(newHint);
         }
     }
+
+    public void Scroll(Hint hint)
+    {
+        StartCoroutine(ScrollRoutine(hint));
+    }
+
     public IEnumerator ScrollRoutine(Hint hint)
     {
         coroutineRunning = true;
