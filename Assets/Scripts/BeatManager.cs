@@ -1,11 +1,7 @@
 using FMODUnity;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 
 
 class BeatManager : MonoBehaviour
@@ -14,7 +10,7 @@ class BeatManager : MonoBehaviour
     class TimelineInfo
     {
         public int currentMusicBeat = 0;
-        public FMOD.StringWrapper lastMarker = new FMOD.StringWrapper();
+        public FMOD.StringWrapper lastMarker;
     }
 
     TimelineInfo timelineInfo;
@@ -36,7 +32,13 @@ class BeatManager : MonoBehaviour
         instance.setCallback(beatCallback, FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_BEAT | FMOD.Studio.EVENT_CALLBACK_TYPE.TIMELINE_MARKER);
     }
 
-    public void StopAndClear(FMOD.Studio.EventInstance instance)
+    private void OnDestroy()
+    {
+        if(timelineHandle.IsAllocated)
+            StopAndClear();
+    }
+
+    public void StopAndClear()
     {
         instance.setUserData(IntPtr.Zero);
         instance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
